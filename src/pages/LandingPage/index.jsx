@@ -222,7 +222,7 @@ function LandingPage() {
                             variants={variants}
                             initial={variants.initial}
                             animate={variants.animate}
-                            className="z-20 flex justify-center items-center  rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                            className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                         >
                             <Link to="/contact">
                                 <div className="flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
