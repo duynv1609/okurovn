@@ -34,7 +34,7 @@ const CONTENT = [
 ];
 
 function LandingPage() {
-    const isDeskTop = useMediaQuery("(min-width:1900px)");
+    const isDeskTop = useMediaQuery("(min-width:1600px)");
     const variants = isDeskTop
         ? { initial: { width: 0, height: 0 }, animate: { width: 452, height: 182 } }
         : { initial: {}, animate: {} };
@@ -65,12 +65,9 @@ function LandingPage() {
                 >
                     <Link
                         to="/delete-account"
-                        className="z-40 absolute left-20 top-10 btn btn-md bg-blue-500 hover:bg-blue-400 hover:cursor-pointer"
+                        className="z-40 absolute left-1/2 -translate-x-1/2 bottom-3 btn btn-md  bg-blue-500 hover:bg-blue-400 hover:cursor-pointer"
                     >
-                        <span className="pr-1">
-                            <i className="fa fa-share"></i>
-                        </span>
-                        <span>Xóa tài khoản</span>
+                        <span className="text-center">Xóa tài khoản OKURO trên mobile</span>
                     </Link>
 
                     <div className="z-20 absolute select-none h-[245px] w-[540px] right-0 top-0   bg-[url('../../../topright.png')] desktop:h-[220px] desktop:w-[486px] pc:h-[286px] pc:w-[530px]      mobile:hidden"></div>
@@ -217,7 +214,7 @@ function LandingPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="z-20 flex justify-center  items-end gap-[42px] w-full lg:top-[835px]  lg:absolute  desktop:top-[530px]   pc:top-[700px] mobile:flex-col mobile:relative    mobile:items-center mobile:justify-center mobile:gap-6  mobile:h-[456px] ">
+                    <div className="z-20 flex justify-center  items-end gap-[42px] w-full lg:bottom-[10%]  lg:absolute  desktop:top-[530px]   pc:bottom-[7%] mobile:flex-col mobile:relative    mobile:items-center mobile:justify-center mobile:gap-6  mobile:h-[456px] ">
                         <motion.div
                             variants={variants}
                             initial={variants.initial}
@@ -228,18 +225,18 @@ function LandingPage() {
                                 {isContent[6]}
                             </div>
                         </motion.div>
-                        <motion.div
-                            variants={variants}
-                            initial={variants.initial}
-                            animate={variants.animate}
-                            className="z-20 flex justify-center items-center  rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
-                        >
-                            <Link to="/contact">
-                                <div className="flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
+                        <Link to="/about">
+                            <motion.div
+                                variants={variants}
+                                initial={variants.initial}
+                                animate={variants.animate}
+                                className="z-20 flex justify-center items-center  rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                            >
+                                <div className="flex flex-col items-start  w-[452px] h-[180px] justify-center text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
                                     {isContent[7]}
                                 </div>
-                            </Link>
-                        </motion.div>
+                            </motion.div>
+                        </Link>
                         <motion.div
                             variants={variants}
                             initial={variants.initial}
