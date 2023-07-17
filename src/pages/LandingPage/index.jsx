@@ -63,6 +63,16 @@ function LandingPage() {
                     transition={{ duration: 2 }}
                     className="flex flex-col h-screen justify-between mobile:justify-items-start bg-okuro-background  z-20 select-none mobile:justify-between mobile:items-start mobile:h-[671px] mobile:mx-4 mobile:mt-[34px]  "
                 >
+                    <Link
+                        to="/delete-account"
+                        className="z-40 absolute left-20 top-10 btn btn-md bg-blue-500 hover:bg-blue-400 hover:cursor-pointer"
+                    >
+                        <span className="pr-1">
+                            <i className="fa fa-share"></i>
+                        </span>
+                        <span>Xóa tài khoản</span>
+                    </Link>
+
                     <div className="z-20 absolute select-none h-[245px] w-[540px] right-0 top-0   bg-[url('../../../topright.png')] desktop:h-[220px] desktop:w-[486px] pc:h-[286px] pc:w-[530px]      mobile:hidden"></div>
                     <div className="z-20 absolute select-none h-[245px] w-[540px] left-[-139px] bottom-[125px]    bg-[url('../../../bottomleft.png')]  desktop:h-[220px] desktop:w-[486px] pc:h-[286px] pc:w-[530px]    desktop:bottom-[125px] desktop:left-[-225px]  mobile:hidden"></div>
                     <div
@@ -222,9 +232,9 @@ function LandingPage() {
                             variants={variants}
                             initial={variants.initial}
                             animate={variants.animate}
-                            className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                            className="z-20 flex justify-center items-center  rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                         >
-                            <Link to="/about">
+                            <Link to="/contact">
                                 <div className="flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
                                     {isContent[7]}
                                 </div>

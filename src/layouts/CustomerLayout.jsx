@@ -1,5 +1,5 @@
-import CustomerHeader from './components/CustomerHeader';
-import { useState } from 'react';
+import CustomerHeader from "./components/CustomerHeader";
+import { useState } from "react";
 
 function CustomerLayout({ heading, children }) {
     return (
@@ -7,9 +7,7 @@ function CustomerLayout({ heading, children }) {
             <div className="grow-0">
                 <CustomerHeader>{heading}</CustomerHeader>
             </div>
-            <div>
-                <main className="grow ">{children}</main>
-            </div>
+            <div className="flex grow justify-center ">{children}</div>
         </div>
     );
 }

@@ -1,43 +1,42 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 
-import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import clsx from 'clsx';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import clsx from "clsx";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const bag2 =
-    'https://cdn.vn.alongwalk.info/wp-content/uploads/2023/01/05212422/image-30-hinh-nen-meo-cute-dung-cho-ca-dien-thoai-va-may-tinh-bfa19be160372b49145eb85b3f12be80.jpg';
+    "https://cdn.vn.alongwalk.info/wp-content/uploads/2023/01/05212422/image-30-hinh-nen-meo-cute-dung-cho-ca-dien-thoai-va-may-tinh-bfa19be160372b49145eb85b3f12be80.jpg";
 
 function Contact({ children }) {
     const refContact = useRef(null);
     const [loading, setLoading] = useState(false);
     const [required, setRequired] = useState(false);
-    const showSuccessNoti = () => toast.success('Thêm thành công!');
-    const showErorrNoti = () => toast.error('Có lỗi xảy ra!');
+    const showSuccessNoti = () => toast.success("Thêm thành công!");
+    const showErorrNoti = () => toast.error("Có lỗi xảy ra!");
     const navigate = useNavigate();
 
     const validationSchema = Yup.object({
-        name: Yup.string().required('Vui lòng nhập tên của bạn!'),
         email: Yup.string()
-            .required('Vui lòng nhập địa chỉ email!')
-            .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, 'Email của bạn không đúng định dạng'),
+            .required("Vui lòng nhập địa chỉ email!")
+            .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, "Email của bạn không đúng định dạng"),
         phone: Yup.string()
-            .required('Vui lòng nhập số điện thoại!')
+            .required("Vui lòng nhập số điện thoại!")
             .matches(
                 /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
-                'Số điện thoại chưa đúng!'
+                "Số điện thoại chưa đúng!"
             ),
-        content: Yup.string().required('Vui lòng nhập nội dung'),
+        content: Yup.string().required("Vui lòng nhập nội dung"),
     });
 
     const form = useFormik({
         initialValues: {
-            name: '',
-            email: '',
-            phone: '',
-            content: '',
+            name: "",
+            email: "",
+            phone: "",
+            content: "",
         },
         validationSchema,
         onSubmit: handleFormsubmit,
@@ -70,7 +69,7 @@ function Contact({ children }) {
                                     name="name"
                                     id="name"
                                     className={clsx(
-                                        'h-[65px] w-full rounded-lg border border-gray-300  py-[20px] px-[24px] text-gray-900    sm:text-sm',
+                                        "h-[65px] w-full rounded-lg border border-gray-300  py-[20px] px-[24px] text-gray-900    sm:text-sm",
                                         {
                                             invalid: form.touched.name && form.errors.name,
                                         }
@@ -82,11 +81,11 @@ function Contact({ children }) {
                                 />
                                 {required && form.errors.name ? (
                                     <span
-                                        className={clsx('text-sm text-red-500 ', {
-                                            'opacity-100': form.touched.name && form.errors.name,
+                                        className={clsx("text-sm text-red-500 ", {
+                                            "opacity-100": form.touched.name && form.errors.name,
                                         })}
                                     >
-                                        {form.errors.name || 'No message'}
+                                        {form.errors.name || "No message"}
                                     </span>
                                 ) : (
                                     <></>
@@ -102,7 +101,7 @@ function Contact({ children }) {
                                     name="email"
                                     id="email"
                                     className={clsx(
-                                        'h-[65px] w-full rounded-lg border border-gray-300  py-[20px] px-[24px] text-gray-900    sm:text-sm',
+                                        "h-[65px] w-full rounded-lg border border-gray-300  py-[20px] px-[24px] text-gray-900    sm:text-sm",
                                         {
                                             invalid: form.touched.email && form.errors.email,
                                         }
@@ -114,11 +113,11 @@ function Contact({ children }) {
                                 />
                                 {required && form.errors.email ? (
                                     <span
-                                        className={clsx('text-sm text-red-500 ', {
-                                            'opacity-100': form.touched.email && form.errors.email,
+                                        className={clsx("text-sm text-red-500 ", {
+                                            "opacity-100": form.touched.email && form.errors.email,
                                         })}
                                     >
-                                        {form.errors.email || 'No message'}
+                                        {form.errors.email || "No message"}
                                     </span>
                                 ) : (
                                     <></>
@@ -134,7 +133,7 @@ function Contact({ children }) {
                                     name="phone"
                                     id="phone"
                                     className={clsx(
-                                        'h-[65px] w-full rounded-lg border border-gray-300  py-[20px] px-[24px] text-gray-900    sm:text-sm',
+                                        "h-[65px] w-full rounded-lg border border-gray-300  py-[20px] px-[24px] text-gray-900    sm:text-sm",
                                         {
                                             invalid: form.touched.phone && form.errors.phone,
                                         }
@@ -146,11 +145,11 @@ function Contact({ children }) {
                                 />
                                 {required && form.errors.phone ? (
                                     <span
-                                        className={clsx('text-sm text-red-500 ', {
-                                            'opacity-100': form.touched.phone && form.errors.phone,
+                                        className={clsx("text-sm text-red-500 ", {
+                                            "opacity-100": form.touched.phone && form.errors.phone,
                                         })}
                                     >
-                                        {form.errors.phone || 'No message'}
+                                        {form.errors.phone || "No message"}
                                     </span>
                                 ) : (
                                     <></>
@@ -163,7 +162,7 @@ function Contact({ children }) {
                                 name="content"
                                 id="content"
                                 className={clsx(
-                                    ' w-full h-full rounded-lg border border-gray-300  p-2.5 text-gray-900    sm:text-sm',
+                                    " w-full h-full rounded-lg border border-gray-300  p-2.5 text-gray-900    sm:text-sm",
                                     {
                                         invalid: form.touched.content && form.errors.content,
                                     }
@@ -175,11 +174,11 @@ function Contact({ children }) {
                             ></textarea>
                             {required && form.errors.content ? (
                                 <span
-                                    className={clsx('text-sm text-red-500 ', {
-                                        'opacity-100': form.touched.content && form.errors.content,
+                                    className={clsx("text-sm text-red-500 ", {
+                                        "opacity-100": form.touched.content && form.errors.content,
                                     })}
                                 >
-                                    {form.errors.content || 'No message'}
+                                    {form.errors.content || "No message"}
                                 </span>
                             ) : (
                                 <></>

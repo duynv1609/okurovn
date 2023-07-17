@@ -7,6 +7,7 @@ import LandingPage from '../pages/LandingPage';
 import Contact from '../pages/Contact';
 import Utilities from '../pages/Utilities';
 import AboutUs from '../pages/AboutUs';
+import DeleteAccount from '../pages/DeleteAccount';
 
 // Public routes
 const publicRoutes = [
@@ -42,7 +43,14 @@ const publicRoutes = [
         props: {
             heading: 'Về chúng tôi',
         },
-    },
+    }, {
+        path: '/delete-account',
+        component: DeleteAccount,
+        layout: CustomerLayout,
+        props: {
+            heading: 'Xóa tài khoản',
+        },
+    }
 ];
 
 const privateRoutes = [];
