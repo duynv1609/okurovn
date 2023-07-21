@@ -6,9 +6,10 @@ function HealthcareLayout({ heading, children }) {
             <div>
                 <Healthcare>{heading}</Healthcare>
             </div>
-            <div className="flex grow justify-center ">{children}</div>
+            <div className="flex flex-col  justify-center ">{children}</div>
         </div>
     );
 }
 
 export default HealthcareLayout;
+ 

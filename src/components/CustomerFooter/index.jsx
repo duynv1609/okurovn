@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import ScrollButton from "../../components/ScrollButton";
 const TABS = [
-    { Link: "/about", Content: "Về chúng tôi" },
-    { Link: "/utilities", Content: "Tiện ích" },
-    { Link: "/contact", Content: "Liên hệ" },
+    { Link: "/education/about", Content: "Về chúng tôi" },
+    { Link: "/education/utilities", Content: "Tiện ích" },
+    { Link: "/education/contact", Content: "Liên hệ" },
 ];
 const INFOR = [
     { Content: "312 Nguyễn Thượng Hiền, Phường 5, Quận Phú Nhuận, Thành phố Hồ Chí Minh" },

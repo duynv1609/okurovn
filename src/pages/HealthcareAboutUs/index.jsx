@@ -605,7 +605,41 @@ function HealthcareAboutUs() {
                             <span className="text-okuro-color-text">Ý kiến</span> người dùng
                         </span>
                     </div>
-                    <Sidebar></Sidebar>
+                    <div className="flex justify-center items-center gap-[110px] ">
+                        <div className="w-[337px] h-[568px]">
+                            <Sidebar></Sidebar>
+                        </div>
+                        <div className="flex">
+                            <div
+                                src=" "
+                                className="w-[989px] h-[666px] bg-[url('../../../bgMap.png')] desktop:h-[220px]"
+                                alt=""
+                            >
+                                <div className="flex flex-col items-center w-[248px] justify-center gap-8 mt-[64px] ml-8 ">
+                                    <img src="../../../imgMoreCard.png" className="w-[250px] h-[160px]  " alt="" />
+                                    <div className="flex flex-col justify-around gap-2 w-[243px] h-[140px]  px-4 py-3 rounded-xl border border-white shadow-[0_4px_8px_0px_rgba(59,130,246,0.15)]">
+                                        <div className="text-[14px] font-semibold text-okuro-primary">
+                                            <p>Thông tin bệnh viện</p>
+                                        </div>
+                                        <div className="text-okuro-web-text text-[12px] font-normal leading-[16px]">
+                                            <p>
+                                                <span className="font-semibold "> Địa chỉ: </span>
+                                                341 Sư Vạn Hạnh, Phường 10, Quận 10, TP HCM
+                                            </p>
+                                        </div>
+                                        <div className="text-okuro-web-text text-[12px] font-normal leading-[16px]">
+                                            <p>
+                                                <span className="font-semibold "> Điện thoại: </span>
+                                                (028) 39271119 <br></br>
+                                                <span className="font-semibold "> Fax: </span>
+                                                (028) 39270053
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>

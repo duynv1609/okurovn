@@ -50,7 +50,7 @@ function Contact({ children }) {
     }
     //
     return (
-        <div className="flex flex-col w-full  select-none justify-start my-12  gap-12 items-center bg-okuro-background-contact mobile:hidden">
+        <div className="flex flex-col w-full  select-none justify-start py-12  gap-12 items-center bg-okuro-background-contact mobile:hidden">
             <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text ">
                 Liên hệ
             </div>
