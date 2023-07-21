@@ -2,10 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import ScrollButton from "../../components/ScrollButton";
+
 const TABS = [
-    { Link: "/about", Content: "Về chúng tôi" },
-    { Link: "/utilities", Content: "Tiện ích" },
-    { Link: "/contact", Content: "Liên hệ" },
+    { Link: "/healthcare/about", Content: "Về chúng tôi" },
+    { Link: "/healthcare/phisical-card", Content: "Thẻ vật lý" },
+    { Link: "/healthcare/nonphisical-card", Content: "Thi phi vật lý" },
+    { Link: "/healthcare/contact", Content: "Liên hệ" },
 ];
 const INFOR = [
     { Content: "312 Nguyễn Thượng Hiền, Phường 5, Quận Phú Nhuận, Thành phố Hồ Chí Minh" },
@@ -18,7 +20,7 @@ function Footer({ children }) {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     return (
-        <div className="flex flex-col border-t-2 border-gray-200 ">
+        <div className="flex flex-col border-t-2 border-gray-200 mobile:hidden">
             <header className="flex h-[]  mx-[200px] select-none items-center justify-around   font-medium text-slate-900 border-b-2 border-gray-200 ">
                 <div className="flex gap-[100px]  w-full py-10  items-start justify-center   ">
                     <div className="flex flex-col gap-6 w-[300px]">

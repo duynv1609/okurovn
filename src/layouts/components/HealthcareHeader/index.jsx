@@ -10,9 +10,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const LINK = [
     // { Link: "/", Content: "" },
-    { Link: "/education/about", Content: "Về chúng tôi" },
-    { Link: "/education/utilities", Content: "Tiện ích" },
-    { Link: "/education/contact", Content: "Liên hệ" },
+    { Link: "/healthcare/about", Content: "Về chúng tôi" },
+    { Link: "/healthcare/phisical-card", Content: "Thẻ vật lý" },
+    { Link: "/healthcare/nonphisical-card", Content: "Thi phi vật lý" },
+    { Link: "/healthcare/contact", Content: "Liên hệ" },
 ];
 
 const sidebar = {
@@ -118,7 +119,7 @@ function HeaderCustomer({ children }) {
                             ></motion.div>
 
                             <div className="z-50 bg-white">
-                                <Navigation link={LINK} />
+                                <Navigation link={LINK} navigate={navigate} />
                             </div>
                         </motion.nav>
                     ) : (

@@ -1,13 +1,13 @@
-import { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { privateRoutes, publicRoutes } from './routes';
-import DefaultLayout from './layouts/DefaultLayout';
-import { ToastContainer } from 'react-toastify';
+import { Fragment, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { privateRoutes, publicRoutes } from "./routes";
+import DefaultLayout from "./layouts/DefaultLayout";
+import { ToastContainer } from "react-toastify";
 
 function App() {
     return (
         <Router>
-            <div className="App">
+            <div className="App ">
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;

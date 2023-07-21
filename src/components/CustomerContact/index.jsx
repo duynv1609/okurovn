@@ -48,10 +48,9 @@ function Contact({ children }) {
         console.log(values);
         setLoading(false);
     }
-    console.log(required);
     //
     return (
-        <div className="flex flex-col   select-none justify-start my-12  gap-12 items-center bg-okuro-background-contact">
+        <div className="flex flex-col w-full  select-none justify-start my-12  gap-12 items-center bg-okuro-background-contact mobile:hidden">
             <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text ">
                 Liên hệ
             </div>

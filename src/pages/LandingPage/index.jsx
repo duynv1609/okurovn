@@ -34,7 +34,7 @@ const CONTENT = [
 ];
 
 function LandingPage() {
-    const isDeskTop = useMediaQuery("(min-width:1600px)");
+    const isDeskTop = useMediaQuery("(min-width:1900px)");
     const variants = isDeskTop
         ? { initial: { width: 0, height: 0 }, animate: { width: 452, height: 182 } }
         : { initial: {}, animate: {} };
@@ -81,8 +81,6 @@ function LandingPage() {
                                 className="w-full h-10 flex justify-end sm:hidden md:h-9 md:w-0 "
                                 onClick={() => {
                                     setToggle(!toggle);
-
-                                    console.log(isContent);
                                 }}
                             >
                                 <div className="flex gap-0 w-12 h-[18px]">
@@ -166,8 +164,11 @@ function LandingPage() {
                                             </Popover.Button>
 
                                             <Popover.Panel className="absolute flex  flex-col top-10 z-50 p-4 items-start gap-4 rounded-xl  bg-white shadow-md">
-                                                {LANGUAGE.map((lang) => (
-                                                    <div className="flex items-center  gap-4 justify-stretch hover:cursor-pointer">
+                                                {LANGUAGE.map((lang, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="flex items-center  gap-4 justify-stretch hover:cursor-pointer"
+                                                    >
                                                         <div className="flex gap-2 items-center">
                                                             <img
                                                                 className="rounded-[30px] h-[20px]"
@@ -215,24 +216,26 @@ function LandingPage() {
                         </div>
                     </div>
                     <div className="z-20 flex justify-center  items-end gap-[42px] w-full lg:bottom-[10%]  lg:absolute  desktop:top-[530px]   pc:bottom-[7%] mobile:flex-col mobile:relative    mobile:items-center mobile:justify-center mobile:gap-6  mobile:h-[456px] ">
-                        <motion.div
-                            variants={variants}
-                            initial={variants.initial}
-                            animate={variants.animate}
-                            className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl bg-blue-500  bg-cover bg-[url('../../../yte.png')]  hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]   "
-                        >
-                            <div className="flex flex-col items-start justify-center  w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl ">
-                                {isContent[6]}
-                            </div>
-                        </motion.div>
-                        <Link to="/about">
+                        <Link to="/healthcare/about">
                             <motion.div
                                 variants={variants}
                                 initial={variants.initial}
                                 animate={variants.animate}
-                                className="z-20 flex justify-center items-center  rounded-2xl bg-red-500 bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                                className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl   bg-cover bg-[url('../../../yte.png')]  hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                             >
-                                <div className="flex flex-col items-start  w-[452px] h-[180px] justify-center text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
+                                <div className="flex flex-col items-start justify-center  w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl ">
+                                    {isContent[6]}
+                                </div>
+                            </motion.div>{" "}
+                        </Link>
+                        <Link to="/education/about">
+                            <motion.div
+                                variants={variants}
+                                initial={variants.initial}
+                                animate={variants.animate}
+                                className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl  bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                            >
+                                <div className="flex flex-col items-start  justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
                                     {isContent[7]}
                                 </div>
                             </motion.div>
@@ -241,7 +244,7 @@ function LandingPage() {
                             variants={variants}
                             initial={variants.initial}
                             animate={variants.animate}
-                            className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl  bg-[url('../../../frameEMR.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                            className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl bg-cover bg-[url('../../../frameEMR.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                         >
                             <div>
                                 <img src="../../../EMR.svg" alt="" className="w-[50px] h-[47px] mx-1" />
