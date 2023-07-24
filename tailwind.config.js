@@ -15,7 +15,7 @@ module.exports = withMT({
             lg: { min: '1024px' },
             xl: { min: '1280px' },
             mobile: { max: '1000px' },
-            desk1000: {min:'1000px',max:'1400px'},
+            desk1000: {min:'1000px',max:'1500px'},
             notmobile: {min:'1000px'},
             desktop: { min: '1400px', max: '1600px' },
             pc: { min: '1600px', max: '2000px' },

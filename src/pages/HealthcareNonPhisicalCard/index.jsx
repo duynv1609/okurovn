@@ -179,7 +179,7 @@ function Utilities() {
                         <div className="flex flex-col items-center justify-center w-[578px] h-[520px]">
                             <img src="../../../phisical31.png" className="object-contain w-[578px] h-[520px]" alt="" />
                         </div>
-                        <div className="flex flex-col items-center justify-center w-[600px] gap-[77px] h-[410px]">
+                        <div className="flex flex-col items-center justify-center w-[701px] gap-[77px] h-[370px]">
                             <div className="flex gap-20">
                                 <div className="flex gap-[26px]">
                                     <div>
@@ -189,7 +189,7 @@ function Utilities() {
                                             className="w-[36px] h-[36px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col w-[275px] h-[72px]">
                                         <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none ">
                                             25000+
                                         </span>
@@ -206,12 +206,12 @@ function Utilities() {
                                             className="w-[36px] h-[36px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col w-[318px] h-[72px]">
                                         <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
-                                            25000+
+                                            Giao dịch siêu tốc
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
-                                            Người tin dùng
+                                            Không tốn phí trung gian
                                         </span>
                                     </div>
                                 </div>
@@ -225,12 +225,12 @@ function Utilities() {
                                             className="w-[36px] h-[36px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col w-[275px] h-[72px]">
                                         <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
-                                            25000+
+                                            10+
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
-                                            Người tin dùng
+                                            Bệnh viện áp dụng thanh toán
                                         </span>
                                     </div>
                                 </div>
@@ -242,12 +242,12 @@ function Utilities() {
                                             className="w-[36px] h-[36px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col w-[318px] h-[72px]">
                                         <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
-                                            25000+
+                                            An toàn và bảo mật
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
-                                            Người tin dùng
+                                            Chuẩn quốc tế
                                         </span>
                                     </div>
                                 </div>
@@ -261,12 +261,12 @@ function Utilities() {
                                             className="w-[36px] h-[36px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col w-[275px] h-[72px]">
                                         <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
-                                            25000+
+                                            50+
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
-                                            Người tin dùng
+                                            Đối tác đồng hành
                                         </span>
                                     </div>
                                 </div>
@@ -278,12 +278,12 @@ function Utilities() {
                                             className="w-[36px] h-[36px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col w-[318px] h-[72px]">
                                         <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
-                                            25000+
+                                            Đối tác đồng hành
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
-                                            Người tin dùng
+                                            Không tiền mặt
                                         </span>
                                     </div>
                                 </div>
@@ -303,7 +303,12 @@ function Utilities() {
                             <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-orange"></div>
                         </div>
 
-                        <div className="flex flex-col items-center justify-center w-[600px] gap-[77px] h-[410px]"></div>
+                        <div className="flex flex-col items-center justify-center w-[219px] gap-[77px] h-[108px] bg-red-100">
+                            <iframe
+                                src="https://www.youtube.com/embed/5Qtj_9eV4hU"
+                                className="w-full h-full bg-blue-200"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -50,14 +50,14 @@ function Contact({ children }) {
     }
     //
     return (
-        <div className="flex flex-col w-full  select-none justify-start py-12  gap-12 items-center bg-okuro-background-contact mobile:hidden">
-            <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text ">
+        <div className="flex flex-col w-full  select-none justify-start py-12  gap-12 items-center bg-okuro-background-contact ">
+            <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text mobile:hidden">
                 Liên hệ
             </div>
-            <form onSubmit={form.handleSubmit}>
+            <form onSubmit={form.handleSubmit} className="w-auto">
                 <div className="flex flex-col">
-                    <div className="flex gap-6">
-                        <div className="flex flex-col gap-3 h-full w-[400px]">
+                    <div className="flex gap-y-3 mobile:flex-col">
+                        <div className="flex flex-col gap-3 px-6 h-full w-[400px] mobile:w-full ">
                             <div
                                 className={clsx('"flex flex-col h-[65 px] w-full   sm:text-sm', {
                                     invalid: required && form.errors.name,
@@ -155,7 +155,7 @@ function Contact({ children }) {
                                 )}
                             </div>
                         </div>
-                        <div className="flex flex-col gap-2  w-[400px]">
+                        <div className="flex flex-col gap-3 px-6 h-auto w-[400px] mobile:w-full">
                             <textarea
                                 type="text"
                                 name="content"
@@ -185,10 +185,10 @@ function Contact({ children }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-6 pt-12">
+                <div className="flex flex-col gap-6 pt-12 px-6">
                     <button
                         type="submit"
-                        className="btn btn-blue btn-md w-full"
+                        className="btn btn-blue btn-md  "
                         onClick={() => {
                             setRequired(true);
                         }}
@@ -216,7 +216,7 @@ function Contact({ children }) {
                     </button>
                     <div className="flex items-center">
                         <img src="../../../info.png" alt="" />
-                        <span className="text-base font-normal font-roboto text-okuro-body-color">
+                        <span className="text-base font-normal font-roboto text-okuro-body-color mobile:text-[16px] mobile:leading-normal">
                             Kiểm tra hộp thư thường xuyên để theo dõi và cập nhật thông tin giá trị nhanh nhất
                         </span>
                     </div>

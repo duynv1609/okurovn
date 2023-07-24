@@ -20,9 +20,9 @@ function Footer({ children }) {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     return (
-        <div className="flex flex-col border-t-2 border-gray-200 mobile:hidden">
-            <header className="flex h-[]  mx-[200px] select-none items-center justify-around   font-medium text-slate-900 border-b-2 border-gray-200 ">
-                <div className="flex gap-[100px]  w-full py-10  items-start justify-center   ">
+        <div className="flex flex-col border-t-2 border-gray-200">
+            <header className="flex h-[]  mx-[200px] select-none items-center justify-around   font-medium text-slate-900 border-b-2 border-gray-200  ">
+                <div className="flex gap-[100px]  w-full py-10  items-start justify-center  mobile:flex-col ">
                     <div className="flex flex-col gap-6 w-[300px]">
                         <div className="flex flex-col gap-3 h-[76px]">
                             <div className="flex  items-center justify-start text-green-600 text-3xl">

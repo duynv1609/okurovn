@@ -29,7 +29,7 @@ const LISTvariants = {
     },
 };
 
-function Navigation({ LINK }) {
+function Navigation({ LINK, setShowModal, toggleOpen }) {
     const navigate = useNavigate();
     return (
         <motion.div variants={LISTvariants} className="flex h-full w-full p-6 ">
@@ -42,7 +42,9 @@ function Navigation({ LINK }) {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => {
-                            navigate(link.link);
+                            navigate(link.Link);
+                            toggleOpen();
+                            setShowModal();
                         }}
                     >
                         <div className="text-placeholder">{link.Content}</div>

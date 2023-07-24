@@ -347,112 +347,126 @@ function HealthcareAboutUs() {
                 )}
             </div>
             <div className="flex flex-col items-center justify-center gap-10 p-20 h-auto w-full   mobile:p-0 ">
-                <div className="grid grid-cols-6 gap-x-[60px] gap-y-[110px] h-full w-full mobile:flex mobile:flex-col mobile:grid-cols-1 mobile:gap-[10px] mobile:gap-x-[10px] mobile:gap-y-[60px] ">
-                    <div className="col-start-2  col-span-2 flex flex-col items-end h-min hover:cursor-pointer mobile:items-start  mobile:col-start-1 mobile:col-span-1 mobile:[w-343px] mobile:h-[207px]  ">
-                        <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
-                            {" "}
-                            <img src="../../../HealthcareAboutIcon1.png" className="w-full h-full" alt="" />
-                        </div>
-                        <div className="z-10 flex   flex-col w-[418px] mobile:w-[343px] pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:[w-343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px]   border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
-                            <div className="flex">
-                                <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]   ">
-                                    Quản lý và triển khai
-                                </span>
+                <div className="grid grid-cols-6  gap-y-[110px] h-full w-full  desk1000:grid-cols-2  mobile:grid-cols-1 justify-center items-center mobile:gap-[10px] mobile:gap-x-[10px] mobile:gap-y-[60px] ">
+                    <div className="col-start-2 desk1000:col-start-1 col-span-2  desk1000:col-span-1 flex flex-col items-center h-min hover:cursor-pointer   mobile:col-start-1 mobile:col-span-1   ">
+                        <div className="flex flex-col w-auto h-auto items-end mobile:items-start">
+                            <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
+                                {" "}
+                                <img src="../../../HealthcareAboutIcon1.png" className="w-full h-full" alt="" />
                             </div>
-                            <div className="flex min-h-[120px]">
-                                <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%]  mobile:text-[14px] mobile:leading-[23px]">
-                                    <li className="mb-0">Quản lý số thứ tự theo thời gian thực.</li>
-                                    <li className="mb-0">Phân loại đối tượng bệnh nhân (thường và ưu tiên).</li>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-start-4 col-span-2 flex flex-col items-end h-min hover:cursor-pointer  mobile:col-start-1 mobile:col-span-1 mobile:[w-343px] mobile:h-[207px] ">
-                        <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
-                            {" "}
-                            <img src="../../../HealthcareAboutIcon2.png" className="w-full h-full" alt="" />
-                        </div>
-                        <div className="z-10 flex  flex-col w-[418px] mobile:w-[343px] pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:[w-343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
-                            <div className="flex">
-                                <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
-                                    Đặt lịch khám
-                                </span>
-                            </div>
-                            <div className="flex min-h-[120px]">
-                                <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
-                                    <li className="mb-0"> Thiết lập cơ chế lựa chọn phòng khám, chuyên khoa khám.</li>
-                                    <li className="mb-0"> Quản lý số thứ tự khám từ xa.</li>
-                                    <li className="mb-0"> Thanh toán nhanh chóng, tiện lợi.</li>
-                                </span>
+                            <div className="z-10 flex   flex-col w-[418px]  pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:w-[343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px]   border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
+                                <div className="flex">
+                                    <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]   ">
+                                        Quản lý và triển khai
+                                    </span>
+                                </div>
+                                <div className="flex min-h-[120px]">
+                                    <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%]  mobile:text-[14px] mobile:leading-[23px]">
+                                        <li className="mb-0">Quản lý số thứ tự theo thời gian thực.</li>
+                                        <li className="mb-0">Phân loại đối tượng bệnh nhân (thường và ưu tiên).</li>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-start-1 desk1000:col-start-2 col-span-2 flex flex-col items-end h-min hover:cursor-pointer  mobile:items-start mobile:col-start-1 mobile:col-span-1 mobile:[w-343px] mobile:h-[207px]">
-                        <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
-                            {" "}
-                            <img src="../../../HealthcareAboutIcon3.png" className="w-full h-full" alt="" />
-                        </div>
-                        <div className="z-10 flex  flex-col w-[418px] mobile:w-[343px] pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px]  rounded-[24px] mobile:[w-343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
-                            <div className="flex">
-                                <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
-                                    Hồ sơ điện tử
-                                </span>
+                    <div className="col-start-4 desk1000:col-start-2 desk1000:col-span-1  col-span-2 flex flex-col items-center h-min hover:cursor-pointer  mobile:col-start-1 mobile:col-span-1   ">
+                        <div className="flex flex-col w-auto h-auto items-end">
+                            <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
+                                {" "}
+                                <img src="../../../HealthcareAboutIcon2.png" className="w-full h-full" alt="" />
                             </div>
-                            <div className="flex min-h-[120px]">
-                                <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
-                                    <li className="mb-0">
-                                        Lưu trữ toàn bộ kết quả khám lâm sàng, phác đồ điều trị trên nền tảng số hóa.
-                                    </li>
-                                    <li className="mb-0"> Tra cứu, truy cập hồ sơ nhanh chóng.</li>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className=" col-start-3 desk1000:col-start-4 col-span-2 flex flex-col items-end h-min hover:cursor-pointer  mobile:col-start-1 mobile:col-span-1 mobile:[w-343px] mobile:h-[207px]">
-                        <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
-                            {" "}
-                            <img src="../../../HealthcareAboutIcon4.png" className="w-full h-full" alt="" />
-                        </div>
-                        <div className="z-10 flex  flex-col w-[418px] mobile:w-[343px] pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:[w-343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
-                            <div className="flex">
-                                <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
-                                    Quản lý và triển khai
-                                </span>
-                            </div>
-                            <div className="flex min-h-[120px]">
-                                <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
-                                    <li className="mb-0">Cập nhật nhanh chóng thông tin viện phí, chi phí khám.</li>
-                                    <li className="mb-0">
-                                        Dễ dàng thanh toán mọi lúc mọi nơi, lưu trữ hóa đơn điện tử.
-                                    </li>
-                                </span>
+                            <div className="z-10 flex  flex-col w-[418px]  pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:w-[343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
+                                <div className="flex">
+                                    <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
+                                        Đặt lịch khám
+                                    </span>
+                                </div>
+                                <div className="flex min-h-[120px]">
+                                    <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
+                                        <li className="mb-0">
+                                            {" "}
+                                            Thiết lập cơ chế lựa chọn phòng khám, chuyên khoa khám.
+                                        </li>
+                                        <li className="mb-0"> Quản lý số thứ tự khám từ xa.</li>
+                                        <li className="mb-0"> Thanh toán nhanh chóng, tiện lợi.</li>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className=" col-start-5 desk1000:col-start-2 col-span-2 flex flex-col items-end h-min hover:cursor-pointer mobile:items-start mobile:col-start-1 mobile:col-span-1 mobile:[w-343px] mobile:h-[207px]">
-                        <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
-                            {" "}
-                            <img src="../../../HealthcareAboutIcon5.png" className="w-full h-full" alt="" />
-                        </div>
-                        <div className="z-10 flex  flex-col w-[418px] mobile:w-[343px] pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:[w-343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
-                            <div className="flex">
-                                <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
-                                    Quản lý và triển khai
-                                </span>
+                    <div className="col-start-1 desk1000:col-start-1 desk1000:col-span-1 col-span-2 flex flex-col items-center h-min hover:cursor-pointer  mobile:col-start-1 mobile:col-span-1  ">
+                        <div className="flex flex-col w-auto h-auto items-end mobile:items-start">
+                            <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
+                                {" "}
+                                <img src="../../../HealthcareAboutIcon3.png" className="w-full h-full" alt="" />
                             </div>
-                            <div className="flex min-h-[120px]">
-                                <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
-                                    <li className="mb-0">
-                                        Cơ chế mã hóa thông tin theo nguyên tắc mã hóa phân tầng dữ liệu giúp thông tin
-                                        luôn được bảo mật với trạng thái tốt nhất.
-                                    </li>
-                                </span>
+                            <div className="z-10 flex  flex-col w-[418px]  pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px]  rounded-[24px] mobile:w-[343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
+                                <div className="flex">
+                                    <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
+                                        Hồ sơ điện tử
+                                    </span>
+                                </div>
+                                <div className="flex min-h-[120px]">
+                                    <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
+                                        <li className="mb-0">
+                                            Lưu trữ toàn bộ kết quả khám lâm sàng, phác đồ điều trị trên nền tảng số
+                                            hóa.
+                                        </li>
+                                        <li className="mb-0"> Tra cứu, truy cập hồ sơ nhanh chóng.</li>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" col-start-3 desk1000:col-start-2 desk1000:col-span-1 col-span-2 flex flex-col items-center h-min hover:cursor-pointer  mobile:col-start-1 mobile:col-span-1  ">
+                        <div className="flex flex-col w-auto h-auto items-end">
+                            <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
+                                {" "}
+                                <img src="../../../HealthcareAboutIcon4.png" className="w-full h-full" alt="" />
+                            </div>
+                            <div className="z-10 flex  flex-col w-[418px]  pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:w-[343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
+                                <div className="flex">
+                                    <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
+                                        Thanh toán trực tuyến
+                                    </span>
+                                </div>
+                                <div className="flex min-h-[120px]">
+                                    <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
+                                        <li className="mb-0">Cập nhật nhanh chóng thông tin viện phí, chi phí khám.</li>
+                                        <li className="mb-0">
+                                            Dễ dàng thanh toán mọi lúc mọi nơi, lưu trữ hóa đơn điện tử.
+                                        </li>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" col-start-5 desk1000:col-start-1 desk1000:col-span-1 col-span-2 flex flex-col items-center h-min hover:cursor-pointer mobile:col-start-1 mobile:col-span-1  ">
+                        <div className="flex flex-col w-auto h-auto items-end mobile:items-start">
+                            <div className="z-30 absolute h-[168px] w-[168px] mobile:h-[72px]  mobile:w-[72px]   -translate-y-[50%]  ">
+                                {" "}
+                                <img src="../../../HealthcareAboutIcon5.png" className="w-full h-full" alt="" />
+                            </div>
+                            <div className="z-10 flex  flex-col w-[418px]  pt-[80px] pb-[60px] px-[40px] gap-[5px] mobile:gap-[4px] rounded-[24px] mobile:w-[343px] mobile:h-[207px] mobile:pt-[42px] mobile:px-[30px]  mobile:pb-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)]  ">
+                                <div className="flex">
+                                    <span className="text-[26px] w-full font-roboto font-semibold  leading-[37px]  text-okuro-web-text mobile:text-[20px]  mobile:leading-[26px]">
+                                        Bảo mật
+                                    </span>
+                                </div>
+                                <div className="flex min-h-[120px]">
+                                    <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
+                                        <li className="mb-0">
+                                            Cơ chế mã hóa thông tin theo nguyên tắc mã hóa phân tầng dữ liệu giúp thông
+                                            tin luôn được bảo mật với trạng thái tốt nhất.
+                                        </li>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="min-w-[60px] min-h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
+                <div className="min-w-[60px] min-h-[4px] rounded-[63px] mb-10 bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
             <div className="flex justify-center items-center  w-full h-[1518px] mobile:h-auto ">
                 <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5">
@@ -461,64 +475,64 @@ function HealthcareAboutUs() {
                             Chức năng <span className="text-okuro-color-text">nổi bật</span>
                         </span>
                     </div>
-                    <div className="flex  w-[1390px] h-[450px] py-10 gap-[70px] justify-center mobile:flex-col-reverse mobile:w-full ">
-                        <div className="flex flex-col justify-center w-[600px] gap-3 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px]  w-full font-roboto font-semibold  leading-[44px]  text-okuro-web-text">
+                    <div className="flex w-[1390px] h-[450px] py-10 gap-[70px] justify-center mobile:flex-col-reverse mobile:w-auto mobile:h-auto mobile:px-4">
+                        <div className="flex flex-col justify-center w-[600px] gap-3 h-[410px] mobile:w-full mobile:h-auto">
+                            <div className="flex w-[580px] mobile:w-auto mobile:h-auto ">
+                                <span className="text-[36px]  w-full font-roboto font-semibold  leading-[44px] text-okuro-web-text  mobile:text-[20px] mobile:leading-normal">
                                     Dẫn bệnh
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px]">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
+                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px] mobile:text-[16px] mobile:leading-normal">
                                     Dễ dàng hoàn thành các thủ tục bệnh viện
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Giảm thiểu thời gian phức tạp khi không biết quy trình khám bệnh
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Tham khảo hồ sơ thông tin người dẫn
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Đa dạng gói dịch vụ theo yêu cầu
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Hỗ trợ chuẩn bị hồ sơ, thủ tục khám bệnh, mua thuốc cho bệnh nhân
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Hỗ trợ giải đáp mọi vấn đề trong suốt quá trình dẫn bệnh
                                     </span>
                                 </div>
@@ -532,62 +546,62 @@ function HealthcareAboutUs() {
                             />
                         </div>
                     </div>
-                    <div className="flex w-[1390px] h-[450px] py-10 gap-[90px] justify-center  mobile:flex-col mobile:w-full ">
+                    <div className="flex w-[1390px] h-[450px] py-10 gap-[90px] justify-center  mobile:flex-col mobile:w-auto mobile:h-auto mobile:px-4">
                         <div className="flex flex-col items-center justify-center w-[481px] h-[387px]  mobile:w-[300px] mobile:h-[224px]">
                             <img
                                 src="../../../HealthcareAboutOutstanding2.png"
-                                className="object-contain w-[613px] h-[402px]  mobile:w-[300px] mobile:h-[224px]"
+                                className="object-contain w-[613px] h-[402px]  mobile:w-[300px] mobile:h-[197px]"
                                 alt=""
                             />
                         </div>
-                        <div className="flex flex-col justify-center  w-[600px] gap-3 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-web-text">
+                        <div className="flex flex-col justify-center w-[600px] gap-3 h-[410px] mobile:w-full mobile:h-auto">
+                            <div className="flex w-[580px] mobile:w-auto mobile:h-auto">
+                                <span className="text-[36px] w-full font-roboto font-semibold leading-[44px] text-okuro-web-text  mobile:text-[20px] mobile:leading-normal">
                                     Tư vấn trực tuyến
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px]">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
+                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px] mobile:text-[16px] mobile:leading-normal">
                                     Tức thời liên hệ với bác sĩ để được chăm sóc
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Đặt lịch tư vấn nhanh chóng
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Tham khảo thông tin của bác sĩ và đánh giá của người khám
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Chủ động theo dõi tình trạng sức khỏe, điều trị kịp thời theo lời khuyên của bác
                                         sĩ
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Nhận chẩn đoán từ bác sĩ để có đơn thuốc hoặc kế hoạch khám chữa bệnh sớm nhất
                                     </span>
                                 </div>
@@ -595,18 +609,20 @@ function HealthcareAboutUs() {
                         </div>
                     </div>
 
-                    <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
+                    <div className="min-w-[60px] mt-5 mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[765px] mobile:hidden">
+            <div className="flex justify-center items-center  w-full h-[765px] mobile:h-auto">
                 <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full">
-                    <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
-                            <span className="text-okuro-color-text">Ý kiến</span> người dùng
-                        </span>
+                    <div className="flex w-full justify-center items-center min-h-[66px] px-4">
+                        <p className="text-[40px]  w-full font-roboto font-semibold text-center align-middle leading-[64px] text-okuro-color-text  mobile:text-[24px] mobile:leading-normal">
+                            Danh sách các
+                            <span className="text-okuro-orange"> bệnh viện </span>sử dụng hệ thống
+                            <span className="text-okuro-orange"> Okuro</span>
+                        </p>
                     </div>
-                    <div className="flex justify-center items-center gap-[110px] ">
-                        <div className="w-[337px] h-[568px]">
+                    <div className="flex justify-center items-center gap-[110px] mobile:flex-col">
+                        <div className="w-[337px] h-[568px] mobile:w-full mobile:h-auto">
                             <Sidebar></Sidebar>
                         </div>
                         <div className="flex">

@@ -642,61 +642,20 @@ function PhisicalCard() {
             <div className="flex justify-center my-[50px] gap-[72px] items-center  w-full h-auto ">
                 <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
                     <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center ">
-                        <div className="flex flex-col items-center justify-center w-[578px] h-[520px]">
-                            <img src="../../../phisical31.png" className="object-contain w-[578px] h-[520px]" alt="" />
+                        <div className="flex flex-col">
+                            <p className="font-roboto text-5xl text-okuro-orange font-black leading-[65px]">
+                                <span>Hướng dẫn sử dụng</span>
+                                <br></br>
+                                <span className="text-okuro-web-text"> thẻ vật lý Okuro</span>
+                            </p>
+                            <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-orange"></div>
                         </div>
-                        <div className="flex flex-col  w-[600px] gap-4 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-orange">
-                                    Giá trị <span className="text-okuro-color-text">của thẻ vật lý Okuro</span>
-                                </span>
-                            </div>
-                            <div className=" min-w-[108px] w-[108px] min-h-[6px] bg-okuro-orange rounded-lg"></div>
 
-                            <div className="flex flex-col w-[580px] ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
-                                    </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
-                                        <span className="font-extrabold">Tiện lợi: </span>
-                                        Thẻ có thể sử dụng tại mọi bệnh viện ứng dụng hệ thống công nghệ số hóa Okuro
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
-                                    </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
-                                        <span className="font-extrabold"> Dễ dàng: </span>
-                                        Mở / Nạp / Hủy thẻ tại bệnh viện hoặc ngân hàng liên kết
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
-                                    </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
-                                        <span className="font-extrabold"> Bảo mật: </span>
-                                        Đảm bảo thông tin được bảo mật và lưu giữ lâu dài
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
-                                    </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
-                                        <span className="font-extrabold"> Linh hoạt: </span>
-                                        Thanh toán hóa mọi chi phí khám chữa bệnh an toàn, tiết kiệm thời gian
-                                    </p>
-                                </div>
-                            </div>
+                        <div className="flex flex-col items-center justify-center w-[625px] gap-[77px] h-[423px]  rounded-[32px]  shadow-[0_4px_20px_0px_rgba(59,130,246,0.15)] overflow-hidden">
+                            <iframe
+                                src="https://www.youtube.com/embed/ZpeOHAHDHM4"
+                                className="w-full h-full bg-blue-200"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
