@@ -63,13 +63,6 @@ function LandingPage() {
                     transition={{ duration: 2 }}
                     className="flex flex-col h-screen justify-between mobile:justify-items-start bg-okuro-background  z-20 select-none mobile:justify-between mobile:items-start mobile:h-[671px] mobile:mx-4 mobile:mt-[34px]  "
                 >
-                    <Link
-                        to="/delete-account"
-                        className="z-40 absolute left-1/2 -translate-x-1/2 bottom-3 btn btn-md  bg-blue-500 hover:bg-blue-400 hover:cursor-pointer"
-                    >
-                        <span className="text-center">Xóa tài khoản OKURO trên mobile</span>
-                    </Link>
-
                     <div className="z-20 absolute select-none h-[245px] w-[540px] right-0 top-0   bg-[url('../../../topright.png')] desktop:h-[220px] desktop:w-[486px] pc:h-[286px] pc:w-[530px]      mobile:hidden"></div>
                     <div className="z-20 absolute select-none h-[245px] w-[540px] left-[-139px] bottom-[125px]    bg-[url('../../../bottomleft.png')]  desktop:h-[220px] desktop:w-[486px] pc:h-[286px] pc:w-[530px]    desktop:bottom-[125px] desktop:left-[-225px]  mobile:hidden"></div>
                     <div
