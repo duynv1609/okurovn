@@ -33,35 +33,38 @@ function Footer({ children }) {
                             </span>
                         </div>
                         <div className="flex gap-4">
-                            <a href={"https://m.facebook.com/okuro.vietnam"}>
+                            <a
+                                href={"https://m.facebook.com/okuro.vietnam"}
+                                className="h-[34px] w-[34px] min-w-[34px]  hover:cursor-pointer"
+                            >
                                 <img
                                     src="../../../imgbtn1.png"
                                     alt=""
                                     className="h-[34px] w-[34px] hover:cursor-pointer"
                                 />
                             </a>
-                            <Link>
+                            <Link className="h-[34px] w-[34px] min-w-[34px] hover:cursor-pointer">
                                 <img
                                     src="../../../imgbtn2.png"
                                     alt=""
                                     className="h-[34px] w-[34px] hover:cursor-pointer"
                                 />
                             </Link>
-                            <Link>
+                            <Link className="h-[34px] w-[34px] min-w-[34px] hover:cursor-pointer">
                                 <img
                                     src="../../../imgbtn3.png"
                                     alt=""
                                     className="h-[34px] w-[34px] hover:cursor-pointer"
                                 />
                             </Link>
-                            <Link>
+                            <Link className="h-[34px] w-[34px] min-w-[34px] hover:cursor-pointer">
                                 <img
                                     src="../../../imgbtn4.png"
                                     alt=""
                                     className="h-[34px] w-[34px] hover:cursor-pointer"
                                 />
                             </Link>
-                            <Link>
+                            <Link className="h-[34px] w-[34px] min-w-[34px] hover:cursor-pointer">
                                 <img
                                     src="../../../imgbtn5.png"
                                     alt=""

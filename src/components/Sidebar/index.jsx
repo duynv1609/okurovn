@@ -29,11 +29,11 @@ const groupMenus = [
                 text: "BV Nhân Dân 115",
                 link: "/",
             },
-            {
-                iconClassname: "fa-solid fa-table",
-                text: "BV Nhi Đồng 2",
-                link: "/",
-            },
+            // {
+            //     iconClassname: "fa-solid fa-table",
+            //     text: "BV Nhi Đồng 2",
+            //     link: "/",
+            // },
         ],
     },
     {
@@ -61,7 +61,7 @@ function Sidebar() {
     const [isSeleccted2, setIsSelected2] = useState(6);
 
     return (
-        <div className="flex h-auto min-w-[240px] flex-col font-roboto  ">
+        <div className="flex h-auto min-w-[240px] flex-col font-roboto ">
             <div className="flex select-none flex-col space-y-0.5  " style={{ overflowY: "overlay" }}>
                 <div className="flex flex-col">
                     <div

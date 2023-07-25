@@ -1,4 +1,9 @@
+import { useMediaQuery } from "@mui/material";
 export default function Pagination() {
+    const minMobile = useMediaQuery("(min-width:200px)");
+    const maxMobile = useMediaQuery("(max-width:1000px)");
+    let isMobile = false;
+    minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
     return (
         <>
             <div className="flex justify-center items-center h-full p-20 ">
@@ -14,7 +19,7 @@ export default function Pagination() {
                             Okuro tiên phong trong việc đưa công nghệ số vào công tác hoạt động tại trường học
                         </p>
                     </div>
-                    <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-color-text"></div>
+                    <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-orange mobile:hidden"></div>
                     <div className="flex gap-4">
                         <div>
                             <img src="../../../google.png" alt="" className="hover:cursor-pointer" />

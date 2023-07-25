@@ -1,7 +1,7 @@
 import Contact from "../../components/CustomerContact";
 import Footer from "../../components/HealthcareFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
-import { Pagination, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { Popover } from "@headlessui/react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -220,7 +220,6 @@ function HealthcareAboutUs() {
     let isMobile = false;
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
 
-    console.log("mobile", isMobile);
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
     const [isContent, setIsContent] = useState(CONTENT[0]);
     const [toggle, setToggle] = useState(false);
@@ -273,7 +272,7 @@ function HealthcareAboutUs() {
             transition={{ duration: 1 }}
             className="flex flex-col justify-between h-full  "
         >
-            <div id="Utilities" className="z-20 flex justify-center mb-10 h-auto w-full mobile:overflow-hidden">
+            <div id="Slider" className="z-20 flex justify-center mb-10 h-auto w-full mobile:overflow-hidden">
                 <div
                     id="background"
                     className="absolute h-[600px] w-full bg-okuro-background desktop:h-[550px] pc:h-[600px] myscreen:h-[650px] mobile:h-[500px] overflow-x-hidden"
@@ -468,7 +467,7 @@ function HealthcareAboutUs() {
 
                 <div className="min-w-[60px] min-h-[4px] rounded-[63px] mb-10 bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[1518px] mobile:h-auto ">
+            <div className="flex justify-center items-center  w-full h-auto ">
                 <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
@@ -612,8 +611,8 @@ function HealthcareAboutUs() {
                     <div className="min-w-[60px] mt-5 mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[765px] mobile:h-auto">
-                <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-full h-[765px] mobile:h-auto desk1000:h-auto">
+                <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full desk1000:">
                     <div className="flex w-full justify-center items-center min-h-[66px] px-4">
                         <p className="text-[40px]  w-full font-roboto font-semibold text-center align-middle leading-[64px] text-okuro-color-text  mobile:text-[24px] mobile:leading-normal">
                             Danh sách các
@@ -621,23 +620,23 @@ function HealthcareAboutUs() {
                             <span className="text-okuro-orange"> Okuro</span>
                         </p>
                     </div>
-                    <div className="flex justify-center items-center gap-[110px] mobile:flex-col">
-                        <div className="w-[337px] h-[568px] mobile:w-full mobile:h-auto">
+                    <div className="flex justify-center items-center gap-[85px] mobile:flex-col mobile:w-[70%] min-w-[275px] mobile:px-0 ">
+                        <div className="w-[325px] h-[568px] mobile:w-full mobile:h-auto   desk1000:w-[250px] ">
                             <Sidebar></Sidebar>
                         </div>
-                        <div className="flex">
+                        <div className="flex desk1000:w-[550px]   mobile:hidden">
                             <div
                                 src=" "
-                                className="w-[989px] h-[666px] bg-[url('../../../bgMap.png')] desktop:h-[220px]"
+                                className="w-[989px] h-[666px] desk1000:w-[692px]  desk1000:h-[466px]  bg-cover bg-[url('../../../bgMap.png')] "
                                 alt=""
                             >
-                                <div className="flex flex-col items-center w-[248px] justify-center gap-8 mt-[64px] ml-8 ">
+                                <div className="flex flex-col items-center w-[248px] justify-center gap-8 mt-[64px] ml-8  ">
                                     <img src="../../../imgMoreCard.png" className="w-[250px] h-[160px]  " alt="" />
-                                    <div className="flex flex-col justify-around gap-2 w-[243px] h-[140px]  px-4 py-3 rounded-xl border border-white shadow-[0_4px_8px_0px_rgba(59,130,246,0.15)]">
+                                    <div className="flex flex-col justify-around gap-2 w-[243px] h-[140px] desk1000:bg-white px-4 py-3 rounded-xl  border border-white shadow-[0_4px_8px_0px_rgba(59,130,246,0.15)]">
                                         <div className="text-[14px] font-semibold text-okuro-primary">
                                             <p>Thông tin bệnh viện</p>
                                         </div>
-                                        <div className="text-okuro-web-text text-[12px] font-normal leading-[16px]">
+                                        <div className="text-okuro-web-text text-[12px] font-normal leading-[16px] ">
                                             <p>
                                                 <span className="font-semibold "> Địa chỉ: </span>
                                                 341 Sư Vạn Hạnh, Phường 10, Quận 10, TP HCM
@@ -657,7 +656,7 @@ function HealthcareAboutUs() {
                         </div>
                     </div>
 
-                    <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
+                    <div className="min-w-[60px] mb-20 mobile:mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
             <div className="flex justify-center items-center  w-full h-[765px] mobile:hidden">
@@ -728,7 +727,7 @@ function HealthcareAboutUs() {
                                 transition="transition"
                                 className="flex h-min hover:cursor-pointer"
                             >
-                                <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
+                                <div className="z-30 absolute h-[42px] w-[54px] -translate-y-[50%] ">
                                     {" "}
                                     <img src="../../../icon.png" className="w-full h-full" alt="" />
                                 </div>
@@ -782,24 +781,24 @@ function HealthcareAboutUs() {
                         </div>
                     </div>
 
-                    <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
+                    <div className="min-w-[60px] mt-5 mb-20 mobile:mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[1194px] mobile:hidden">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-auto h-auto overflow-hidden">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-auto w-auto">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Tổng quan</span> giao diện
                         </span>
                     </div>
-                    <div className="flex items-center justify-center w-full h-[916px] gap-[70px] bg-gradient-to-bl from-okuro-linear-from3 to-okuro-linear-to3  overflow-hidden ">
+                    <div className="flex items-center justify-center w-full h-[916px] mobile:h-auto gap-[70px] bg-gradient-to-bl from-okuro-linear-from3 to-okuro-linear-to3   overflow-hidden ">
                         <img
                             src="../../../HealthPhoneUI.png"
-                            className=" z-30 object-contain w-[1390x] h-[916px]"
+                            className=" z-30 object-contain w-[1390x] h-[916px] mobile:h-auto mobile:w-auto"
                             alt=""
                         />
-                        <div className="absolute w-full h-[636px] bg-cyan-200 opacity-20"></div>
-                        <div className="z-20 absolute w-[300px] h-[300px] bg-gradient-to-b from-okuro-linear-from4 to-okuro-primary rotate-[33deg] rounded-[38px]"></div>
+                        <div className="absolute w-full h-[636px] bg-cyan-200 opacity-20 mobile:h-[174px] "></div>
+                        <div className="z-20 absolute w-[300px] h-[300px] desk1000:w-[250px] desk1000:h-[250px] mobile:w-[100px] mobile:h-[100px] bg-gradient-to-b from-okuro-linear-from4 to-okuro-primary rotate-[33deg] rounded-[38px]"></div>
                     </div>
 
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
@@ -1026,13 +1025,12 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Tải ứng dụng miễn phí bằng cách tìm kiếm từ khóa
-                                                                    "Okuro" trên App Store hoặc Google Play Store. Hoặc
-                                                                    quét mã QR để tải Okuro:
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Tải ứng dụng miễn phí bằng cách tìm kiếm từ khóa "Okuro"
+                                                                trên App Store hoặc Google Play Store. Hoặc quét mã QR
+                                                                để tải Okuro:
+                                                            </span>
+
                                                             <div className=" grow-0">
                                                                 <img src="../../../QR.png" className="" alt="" />
                                                             </div>
@@ -1051,13 +1049,12 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Nhập số điện thoại và mật khẩu để đăng nhập tài
-                                                                    khoản Okuro. Nếu không nhớ mật khẩu, chọn "Quên mật
-                                                                    khẩu?" để lấy lại mật khẩu
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Nhập số điện thoại và mật khẩu để đăng nhập tài khoản
+                                                                Okuro. Nếu không nhớ mật khẩu, chọn "Quên mật khẩu?" để
+                                                                lấy lại mật khẩu
+                                                            </span>
+
                                                             <div className=" grow-0">
                                                                 <img src="../../../QR.png" className="" alt="" />
                                                             </div>
@@ -1131,11 +1128,9 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Mở ứng dụng và chọn đăng ký
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Mở ứng dụng và chọn đăng ký
+                                                            </span>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1151,12 +1146,10 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Vuốt màn hình xuống dưới phần mở rộng của ứng dụng
-                                                                    rồi chọn "Giáo dục"
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Vuốt màn hình xuống dưới phần mở rộng của ứng dụng rồi
+                                                                chọn "Giáo dục"
+                                                            </span>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1227,15 +1220,13 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Nhập số điện thoại muốn đăng ký tài khoản Okuro
-                                                                </p>
-                                                                <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
-                                                                    Lưu ý: Mỗi số điện thoại chỉ được sử dụng 01 tài
-                                                                    khoản Okuro
-                                                                </p>
-                                                            </div>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Nhập số điện thoại muốn đăng ký tài khoản Okuro
+                                                            </p>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
+                                                                Lưu ý: Mỗi số điện thoại chỉ được sử dụng 01 tài khoản
+                                                                Okuro
+                                                            </p>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1251,11 +1242,9 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Chọn trường đang theo học
-                                                                </p>
-                                                            </div>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Chọn trường đang theo học
+                                                            </p>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1326,12 +1315,10 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Vui lòng kiểm tra và nhập chính xác mã xác minh và
-                                                                    chọn "Xác nhận"
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Vui lòng kiểm tra và nhập chính xác mã xác minh và chọn
+                                                                "Xác nhận"
+                                                            </span>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1347,11 +1334,9 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Chọn tên học sinh trong danh sách
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Chọn tên học sinh trong danh sách
+                                                            </span>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1453,12 +1438,9 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Sẵn sàng trải nghiệm các tính năng trên ứng dụng
-                                                                    Okuro
-                                                                </p>
-                                                            </div>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Sẵn sàng trải nghiệm các tính năng trên ứng dụng Okuro
+                                                            </p>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1472,38 +1454,62 @@ function HealthcareAboutUs() {
                 </div>
                 <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[788px] mobile:hidden">
-                <div className="flex flex-col gap-[120px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-full h-auto mobile:w-auto">
+                <div className="flex flex-col gap-[120px] justify-center  items-center h-auto w-full mobile:gap-[42px]">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Đối tác</span> đồng triển khai
                         </span>
                     </div>
-                    <div className="flex flex-col justify-between w-[1040px] h-[394px] gap-[24px] ">
-                        <div className="flex gap-[100px]">
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness1.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness2.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness3.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness4.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
+                    <div className="grid grid-cols-4 mobile:grid-cols-3 justify-center items-center w-[1040px] h-auto gap-[24px]  mobile:w-auto mobile:gap-y-0 ">
+                        <div className="col-start-1  flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness1.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="flex gap-[100px] justify-center">
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness5.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness6.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness7.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
+                        <div className="col-start-2  flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness2.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        <div className="col-start-3 flex justify-center  items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness3.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        <div className="col-start-4 mobile:col-start-1 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness4.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        <div className="col-start-2 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness5.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        {/* <div className="col-start-4 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness6.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div> */}
+                        <div className="col-start-3 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness7.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
                         </div>
                     </div>
 

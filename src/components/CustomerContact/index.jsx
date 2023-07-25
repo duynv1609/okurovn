@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-
+import { useMediaQuery } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,6 +11,7 @@ const bag2 =
     "https://cdn.vn.alongwalk.info/wp-content/uploads/2023/01/05212422/image-30-hinh-nen-meo-cute-dung-cho-ca-dien-thoai-va-may-tinh-bfa19be160372b49145eb85b3f12be80.jpg";
 
 function Contact({ children }) {
+    const isDeskTop = useMediaQuery("(min-width:1000px)");
     const refContact = useRef(null);
     const [loading, setLoading] = useState(false);
     const [required, setRequired] = useState(false);
@@ -51,9 +52,11 @@ function Contact({ children }) {
     //
     return (
         <div className="flex flex-col w-full  select-none justify-start py-12  gap-12 items-center bg-okuro-background-contact ">
-            <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text mobile:hidden">
-                Liên hệ
-            </div>
+            {isDeskTop && (
+                <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text">
+                    Liên hệ
+                </div>
+            )}
             <form onSubmit={form.handleSubmit} className="w-auto">
                 <div className="flex flex-col">
                     <div className="flex gap-y-3 mobile:flex-col">

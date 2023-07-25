@@ -214,6 +214,11 @@ const containerVariant = {
 };
 
 function PhisicalCard() {
+    const minMobile = useMediaQuery("(min-width:200px)");
+    const maxMobile = useMediaQuery("(max-width:1000px)");
+    let isMobile = false;
+    minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
+
     const [signup, setSignup] = useState(true);
     const [phisical1, setPhisical1] = useState(1);
     const [phisical2, setPhisical2] = useState(1);
@@ -236,65 +241,72 @@ function PhisicalCard() {
             initial={{ opacity: 0.2 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="flex flex-col justify-between h-full"
+            className="flex flex-col justify-between h-full  "
         >
-            <div id="Slider" className="flex justify-center h-full">
+            <div
+                id="Slider"
+                className="z-20 flex justify-center  h-auto w-full mobile:px-4 mobile:py-4 mobile:overflow-hidden mobile:bg-okuro-background"
+            >
                 <div
                     id="background"
-                    className="absolute h-[60%] w-full bg-okuro-background desktop:h-[90%] pc:h-[65%] myscreen:h-[55%] overflow-x-hidden"
+                    className="absolute h-[650px] w-full bg-okuro-background desktop:h-[600px] pc:h-[600px] myscreen:h-[650px] mobile:hidden overflow-x-hidden"
                 >
-                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] left-[0px] absolute -translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
-                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] right-[0px] absolute translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-l from-okuro-color-text to-okuro-primary"></div>
+                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] left-[0px] absolute -translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-r from-okuro-color-text to-okuro-primary mobile:hidden"></div>
+                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] right-[0px] absolute translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-l from-okuro-color-text to-okuro-primary mobile:hidden"></div>
                 </div>
-                <Carousel
-                    className="rounded-xl w-[1200px] h-[700px] mb-20"
-                    loop={true}
-                    prevArrow={({ handlePrev }) => (
-                        <IconButton
-                            variant="text"
-                            color="white"
-                            size="lg"
-                            onClick={handlePrev}
-                            className=" bg-white text-okuro-color-text  hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
-                        >
-                            <span>
-                                <i className="fa fa-angle-left fa-2xl"></i>
-                            </span>
-                        </IconButton>
-                    )}
-                    nextArrow={({ handleNext }) => (
-                        <IconButton
-                            variant="text"
-                            color="white"
-                            size="lg"
-                            onClick={handleNext}
-                            className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
-                        >
-                            <span>
-                                <i className="fa fa-angle-right fa-2xl"></i>
-                            </span>
-                        </IconButton>
-                    )}
-                    navigation={({ setActiveIndex, activeIndex, length }) => (
-                        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-                            {new Array(length).fill("").map((_, i) => (
-                                <span
-                                    key={i}
-                                    className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
-                                        activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
-                                    }`}
-                                    onClick={() => setActiveIndex(i)}
-                                />
-                            ))}
-                        </div>
-                    )}
-                >
+                {isMobile ? (
                     <PaginationPhisical></PaginationPhisical>
-                    <PaginationPhisical></PaginationPhisical>
-                    <PaginationPhisical></PaginationPhisical>
-                    <PaginationPhisical></PaginationPhisical>
-                    <PaginationPhisical></PaginationPhisical>
-                </Carousel>
+                ) : (
+                    <Carousel
+                        className="rounded-xl w-[1200px] h-[700px] mb-20"
+                        loop={true}
+                        prevArrow={({ handlePrev }) => (
+                            <IconButton
+                                variant="text"
+                                color="white"
+                                size="lg"
+                                onClick={handlePrev}
+                                className=" bg-white text-okuro-color-text  hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
+                            >
+                                <span>
+                                    <i className="fa fa-angle-left fa-2xl"></i>
+                                </span>
+                            </IconButton>
+                        )}
+                        nextArrow={({ handleNext }) => (
+                            <IconButton
+                                variant="text"
+                                color="white"
+                                size="lg"
+                                onClick={handleNext}
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                            >
+                                <span>
+                                    <i className="fa fa-angle-right fa-2xl"></i>
+                                </span>
+                            </IconButton>
+                        )}
+                        navigation={({ setActiveIndex, activeIndex, length }) => (
+                            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                                {new Array(length).fill("").map((_, i) => (
+                                    <span
+                                        key={i}
+                                        className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
+                                            activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
+                                        }`}
+                                        onClick={() => setActiveIndex(i)}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    >
+                        <PaginationPhisical></PaginationPhisical>
+                        <PaginationPhisical></PaginationPhisical>
+                        <PaginationPhisical></PaginationPhisical>
+                        <PaginationPhisical></PaginationPhisical>
+                        <PaginationPhisical></PaginationPhisical>
+                    </Carousel>
+                )}
             </div>
             <div className="flex flex-col justify-between items-center  w-full h-auto mobile:hidden">
                 <div className="flex flex-col  justify-center  items-center h-auto w-full">
@@ -578,58 +590,62 @@ function PhisicalCard() {
                 </div>
             </div>
             <div className="flex justify-center my-[50px] gap-[72px] items-center  w-full h-auto ">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
-                    <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center ">
-                        <div className="flex flex-col items-center justify-center w-[578px] h-[520px]">
-                            <img src="../../../phisical31.png" className="object-contain w-[578px] h-[520px]" alt="" />
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5">
+                    <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center mobile:flex-col mobile:w-auto mobile:h-auto mobile:px-4">
+                        <div className="flex flex-col items-center justify-center w-[578px] h-[520px] mobile:w-[300px] mobile:h-[275px]">
+                            <img
+                                src="../../../phisical31.png"
+                                className="object-contain w-[578px] h-[520px] mobile:w-[300px] mobile:h-[275px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="flex flex-col  w-[600px] gap-4 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-orange">
+                        <div className="flex flex-col  w-[600px] gap-4 h-[410px] mobile:w-full mobile:h-auto">
+                            <div className="flex w-[580px] mobile:w-auto mobile:h-auto ">
+                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                                     Giá trị <span className="text-okuro-color-text">của thẻ vật lý Okuro</span>
                                 </span>
                             </div>
                             <div className=" min-w-[108px] w-[108px] min-h-[6px] bg-okuro-orange rounded-lg"></div>
 
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
+                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
                                         <span className="font-extrabold">Tiện lợi: </span>
                                         Thẻ có thể sử dụng tại mọi bệnh viện ứng dụng hệ thống công nghệ số hóa Okuro
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
+                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
                                         <span className="font-extrabold"> Dễ dàng: </span>
                                         Mở / Nạp / Hủy thẻ tại bệnh viện hoặc ngân hàng liên kết
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
+                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
                                         <span className="font-extrabold"> Bảo mật: </span>
                                         Đảm bảo thông tin được bảo mật và lưu giữ lâu dài
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px]">
+                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
                                         <span className="font-extrabold"> Linh hoạt: </span>
                                         Thanh toán hóa mọi chi phí khám chữa bệnh an toàn, tiết kiệm thời gian
                                     </p>
@@ -641,17 +657,21 @@ function PhisicalCard() {
             </div>
             <div className="flex justify-center my-[50px] gap-[72px] items-center  w-full h-auto ">
                 <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
-                    <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center ">
+                    <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center mobile:flex-col ">
                         <div className="flex flex-col">
-                            <p className="font-roboto text-5xl text-okuro-orange font-black leading-[65px]">
+                            <p className="font-roboto text-5xl text-okuro-orange font-black leading-[65px] mobile:text-center mobile:font-semibold mobile:text-[24px] mobile:leading-normal">
+                                {isMobile && <span className="text-okuro-web-text">Video </span>}
                                 <span>Hướng dẫn sử dụng</span>
                                 <br></br>
                                 <span className="text-okuro-web-text"> thẻ vật lý Okuro</span>
                             </p>
-                            <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-orange"></div>
+                            <div
+                                id="br"
+                                className="w-[82px] h-[6px] rounded-[63px] bg-okuro-orange mobile:hidden"
+                            ></div>
                         </div>
 
-                        <div className="flex flex-col items-center justify-center w-[625px] gap-[77px] h-[423px]  rounded-[32px]  shadow-[0_4px_20px_0px_rgba(59,130,246,0.15)] overflow-hidden">
+                        <div className="flex flex-col items-center justify-center w-[625px] gap-[77px] h-[423px] mobile:w-[343px] mobile:h-[217px]  rounded-[32px]  shadow-[0_4px_20px_0px_rgba(59,130,246,0.15)] overflow-hidden">
                             <iframe
                                 src="https://www.youtube.com/embed/ZpeOHAHDHM4"
                                 className="w-full h-full bg-blue-200"

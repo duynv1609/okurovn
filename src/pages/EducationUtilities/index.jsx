@@ -283,7 +283,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[340px] min-w-[340px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle1.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Mạng xã hội chuyên biệt
                                         </p>
                                     </div>
@@ -341,7 +341,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[315px] min-w-[315px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle2.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Tuyển sinh trực tuyến
                                         </p>
                                     </div>
@@ -399,7 +399,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[280px] min-w-[280px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle3.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Thông tin học sinh
                                         </p>
                                     </div>
@@ -448,7 +448,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[241px] min-w-[241px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle4.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Thời khóa biểu
                                         </p>
                                     </div>
@@ -548,7 +548,7 @@ function Utilities() {
                                             id="tabtitle1"
                                             className="flex items-center justify-center w-[280px] min-w-[280px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle5.png')] bg-contain bg-no-repeat "
                                         >
-                                            <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                            <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                                 Điểm danh xe bus
                                             </p>
                                         </div>
@@ -598,7 +598,7 @@ function Utilities() {
                                             id="tabtitle1"
                                             className="flex items-center justify-center w-[344px] min-w-[344px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle52.png')] bg-contain bg-no-repeat "
                                         >
-                                            <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                            <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                                 Thiết bị điểm danh xe bus
                                             </p>
                                         </div>
@@ -647,7 +647,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[196px] min-w-[196px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle6.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Giáo viên
                                         </p>
                                     </div>
@@ -697,7 +697,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[185px] min-w-[185px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle7.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Thực đơn
                                         </p>
                                     </div>
@@ -748,7 +748,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[286px] min-w-[286px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle8.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Nhật ký hoạt động
                                         </p>
                                     </div>
@@ -805,7 +805,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[286px] min-w-[286px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle9.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Điểm danh lớp học
                                         </p>
                                     </div>
@@ -868,7 +868,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[177px] min-w-[177px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle10.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Lời nhắn
                                         </p>
                                     </div>
@@ -908,7 +908,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[242px] min-w-[242px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle11.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Kết quả học tập
                                         </p>
                                     </div>
@@ -958,7 +958,7 @@ function Utilities() {
                                         id="tabtitle1"
                                         className="flex items-center justify-center w-[205px] min-w-[205px] min-h-[44px] h-[44px] bg-[url('../../../utilitiesTitle12.png')] bg-contain bg-no-repeat "
                                     >
-                                        <p className="text-2xl font-black align-middle h-[32px]  font-roboto text-white ">
+                                        <p className="text-[24px] font-black align-middle h-[32px]  font-roboto text-white ">
                                             Thanh toán
                                         </p>
                                     </div>

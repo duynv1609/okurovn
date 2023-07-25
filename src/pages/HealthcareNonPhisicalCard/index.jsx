@@ -93,8 +93,12 @@ const TABS = [
 ];
 const num = (185 / (161 * 12 + 24 * 11)) * 100;
 
-function Utilities() {
-    console.log(num);
+function NonPhisicalCard() {
+    const minMobile = useMediaQuery("(min-width:200px)");
+    const maxMobile = useMediaQuery("(max-width:1000px)");
+    let isMobile = false;
+    minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
+
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
     const [isContent, setIsContent] = useState(CONTENT[0]);
     const [toggle, setToggle] = useState(false);
@@ -112,75 +116,100 @@ function Utilities() {
             initial={{ opacity: 0.2 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="flex flex-col w-full justify-between h-full"
+            className="flex flex-col justify-between h-full  "
         >
-            <div id="Utilities" className="flex justify-center h-full">
+            <div
+                id="Slider"
+                className="z-20 flex justify-center  h-auto w-full mobile:px-4 mobile:py-4 mobile:overflow-hidden mobile:bg-okuro-background"
+            >
                 <div
                     id="background"
-                    className="absolute h-[60%] w-full bg-okuro-background desktop:h-[90%] pc:h-[65%] myscreen:h-[55%] overflow-x-hidden"
+                    className="absolute h-[650px] w-full bg-okuro-background desktop:h-[600px] pc:h-[600px] myscreen:h-[650px] mobile:hidden overflow-x-hidden"
                 >
-                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] left-[0px] absolute -translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
-                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] right-[0px] absolute translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-l from-okuro-color-text to-okuro-primary"></div>
+                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] left-[0px] absolute -translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-r from-okuro-color-text to-okuro-primary mobile:hidden"></div>
+                    <div className="h-[305px] w-[305px]  rotate-45  rounded-[60px] right-[0px] absolute translate-x-[80%] top-[53%] -translate-y-1/2 bg-gradient-to-l from-okuro-color-text to-okuro-primary mobile:hidden"></div>
                 </div>
-                <Carousel
-                    className="rounded-xl w-[1200px] h-[700px] mb-20"
-                    loop={true}
-                    prevArrow={({ handlePrev }) => (
-                        <IconButton
-                            variant="text"
-                            color="white"
-                            size="lg"
-                            onClick={handlePrev}
-                            className=" bg-white text-okuro-color-text  hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
-                        >
-                            <span>
-                                <i className="fa fa-angle-left fa-2xl"></i>
-                            </span>
-                        </IconButton>
-                    )}
-                    nextArrow={({ handleNext }) => (
-                        <IconButton
-                            variant="text"
-                            color="white"
-                            size="lg"
-                            onClick={handleNext}
-                            className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
-                        >
-                            <span>
-                                <i className="fa fa-angle-right fa-2xl"></i>
-                            </span>
-                        </IconButton>
-                    )}
-                    navigation={({ setActiveIndex, activeIndex, length }) => (
-                        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-                            {new Array(length).fill("").map((_, i) => (
-                                <span
-                                    key={i}
-                                    className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
-                                        activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
-                                    }`}
-                                    onClick={() => setActiveIndex(i)}
-                                />
-                            ))}
-                        </div>
-                    )}
-                >
+                {isMobile ? (
                     <PaginationPhisicalNon></PaginationPhisicalNon>
-                    <PaginationPhisicalNon></PaginationPhisicalNon>
-                    <PaginationPhisicalNon></PaginationPhisicalNon>
-                    <PaginationPhisicalNon></PaginationPhisicalNon>
-                    <PaginationPhisicalNon></PaginationPhisicalNon>
-                </Carousel>
+                ) : (
+                    <Carousel
+                        className="rounded-xl w-[1200px]  h-[700px] mobile:w-[343px] mobile:h-[] "
+                        loop={!isMobile}
+                        prevArrow={
+                            !isMobile
+                                ? ({ handlePrev }) => (
+                                      <IconButton
+                                          variant="text"
+                                          color="white"
+                                          size="lg"
+                                          onClick={handlePrev}
+                                          className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
+                                      >
+                                          <span>
+                                              <i className="fa fa-angle-left fa-2xl"></i>
+                                          </span>
+                                      </IconButton>
+                                  )
+                                : !isMobile
+                        }
+                        nextArrow={
+                            !isMobile
+                                ? ({ handleNext }) => (
+                                      <IconButton
+                                          variant="text"
+                                          color="white"
+                                          size="lg"
+                                          onClick={handleNext}
+                                          className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                                      >
+                                          <span>
+                                              <i className="fa fa-angle-right fa-2xl"></i>
+                                          </span>
+                                      </IconButton>
+                                  )
+                                : !isMobile
+                        }
+                        navigation={
+                            !isMobile
+                                ? ({ setActiveIndex, activeIndex, length }) => (
+                                      <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                                          {new Array(length).fill("").map((_, i) => (
+                                              <span
+                                                  key={i}
+                                                  className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
+                                                      activeIndex === i
+                                                          ? "bg-red-800 w-[32px]"
+                                                          : "bg-okuro-pagination w-4"
+                                                  }`}
+                                                  onClick={() => setActiveIndex(i)}
+                                              />
+                                          ))}
+                                      </div>
+                                  )
+                                : !isMobile
+                        }
+                    >
+                        <PaginationPhisicalNon></PaginationPhisicalNon>
+                        <PaginationPhisicalNon></PaginationPhisicalNon>
+                        <PaginationPhisicalNon></PaginationPhisicalNon>
+                        <PaginationPhisicalNon></PaginationPhisicalNon>
+                        <PaginationPhisicalNon></PaginationPhisicalNon>
+                    </Carousel>
+                )}
             </div>
 
             <div className="flex justify-center my-[50px] gap-[72px] items-center  w-full h-auto ">
                 <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
-                    <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center ">
-                        <div className="flex flex-col items-center justify-center w-[578px] h-[520px]">
-                            <img src="../../../phisical31.png" className="object-contain w-[578px] h-[520px]" alt="" />
+                    <div className="flex w-auto h-auto gap-[70px] justify-center  items-center mobile:flex-col mobile:gap-5 ">
+                        <div className="flex flex-col items-center justify-center w-[578px] h-[520px]  mobile:w-[300px] mobile:h-[275px]">
+                            <img
+                                src="../../../imgPhisicalNon.png"
+                                className="object-contain w-[578px] h-[520px]  mobile:w-[300px] mobile:h-[275px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="flex flex-col items-center justify-center w-[701px] gap-[77px] h-[370px]">
-                            <div className="flex gap-20">
+                        <div className="flex flex-col items-center justify-center w-[701px] gap-[77px] mobile:w-full h-auto mobile:px-4 mobile:gap-6">
+                            <div className="flex gap-20 mobile:flex-col mobile:gap-6">
                                 <div className="flex gap-[26px]">
                                     <div>
                                         <img
@@ -216,7 +245,7 @@ function Utilities() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex gap-20">
+                            <div className="flex gap-20 mobile:flex-col mobile:gap-6">
                                 <div className="flex gap-[26px]">
                                     <div>
                                         <img
@@ -252,7 +281,7 @@ function Utilities() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex gap-20">
+                            <div className="flex gap-20 mobile:flex-col mobile:gap-6">
                                 <div className="flex gap-[26px]">
                                     <div>
                                         <img
@@ -318,4 +347,4 @@ function Utilities() {
     );
 }
 
-export default Utilities;
+export default NonPhisicalCard;

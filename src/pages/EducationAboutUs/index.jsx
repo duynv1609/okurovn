@@ -988,7 +988,7 @@ function AboutUs() {
                                     <div className="flex  h-[100px] w-full ">
                                         <div
                                             className={clsx(
-                                                "flex       h-11 w-[233px]  items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                "flex  w-[234px] h-11 items-center justify-center cursor-pointer rounded-lg transition-all",
                                                 {
                                                     "opacity-100 bg-[url('../../../btnNavigate.png')]": signup,
                                                     "opacity-60 bg-okuro-btn-navigate": !signup,
@@ -1006,7 +1006,7 @@ function AboutUs() {
 
                                         <div
                                             className={clsx(
-                                                "flex   bg-cover w-[324px] h-11    items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                "flex bg-cover w-[324px] h-[44px]    items-center justify-center cursor-pointer rounded-lg transition-all",
                                                 {
                                                     "opacity-100 bg-[url('../../../btn2.png')]": !signup,
                                                     "opacity-60 bg-okuro-btn-navigate": signup,
@@ -1030,7 +1030,7 @@ function AboutUs() {
                                                 setShowTitle(1);
                                             }}
                                         >
-                                            <div className="flex items-center justify-center min-h-9 min-w-[36px] w-9 h-9">
+                                            <div className="flex items-center justify-center min-h-[36px] min-w-[36px] w-[36px] h-[36px] pt-1">
                                                 <motion.img
                                                     src="../../../xanh1.png"
                                                     alt=""
@@ -1042,10 +1042,14 @@ function AboutUs() {
                                                 <div className="hover:cursor-pointer">
                                                     <AnimatePresence>
                                                         {signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <motion.div
+                                                                initial={{}}
+                                                                animate={{}}
+                                                                className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange"
+                                                            >
                                                                 Tải ứng dụng{" "}
                                                                 <span className="text-okuro-web-text"> Okuro</span>
-                                                            </span>
+                                                            </motion.div>
                                                         )}
                                                         {!signup && (
                                                             <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
@@ -1062,7 +1066,7 @@ function AboutUs() {
                                                     {signup && showTitle == 1 && (
                                                         <motion.div
                                                             className="flex gap-4"
-                                                            initial={{ opacity: 0, y: -10 }}
+                                                            initial={{ opacity: 0, y: -0 }}
                                                             animate={{
                                                                 opacity: 1,
                                                                 y: 0,
@@ -1070,13 +1074,12 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Tải ứng dụng miễn phí bằng cách tìm kiếm từ khóa
-                                                                    "Okuro" trên App Store hoặc Google Play Store. Hoặc
-                                                                    quét mã QR để tải Okuro:
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Tải ứng dụng miễn phí bằng cách tìm kiếm từ khóa "Okuro"
+                                                                trên App Store hoặc Google Play Store. Hoặc quét mã QR
+                                                                để tải Okuro:
+                                                            </span>
+
                                                             <div className=" grow-0">
                                                                 <img src="../../../QR.png" className="" alt="" />
                                                             </div>
@@ -1095,13 +1098,12 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Nhập số điện thoại và mật khẩu để đăng nhập tài
-                                                                    khoản Okuro. Nếu không nhớ mật khẩu, chọn "Quên mật
-                                                                    khẩu?" để lấy lại mật khẩu
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Nhập số điện thoại và mật khẩu để đăng nhập tài khoản
+                                                                Okuro. Nếu không nhớ mật khẩu, chọn "Quên mật khẩu?" để
+                                                                lấy lại mật khẩu
+                                                            </span>
+
                                                             <div className=" grow-0">
                                                                 <img src="../../../QR.png" className="" alt="" />
                                                             </div>
@@ -1117,7 +1119,7 @@ function AboutUs() {
                                                 setShowTitle(2);
                                             }}
                                         >
-                                            <div className="flex items-center justify-center min-h-9 min-w-9 w-9 h-9">
+                                            <div className="flex items-center justify-center min-h-[36px] min-w-[36px] w-[36px] h-[36px] pt-1">
                                                 <AnimatePresence>
                                                     {showTitle < 2 ? (
                                                         <motion.img
@@ -1165,11 +1167,9 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Mở ứng dụng và chọn đăng ký
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Mở ứng dụng và chọn đăng ký
+                                                            </span>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1185,12 +1185,10 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Vuốt màn hình xuống dưới phần mở rộng của ứng dụng
-                                                                    rồi chọn "Giáo dục"
-                                                                </span>
-                                                            </div>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Vuốt màn hình xuống dưới phần mở rộng của ứng dụng rồi
+                                                                chọn "Giáo dục"
+                                                            </span>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1203,7 +1201,7 @@ function AboutUs() {
                                                 setShowTitle(3);
                                             }}
                                         >
-                                            <div className="flex items-center justify-center min-h-9 min-w-9 w-9 h-9">
+                                            <div className="flex items-center justify-center min-h-[36px] min-w-[36px] w-[36px] h-[36px] pt-1">
                                                 <AnimatePresence>
                                                     {showTitle < 3 ? (
                                                         <motion.img
@@ -1245,7 +1243,7 @@ function AboutUs() {
                                                 <AnimatePresence>
                                                     {signup && showTitle == 3 && (
                                                         <motion.div
-                                                            className="flex gap-4"
+                                                            className="flex flex-col gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
                                                             animate={{
                                                                 opacity: 1,
@@ -1254,15 +1252,13 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Nhập số điện thoại muốn đăng ký tài khoản Okuro
-                                                                </p>
-                                                                <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
-                                                                    Lưu ý: Mỗi số điện thoại chỉ được sử dụng 01 tài
-                                                                    khoản Okuro
-                                                                </p>
-                                                            </div>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Nhập số điện thoại muốn đăng ký tài khoản Okuro
+                                                            </p>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
+                                                                Lưu ý: Mỗi số điện thoại chỉ được sử dụng 01 tài khoản
+                                                                Okuro
+                                                            </p>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1278,11 +1274,9 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -10, transition: { duration: 0.2 } }}
                                                         >
-                                                            <div className="w-full h-full">
-                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
-                                                                    Chọn trường đang theo học
-                                                                </p>
-                                                            </div>
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                Chọn trường đang theo học
+                                                            </p>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -1295,7 +1289,7 @@ function AboutUs() {
                                                 setShowTitle(4);
                                             }}
                                         >
-                                            <div className="flex items-center justify-center min-h-9 min-w-9 w-9 h-9">
+                                            <div className="flex items-center justify-center min-h-[36px] min-w-[36px] w-[36px] h-[36px] pt-1">
                                                 <AnimatePresence>
                                                     {showTitle < 4 ? (
                                                         <motion.img
@@ -1385,7 +1379,7 @@ function AboutUs() {
                                                 setShowTitle(5);
                                             }}
                                         >
-                                            <div className="flex items-center justify-center min-h-9 min-w-9 w-9 h-9">
+                                            <div className="flex items-center justify-center min-h-[36px] min-w-[36px] w-[36px] h-[36px] pt-1">
                                                 <AnimatePresence>
                                                     {showTitle < 5 ? (
                                                         <motion.img

@@ -61,7 +61,7 @@ function HeaderCustomer({ children, showModal, setShowModal }) {
                             key={index}
                             to={tab.Link}
                             className={clsx(
-                                "text-okuro-body-color  font-roboto items-center justify-center   !text-base font-light hover:cursor-pointer",
+                                "text-okuro-body-color  font-roboto items-center justify-center text-base font-light hover:cursor-pointer",
                                 {
                                     " text-okuro-primary !text-lg !font-black ": pathname == tab.Link,
                                 }
