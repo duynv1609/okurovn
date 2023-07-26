@@ -3,12 +3,10 @@ import Footer from "../../components/CustomerFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
 import { Popover } from "@headlessui/react";
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import AboutPagination from "../../components/AboutPagination";
-
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
+import { useMediaQuery } from "@mui/material";
 
 const LANGUAGE = [
     { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
@@ -212,6 +210,11 @@ const containerVariant = {
 };
 
 function AboutUs() {
+    const minMobile = useMediaQuery("(min-width:200px)");
+    const maxMobile = useMediaQuery("(max-width:1000px)");
+    let isMobile = false;
+    minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
+
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
     const [isContent, setIsContent] = useState(CONTENT[0]);
     const [toggle, setToggle] = useState(false);
@@ -264,70 +267,82 @@ function AboutUs() {
             transition={{ duration: 1 }}
             className="flex flex-col justify-between h-full"
         >
-            <div id="Utilities" className="flex justify-center h-full     ">
+            <div
+                id="Slider"
+                className="z-20 flex justify-center mb-10 h-auto w-full mobile:px-4 mobile:py-4 mobile:overflow-hidden mobile:bg-okuro-background"
+            >
                 <div
                     id="background"
-                    className="absolute h-[700px] w-full bg-okuro-background desktop:h-[600px] pc:h-[600px] myscreen:h-[700px] overflow-x-hidden"
+                    className="absolute h-[600px] w-full bg-okuro-background desktop:h-[550px] pc:h-[600px] myscreen:h-[650px] mobile:hidden overflow-x-hidden"
                 ></div>
-                <Carousel
-                    className="rounded-xl w-[1200px] h-[700px] mb-20 "
-                    loop={true}
-                    prevArrow={({ handlePrev }) => (
-                        <IconButton
-                            variant="text"
-                            color="white"
-                            size="lg"
-                            onClick={handlePrev}
-                            className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
-                        >
-                            <span>
-                                <i className="fa fa-angle-left fa-2xl"></i>
-                            </span>
-                        </IconButton>
-                    )}
-                    nextArrow={({ handleNext }) => (
-                        <IconButton
-                            variant="text"
-                            color="white"
-                            size="lg"
-                            onClick={handleNext}
-                            className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
-                        >
-                            <span>
-                                <i className="fa fa-angle-right fa-2xl"></i>
-                            </span>
-                        </IconButton>
-                    )}
-                    navigation={({ setActiveIndex, activeIndex, length }) => (
-                        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-                            {new Array(length).fill("").map((_, i) => (
-                                <span
-                                    key={i}
-                                    className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
-                                        activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
-                                    }`}
-                                    onClick={() => setActiveIndex(i)}
-                                />
-                            ))}
-                        </div>
-                    )}
-                >
+
+                {isMobile ? (
                     <AboutPagination></AboutPagination>
-                    <AboutPagination></AboutPagination>
-                    <AboutPagination></AboutPagination>
-                    <AboutPagination></AboutPagination>
-                    <AboutPagination></AboutPagination>
-                </Carousel>
+                ) : (
+                    <Carousel
+                        className="rounded-xl w-[1200px] h-[700px] mb-20 "
+                        loop={true}
+                        prevArrow={({ handlePrev }) => (
+                            <IconButton
+                                variant="text"
+                                color="white"
+                                size="lg"
+                                onClick={handlePrev}
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
+                            >
+                                <span>
+                                    <i className="fa fa-angle-left fa-2xl"></i>
+                                </span>
+                            </IconButton>
+                        )}
+                        nextArrow={({ handleNext }) => (
+                            <IconButton
+                                variant="text"
+                                color="white"
+                                size="lg"
+                                onClick={handleNext}
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                            >
+                                <span>
+                                    <i className="fa fa-angle-right fa-2xl"></i>
+                                </span>
+                            </IconButton>
+                        )}
+                        navigation={({ setActiveIndex, activeIndex, length }) => (
+                            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                                {new Array(length).fill("").map((_, i) => (
+                                    <span
+                                        key={i}
+                                        className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
+                                            activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
+                                        }`}
+                                        onClick={() => setActiveIndex(i)}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    >
+                        <AboutPagination></AboutPagination>
+                        <AboutPagination></AboutPagination>
+                        <AboutPagination></AboutPagination>
+                        <AboutPagination></AboutPagination>
+                        <AboutPagination></AboutPagination>
+                    </Carousel>
+                )}
             </div>
-            <div className="flex flex-col items-center justify-center gap-10 p-20 h-[1034px] w-full ">
-                <div className="flex items-center justify-center gap-[60px] h-full w-full ">
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon1.png" className="h-20 w-20" alt="" />
+            <div className="flex flex-col items-center justify-center gap-10 p-20 h-auto w-full   mobile:p-0 mobile:px-4">
+                <div className="flex items-center justify-center gap-[60px] h-full w-full mobile:flex-col mobile:gap-[24px] mobile:h-auto mobile:w-auto">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon1.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Cập nhật{" "}
                                     <span className="text-okuro-color-text">
                                         lịch báo giảng,{<br />}danh bạ giáo viên
@@ -342,13 +357,17 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon2.png" className="h-20 w-20" alt="" />
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon2.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Thanh toán{" "}
                                     <span className="text-okuro-color-text">
                                         {" "}
@@ -364,13 +383,17 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon3.png" className="h-20 w-20" alt="" />
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon3.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Kết nối{" "}
                                     <span className="text-okuro-color-text">nhà trường với,{<br />} phụ huynh</span>
                                 </span>
@@ -383,13 +406,17 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon4.png" className="h-20 w-20" alt="" />
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon4.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Nộp hồ sơ{" "}
                                     <span className="text-okuro-color-text">tuyển sinh{<br />} trực tuyến</span>
                                 </span>
@@ -403,14 +430,18 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center justify-center gap-[60px] h-full w-full ">
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon1.png" className="h-20 w-20" alt="" />
+                <div className="flex items-center justify-center gap-[60px] h-full w-full mobile:flex-col">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon1.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Theo dõi{" "}
                                     <span className="text-okuro-color-text">nội dung{<br />} thời khóa biểu</span>
                                 </span>
@@ -423,13 +454,17 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon2.png" className="h-20 w-20" alt="" />
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon2.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Theo dõi{" "}
                                     <span className="text-okuro-color-text">
                                         điểm danh trên{<br />} xe đưa đón học sinh
@@ -443,13 +478,17 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon3.png" className="h-20 w-20" alt="" />
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon3.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Theo dõi <span className="text-okuro-color-text">thực đơn{<br />} hằng ngày</span>
                                 </span>
                             </div>
@@ -460,13 +499,17 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab ">
-                        <div className=" flex items-cennter justify-center h-20 w-full ">
-                            <img src="../../../AboutIcon4.png" className="h-20 w-20" alt="" />
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                        <div className=" flex items-cennter justify-center h-auto w-full ">
+                            <img
+                                src="../../../AboutIcon4.png"
+                                className="h-20 w-20 mobile:w-[62px] mobile:h-[62px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="h-[182px] w-full px-  ">
+                        <div className="h-[182px] w-full mobile:px-4  ">
                             <div className="flex w-full items-center h-[66px]   ">
-                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange">
+                                <span className="text-[22px] w-full font-roboto font-semibold text-center leading-[31px] px-4  text-okuro-orange mobile:text-[20px] mobile:leading-[28px]">
                                     Bảo mật <span className="text-okuro-color-text">thông tin</span>
                                 </span>
                             </div>
@@ -481,125 +524,125 @@ function AboutUs() {
                 </div>
                 <div className="min-w-[60px] min-h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[1518px] ">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-full h-auto ">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5 mobile:max-w-[558px]">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
                             Chức năng <span className="text-okuro-color-text">nổi bật</span>
                         </span>
                     </div>
-                    <div className="flex w-[1390px] h-[450px] gap-[70px] justify-center  ">
-                        <div className="flex flex-col  w-[600px] gap-3 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-orange">
+                    <div className="flex w-[1390px] h-[450px] py-10 gap-[70px] justify-center mobile:flex-col-reverse mobile:w-auto mobile:h-auto mobile:px-4">
+                        <div className="flex flex-col justify-center w-[600px] gap-3 h-[410px] mobile:w-full mobile:h-auto">
+                            <div className="flex w-[580px] mobile:w-auto mobile:h-auto ">
+                                <span className="text-[36px]  w-full font-roboto font-semibold  leading-[44px] text-okuro-orange  mobile:text-[20px] mobile:leading-normal">
                                     Kết nối{" "}
                                     <span className="text-okuro-color-text">
                                         thông tin giữa nhà trường với phụ huynh học sinh
                                     </span>
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px]">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
+                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px] mobile:text-[16px] mobile:leading-normal">
                                     Dễ dàng cập nhật thông tin quá trình học tập, rèn luyện
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Quản lý và cập nhật nhanh chóng thông tin của trường theo năm học: Tổng số giáo
                                         viên / học sinh, tình hình học tập, rèn luyện của học sinh, tình hình thu học
                                         phí, sử dụng thư viện, thiết bị…
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Cập nhật và quản lý chất lượng bữa ăn của học sinh
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Triển khai và quản lý chi tiết hành trình đưa đón học sinh
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Chủ động giúp học sinh chuẩn bị bài tốt hơn thông qua thời khóa biểu được cập
                                         nhật liên tục
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col items-center justify-center w-[481px] h-[387px]">
+                        <div className="flex flex-col items-center justify-center w-[481px] h-[387px] mobile:w-[300px] mobile:h-[235px]">
                             <img
                                 src="../../../AboutOutstandingImg.png"
-                                className="object-contain w-[481px] h-[387px]"
+                                className="object-contain w-[481px] h-[387px] mobile:w-[300px] mobile:h-[235px]"
                                 alt=""
                             />
                         </div>
                     </div>
-                    <div className="flex w-[1390px] h-[450px] gap-[70px] justify-center  ">
-                        <div className="flex flex-col items-center justify-center w-[481px] h-[387px]">
+                    <div className="flex w-[1390px] h-[450px] py-10 gap-[70px] justify-center mobile:flex-col mobile:w-auto mobile:h-auto mobile:px-4">
+                        <div className="flex flex-col items-center justify-center w-[481px] h-[387px] mobile:w-[300px] mobile:h-[276px]">
                             <img
                                 src="../../../AboutOutstandingImg2.png"
-                                className="object-contain w-[481px] h-[387px]"
+                                className="object-contain w-[481px] h-[387px] mobile:w-[300px] mobile:h-[276px]"
                                 alt=""
                             />
                         </div>
-                        <div className="flex flex-col  w-[600px] gap-3 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-orange">
+                        <div className="flex flex-col justify-center w-[600px] gap-3 h-[410px] mobile:w-full mobile:h-auto">
+                            <div className="flex w-[580px] mobile:w-auto mobile:h-auto ">
+                                <span className="text-[36px]  w-full font-roboto font-semibold  leading-[44px] text-okuro-orange  mobile:text-[20px] mobile:leading-normal">
                                     Quản Lý <span className="text-okuro-color-text">Thanh Toán trực tuyến</span>
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px]">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
+                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px] mobile:text-[16px] mobile:leading-normal">
                                     Cập nhật thông báo và trạng thái học phí
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Cập nhật đầy đủ thông tin học phí và các chi phí khác
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Thanh toán trực tuyến mọi lúc mọi nơi và lưu trữ hóa đơn điện tử tiện lợi
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Kết nối thông tin hai chiều xuyên suốt giữa nhà trường với phụ huynh
                                     </span>
                                 </div>
@@ -607,67 +650,67 @@ function AboutUs() {
                         </div>
                     </div>
 
-                    <div className="flex w-[1390px] h-[450px] gap-[70px] justify-center  ">
-                        <div className="flex flex-col  w-[600px] gap-3 h-[410px]">
-                            <div className="flex w-[580px] ">
-                                <span className="text-[36px] w-full font-roboto font-semibold  leading-[44px]  text-okuro-orange">
+                    <div className="flex w-[1390px] h-[450px] py-10 gap-[70px] justify-center mobile:flex-col-reverse mobile:w-auto mobile:h-auto mobile:px-4">
+                        <div className="flex flex-col justify-center w-[600px] gap-3 h-[410px] mobile:w-full mobile:h-auto">
+                            <div className="flex w-[580px] mobile:w-auto mobile:h-auto ">
+                                <span className="text-[36px]  w-full font-roboto font-semibold  leading-[44px] text-okuro-orange  mobile:text-[20px] mobile:leading-normal">
                                     Mạng xã hội <span className="text-okuro-color-text">giáo dục</span>
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
-                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px]">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
+                                <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px] mobile:text-[16px] mobile:leading-normal">
                                     Mạng lưới kết nối thông tin giá trị và tương tác đa chiều
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Rút ngắn khoảng cách giữa nhà trường với phụ huynh qua các chia sẻ giá trị,
                                         thông tin quan trọng
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Không gian chia sẻ giữa phụ huynh trong hành trình nuôi dạy con khỏe mạnh thông
                                         minh
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Lưu giữ những khoảnh khắc quý giá trong hành trình phát triển toàn diện của học
                                         sinh
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
                                         <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
                                     </div>
-                                    <span className="text-okuro-web-text font-roboto text-base font-normal leading-[30px]">
+                                    <span className="text-okuro-web-text font-roboto text-[16px] font-normal leading-[30px] mobile:text-okuro-body-color">
                                         Chủ động giúp học sinh chuẩn bị bài tốt hơn thông qua thời khóa biểu được cập
                                         nhật liên tục
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col items-center justify-center w-[481px] h-[387px]">
+                        <div className="flex flex-col items-center justify-center w-[481px] h-[387px] mobile:w-[300px] mobile:h-[235px]">
                             <img
                                 src="../../../AboutOutstandingImg.png"
-                                className="object-contain w-[481px] h-[387px]"
+                                className="object-contain w-[481px] h-[387px] mobile:w-[300px] mobile:h-[235px]"
                                 alt=""
                             />
                         </div>
@@ -675,7 +718,7 @@ function AboutUs() {
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[765px]">
+            <div className="flex justify-center items-center  w-full h-[765px] mobile:hidden">
                 <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
@@ -815,24 +858,27 @@ function AboutUs() {
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[1194px]  ">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-auto h-auto overflow-hidden">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-auto w-auto">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Tổng quan</span> giao diện
                         </span>
                     </div>
-                    <div className="flex items-center justify-center w-full h-[916px] gap-[70px] bg-gradient-to-bl from-okuro-linear-from3 to-okuro-linear-to3  overflow-hidden ">
-                        <img src="../../../PhoneUI.png" className=" z-30 object-contain w-[1390x] h-[916px]" alt="" />
-                        <div className="absolute w-full h-[636px] bg-cyan-200 opacity-20"></div>
-                        <div className="z-20 absolute w-[300px] h-[300px] bg-gradient-to-b from-okuro-linear-from4 to-okuro-primary rotate-[33deg] rounded-[38px]"></div>
+                    <div className="flex items-center justify-center w-full h-[916px] mobile:h-auto gap-[70px] bg-gradient-to-bl from-okuro-linear-from3 to-okuro-linear-to3   overflow-hidden ">
+                        <img
+                            src="../../../PhoneUI.png"
+                            className=" z-30 object-contain w-[1390x] h-[916px] mobile:h-auto mobile:w-auto"
+                            alt=""
+                        />
+                        <div className="absolute w-full h-[636px] bg-cyan-200 opacity-20 mobile:h-[174px] "></div>
+                        <div className="z-20 absolute w-[300px] h-[300px] desk1000:w-[250px] desk1000:h-[250px] mobile:w-[100px] mobile:h-[100px] bg-gradient-to-b from-okuro-linear-from4 to-okuro-primary rotate-[33deg] rounded-[38px]"></div>
                     </div>
 
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-
-            <div className="flex flex-col justify-between items-center  w-full h-[1023px]  ">
+            <div className="flex flex-col justify-between items-center  w-full h-[1023px] mobile:hidden">
                 <div className="flex flex-col  justify-center  items-center h-full w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
@@ -1475,38 +1521,62 @@ function AboutUs() {
                 </div>
                 <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[788px]">
-                <div className="flex flex-col gap-[120px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-full h-auto mobile:w-auto">
+                <div className="flex flex-col gap-[120px] justify-center  items-center h-auto w-full mobile:gap-[42px]">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Đối tác</span> đồng triển khai
                         </span>
                     </div>
-                    <div className="flex flex-col justify-between w-[1040px] h-[394px] gap-[24px] ">
-                        <div className="flex gap-[100px]">
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness1.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness2.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness3.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness4.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
+                    <div className="grid grid-cols-4 mobile:grid-cols-3 justify-center items-center w-[1040px] h-auto gap-x-[100px] gap-y-[24px]  mobile:w-auto mobile:gap-y-0 mobile:gap-x-6 ">
+                        <div className="col-start-1  flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness1.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
                         </div>
-                        <div className="flex gap-[100px] justify-center">
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness5.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness6.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
-                            <div className="w-[185px] h-[185px]">
-                                <img src="../../../AboutBussiness7.png" className="w-[185px] h-[185px]" alt="" />
-                            </div>
+                        <div className="col-start-2  flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness2.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        <div className="col-start-3 flex justify-center  items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness3.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        <div className="col-start-4 mobile:col-start-1 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness4.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        <div className="col-start-2 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness5.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div>
+                        {/* <div className="col-start-4 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness6.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
+                        </div> */}
+                        <div className="col-start-3 flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
+                            <img
+                                src="../../../AboutBussiness7.png"
+                                className="w-[185px] h-[185px] mobile:w-[100px] mobile:h-[100px]"
+                                alt=""
+                            />
                         </div>
                     </div>
 

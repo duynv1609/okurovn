@@ -10,7 +10,7 @@ import * as Yup from "yup";
 const bag2 =
     "https://cdn.vn.alongwalk.info/wp-content/uploads/2023/01/05212422/image-30-hinh-nen-meo-cute-dung-cho-ca-dien-thoai-va-may-tinh-bfa19be160372b49145eb85b3f12be80.jpg";
 
-function Contact({ children }) {
+function Contact({ children, Hid }) {
     const isDeskTop = useMediaQuery("(min-width:1000px)");
     const refContact = useRef(null);
     const [loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ function Contact({ children }) {
     //
     return (
         <div className="flex flex-col w-full  select-none justify-start py-12  gap-12 items-center bg-okuro-background-contact ">
-            {isDeskTop && (
+            {(isDeskTop || !Hid) && (
                 <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text">
                     Liên hệ
                 </div>
@@ -217,8 +217,9 @@ function Contact({ children }) {
                             </div>
                         )}
                     </button>
-                    <div className="flex items-center">
+                    <div className="flex items-start">
                         <img src="../../../info.png" alt="" />
+
                         <span className="text-base font-normal font-roboto text-okuro-body-color mobile:text-[16px] mobile:leading-normal">
                             Kiểm tra hộp thư thường xuyên để theo dõi và cập nhật thông tin giá trị nhanh nhất
                         </span>

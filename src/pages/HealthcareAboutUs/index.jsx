@@ -2,15 +2,11 @@ import Contact from "../../components/CustomerContact";
 import Footer from "../../components/HealthcareFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
 import { useMediaQuery } from "@mui/material";
-import { Popover } from "@headlessui/react";
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import HealthcareAboutPagination from "../../components/HealthcareAboutPagination";
 
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
-import { duration } from "@mui/material";
 import Sidebar from "../../components/Sidebar";
 
 const LANGUAGE = [
@@ -272,70 +268,59 @@ function HealthcareAboutUs() {
             transition={{ duration: 1 }}
             className="flex flex-col justify-between h-full  "
         >
-            <div id="Slider" className="z-20 flex justify-center mb-10 h-auto w-full mobile:overflow-hidden">
+            <div
+                id="Slider"
+                className="z-20 flex justify-center mb-10 h-auto w-full mobile:px-4 mobile:py-4 mobile:overflow-hidden mobile:bg-okuro-background"
+            >
                 <div
                     id="background"
-                    className="absolute h-[600px] w-full bg-okuro-background desktop:h-[550px] pc:h-[600px] myscreen:h-[650px] mobile:h-[500px] overflow-x-hidden"
+                    className="absolute h-[600px] w-full bg-okuro-background desktop:h-[550px] pc:h-[600px] myscreen:h-[650px] mobile:hidden overflow-x-hidden"
                 ></div>
                 {isMobile ? (
                     <HealthcareAboutPagination></HealthcareAboutPagination>
                 ) : (
                     <Carousel
                         className="rounded-xl w-[1200px]  h-[700px] mobile:w-[343px] mobile:h-[] "
-                        loop={!isMobile}
-                        prevArrow={
-                            !isMobile
-                                ? ({ handlePrev }) => (
-                                      <IconButton
-                                          variant="text"
-                                          color="white"
-                                          size="lg"
-                                          onClick={handlePrev}
-                                          className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
-                                      >
-                                          <span>
-                                              <i className="fa fa-angle-left fa-2xl"></i>
-                                          </span>
-                                      </IconButton>
-                                  )
-                                : !isMobile
-                        }
-                        nextArrow={
-                            !isMobile
-                                ? ({ handleNext }) => (
-                                      <IconButton
-                                          variant="text"
-                                          color="white"
-                                          size="lg"
-                                          onClick={handleNext}
-                                          className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
-                                      >
-                                          <span>
-                                              <i className="fa fa-angle-right fa-2xl"></i>
-                                          </span>
-                                      </IconButton>
-                                  )
-                                : !isMobile
-                        }
-                        navigation={
-                            !isMobile
-                                ? ({ setActiveIndex, activeIndex, length }) => (
-                                      <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-                                          {new Array(length).fill("").map((_, i) => (
-                                              <span
-                                                  key={i}
-                                                  className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
-                                                      activeIndex === i
-                                                          ? "bg-red-800 w-[32px]"
-                                                          : "bg-okuro-pagination w-4"
-                                                  }`}
-                                                  onClick={() => setActiveIndex(i)}
-                                              />
-                                          ))}
-                                      </div>
-                                  )
-                                : !isMobile
-                        }
+                        loop={true}
+                        prevArrow={({ handlePrev }) => (
+                            <IconButton
+                                variant="text"
+                                color="white"
+                                size="lg"
+                                onClick={handlePrev}
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
+                            >
+                                <span>
+                                    <i className="fa fa-angle-left fa-2xl"></i>
+                                </span>
+                            </IconButton>
+                        )}
+                        nextArrow={({ handleNext }) => (
+                            <IconButton
+                                variant="text"
+                                color="white"
+                                size="lg"
+                                onClick={handleNext}
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                            >
+                                <span>
+                                    <i className="fa fa-angle-right fa-2xl"></i>
+                                </span>
+                            </IconButton>
+                        )}
+                        navigation={({ setActiveIndex, activeIndex, length }) => (
+                            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                                {new Array(length).fill("").map((_, i) => (
+                                    <span
+                                        key={i}
+                                        className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
+                                            activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
+                                        }`}
+                                        onClick={() => setActiveIndex(i)}
+                                    />
+                                ))}
+                            </div>
+                        )}
                     >
                         <HealthcareAboutPagination></HealthcareAboutPagination>
                         <HealthcareAboutPagination></HealthcareAboutPagination>
@@ -468,9 +453,9 @@ function HealthcareAboutUs() {
                 <div className="min-w-[60px] min-h-[4px] rounded-[63px] mb-10 bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
             <div className="flex justify-center items-center  w-full h-auto ">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5 mobile:max-w-[558px]">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text[24px]">
                             Chức năng <span className="text-okuro-color-text">nổi bật</span>
                         </span>
                     </div>
@@ -481,7 +466,7 @@ function HealthcareAboutUs() {
                                     Dẫn bệnh
                                 </span>
                             </div>
-                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
+                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto">
                                 <span className="text-okuro-color-text font-roboto text-2xl font-normal leading-[30px] mobile:text-[16px] mobile:leading-normal">
                                     Dễ dàng hoàn thành các thủ tục bệnh viện
                                 </span>
@@ -1461,7 +1446,7 @@ function HealthcareAboutUs() {
                             <span className="text-okuro-color-text">Đối tác</span> đồng triển khai
                         </span>
                     </div>
-                    <div className="grid grid-cols-4 mobile:grid-cols-3 justify-center items-center w-[1040px] h-auto gap-[24px]  mobile:w-auto mobile:gap-y-0 ">
+                    <div className="grid grid-cols-4 mobile:grid-cols-3 justify-center items-center w-[1040px] h-auto gap-x-[100px] gap-y-[24px]  mobile:w-auto mobile:gap-y-0 mobile:gap-x-6 ">
                         <div className="col-start-1  flex justify-center items-center mobile:w-[100px] mobile:h-[100px]">
                             <img
                                 src="../../../AboutBussiness1.png"

@@ -1,7 +1,7 @@
 export default function Pagination() {
     return (
         <>
-            <div className="flex justify-center items-center h-full p-20 mobile:w-[343px] mobile:flex-col-reverse  mobile:h-[500px] mobile:z-50 mobile:p-0">
+            <div className="flex justify-center items-center h-auto p-20 mobile:w-[343px] mobile:flex-col-reverse mobile:z-50 mobile:p-0">
                 <div className="flex flex-col gap-4 justify-center items-start h-full w-full  mobile:gap-3">
                     <div className="flex">
                         <p className="font-roboto text-[48px] text-okuro-orange capitalize font-black leading-[65px] mobile:text-[36px] mobile:font-bold mobile:leading-tight ">
@@ -31,7 +31,6 @@ export default function Pagination() {
                     <img
                         src="../../../HealthcareAboutSlider.png"
                         className="object-contain w-[673px] h-[526px] mobile:h-full mobile:w-full"
-                        alt=""
                     />
                 </div>
             </div>

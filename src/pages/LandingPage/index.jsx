@@ -35,9 +35,7 @@ const CONTENT = [
 
 function LandingPage() {
     const isDeskTop = useMediaQuery("(min-width:1900px)");
-    const variants = isDeskTop
-        ? { initial: { width: 0, height: 0 }, animate: { width: 452, height: 182 } }
-        : { initial: {}, animate: {} };
+    const variants = { initial: { scale: 0 }, animate: { scale: 1 } };
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
     const [isContent, setIsContent] = useState(CONTENT[0]);
     const [toggle, setToggle] = useState(false);
@@ -60,7 +58,7 @@ function LandingPage() {
                 <motion.div
                     initial={{ opacity: 0.2 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 2 }}
+                    transition={{ duration: 1 }}
                     className="flex flex-col h-screen justify-between mobile:justify-items-start bg-okuro-background  z-20 select-none mobile:justify-between mobile:items-start mobile:h-[671px] mobile:mx-4 mobile:mt-[34px]  "
                 >
                     <div className="z-20 absolute select-none h-[245px] w-[540px] right-0 top-0   bg-[url('../../../topright.png')] desktop:h-[220px] desktop:w-[486px] pc:h-[286px] pc:w-[530px]      mobile:hidden"></div>

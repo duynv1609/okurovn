@@ -8,9 +8,9 @@ function HomeCustomer() {
             initial={{ opacity: 0.2 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="flex flex-col justify-between h-full  w-full bg-okuro-background-contact "
+            className="flex flex-col justify-between h-full min-h-screen mobile:h-full w-full bg-okuro-background-contact "
         >
-            <Contact />
+            <Contact Hid={false} />
             <Footer />
         </motion.div>
     );

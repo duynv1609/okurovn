@@ -36,7 +36,7 @@ const sidebar = {
     },
 };
 
-function HeaderCustomer({ children }) {
+function HeaderCustomer({ children, showModal, setShowModal }) {
     const navigate = useNavigate();
     const [isOpen, toggleOpen] = useCycle(false, true);
     const [height, setHeight] = useState(200);
@@ -54,13 +54,13 @@ function HeaderCustomer({ children }) {
                         <img src="../../../LogoHeader.png" alt="" className="w-30 h-6" />
                     </Link>
                 </div>
-                <div className="flex justify-start  space-x-3 gap-[70px]  mx-20 mobile:hidden">
+                <div className="flex justify-start  space-x-3 gap-[70px]  mx-20 desk1000:mx-0 mobile:hidden">
                     {LINK.map((tab, index) => (
                         <Link
                             key={index}
                             to={tab.Link}
                             className={clsx(
-                                "text-okuro-body-color  font-roboto items-center justify-center   !text-base font-light hover:cursor-pointer",
+                                "text-okuro-body-color  font-roboto items-center justify-center text-base font-light hover:cursor-pointer",
                                 {
                                     " text-okuro-primary !text-lg !font-black ": pathname == tab.Link,
                                 }
@@ -96,11 +96,17 @@ function HeaderCustomer({ children }) {
                         animate={isOpen ? "open" : "closed"}
                         className=" flex justify-center items-center h-9 w-9 "
                     >
-                        <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
+                        <MenuToggle
+                            toggle={() => {
+                                toggleOpen();
+                                setShowModal(!isOpen);
+                            }}
+                            isOpen={isOpen}
+                        />
                     </motion.div>
                     {isOpen ? (
                         <motion.nav
-                            className="z-30 absolute top-16  h-20 w-full "
+                            className="z-30 absolute top-15  h-20 w-full "
                             initial={false}
                             animate={isOpen ? "open" : "closed"}
                         >
@@ -118,7 +124,12 @@ function HeaderCustomer({ children }) {
                             ></motion.div>
 
                             <div className="z-50 bg-white">
-                                <Navigation link={LINK} />
+                                <Navigation
+                                    LINK={LINK}
+                                    navigate={navigate}
+                                    setShowModal={setShowModal}
+                                    toggleOpen={toggleOpen}
+                                />
                             </div>
                         </motion.nav>
                     ) : (
