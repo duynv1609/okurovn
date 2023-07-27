@@ -7,7 +7,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import PaginationPhisicalNon from "../../components/PaginationPhisicalNon";
-
+import EmptyWallet1 from "./EmptyWallet1";
+import BoxSearch1 from "./BoxSearch1";
+import Code11 from "./Code11";
+import ChartSquare1 from "./ChartSquare1";
 import { animate, motion } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
 
@@ -321,7 +324,7 @@ function NonPhisicalCard() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center my-[50px] gap-[72px] items-center  w-full h-auto ">
+            {/* <div className="flex justify-center my-[50px] gap-[72px] items-center  w-full h-auto ">
                 <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full">
                     <div className="flex w-[1390px] h-auto gap-[70px] justify-center  items-center ">
                         <div className="flex flex-col">
@@ -337,6 +340,65 @@ function NonPhisicalCard() {
                                 src="https://www.youtube.com/embed/5Qtj_9eV4hU"
                                 className="w-full h-full bg-blue-200"
                             ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+            <div className="font-roboto flex justify-center mb-[50px] gap-[72px] items-center  w-full h-auto mobile:flex-col mobile:gap-6 ">
+                <div className="flex flex-col">
+                    <p className="font-roboto text-5xl text-okuro-orange font-black leading-[65px] text-center mobile:text-[24px] mobile:font-semibold">
+                        <span>Tính năng</span>
+                        <span className="text-okuro-web-text"> nổi bật</span>
+                    </p>
+                    <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-orange mobile:hidden"></div>
+                </div>
+                <div className="flex w-auto h-auto text-center gap-[35px] mobile:gap-4">
+                    <div className="flex h-auto w-auto flex-col items-center justify-between gap-[30px] pt-[79px] mobile:pt-10">
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[49px] pb-[106px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                            <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#F1F7FF] ">
+                                <BoxSearch1 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
+                            </div>
+                            <p className="mt-[3px] w-full text-2xl font-[600] text-[#010D82] mobile:text-base mobile:font-semibold">
+                                Tiện lợi
+                            </p>
+                            <p className="h-11 w-[210px] text-base font-[400] leading-[1.4] mobile:leading-tight mobile:h-full mobile:w-full text-[#64748B] mobile:text-base mobile:font-normal ">
+                                Liên kết với tất cả thẻ ATM của Ngân hàng đối tác
+                            </p>
+                        </div>
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[33px] pb-[106px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                            <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#FFF2F8] ">
+                                <Code11 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
+                            </div>
+                            <p className=" w-[108px] text-2xl font-[600] text-[#010D82] mobile:text-base mobile:font-semibold">
+                                Bảo mật
+                            </p>
+                            <p className="h-11 w-[242px] text-base font-[400] leading-[1.4] mobile:leading-tight mobile:h-full mobile:w-full text-[#64748B] mobile:text-base mobile:font-normal ">
+                                Xác nhận giao dịch bằng mật khẩu 6 số và mã OTP qua SMS
+                            </p>
+                        </div>
+                    </div>
+                    <div className=" flex h-[427px] w-auto flex-col items-center justify-between gap-[30px] ">
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[54px] pb-[129px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                            <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#FFF7E3] ">
+                                <EmptyWallet1 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
+                            </div>
+                            <p className="mt-0.5 w-[200px] text-2xl font-[600] text-[#010D82] mobile:text-base mobile:font-semibold">
+                                Nhanh chóng
+                            </p>
+                            <p className="h-[22px] w-[141px] text-base font-[400] leading-[1.4] mobile:leading-tight mobile:h-full mobile:w-full text-[#64748B] mobile:text-base mobile:font-normal ">
+                                Thanh toán siêu tốc
+                            </p>
+                        </div>
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[38px] pb-[41px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                            <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#DEFFEE] ">
+                                <ChartSquare1 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
+                            </div>
+                            <p className="mt-[3px] w-[232px] text-2xl font-[600] text-[#010D82] mobile:text-base mobile:font-semibold">
+                                An toàn
+                            </p>
+                            <p className="h-[110px] w-52 text-base font-[400] leading-[1.4] mobile:leading-tight mobile:h-full mobile:w-full text-[#64748B] mobile:text-base mobile:font-normal ">
+                                Mã hóa thông tin theo nguyên tắc phân tầng dữ liệu
+                            </p>
                         </div>
                     </div>
                 </div>

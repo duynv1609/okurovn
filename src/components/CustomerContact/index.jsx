@@ -20,6 +20,7 @@ function Contact({ children, Hid }) {
     const navigate = useNavigate();
 
     const validationSchema = Yup.object({
+        name: Yup.string().required("Vui lòng nhập họ và tên!"),
         email: Yup.string()
             .required("Vui lòng nhập địa chỉ email!")
             .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, "Email của bạn không đúng định dạng"),
@@ -47,6 +48,7 @@ function Contact({ children, Hid }) {
         setLoading(true);
         setRequired(true);
         console.log(values);
+        showSuccessNoti();
         setLoading(false);
     }
     //

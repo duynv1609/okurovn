@@ -10,7 +10,7 @@ function HomeCustomer() {
             transition={{ duration: 1 }}
             className="flex flex-col justify-between h-full min-h-screen mobile:h-full w-full bg-okuro-background-contact "
         >
-            <Contact Hid={false} />
+            <Contact Hid={true} />
             <Footer />
         </motion.div>
     );
