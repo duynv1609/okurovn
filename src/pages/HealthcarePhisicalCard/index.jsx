@@ -95,7 +95,7 @@ const TABS = [
 const imgVariant = {
     hidden: {
         opacity: 0,
-        scale: 0.5,
+        scale: 0.95,
         x: 0,
     },
     visible: {
@@ -105,7 +105,7 @@ const imgVariant = {
         transition: { delay: 0.4 },
     },
     trans: { delay: 2, duration: 20 },
-    exit: { scale: 0.5, opacity: 0, x: 0, transition: { delay: 0.1 } },
+    exit: { scale: 0.95, opacity: 0, x: 0, transition: { delay: 0.1 } },
 };
 
 const containerVariant = {
@@ -292,7 +292,7 @@ function PhisicalCard() {
                                     <span
                                         key={i}
                                         className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
-                                            activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
+                                            activeIndex === i ? "bg-okuro-orange w-[32px]" : "bg-okuro-pagination w-4"
                                         }`}
                                         onClick={() => setActiveIndex(i)}
                                     />

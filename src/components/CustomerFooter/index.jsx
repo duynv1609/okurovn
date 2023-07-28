@@ -24,7 +24,7 @@ function Footer({ children }) {
         <div className="flex flex-col border-t-2 border-gray-200">
             <header className="flex w-auto h-auto  select-none items-center justify-around   font-medium text-slate-900 border-b-2 border-gray-200  ">
                 <div className="flex gap-[100px] mobile:px-4 mobile:pt-6 mobile:pb-10 mobile:gap-6 w-full py-10  items-start justify-center  mobile:flex-col ">
-                    <div className="flex flex-col gap-6 w-[300px] mobile:gap-3">
+                    <div className="flex flex-col gap-6 w-auto mobile:gap-3">
                         <div className="flex flex-col gap-3 h-[76px]">
                             <div className="flex  items-center justify-start text-green-600 text-3xl">
                                 <Link to="/" className=" ">

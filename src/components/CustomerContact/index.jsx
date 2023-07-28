@@ -59,10 +59,10 @@ function Contact({ children, Hid }) {
                     Liên hệ
                 </div>
             )}
-            <form onSubmit={form.handleSubmit} className="w-auto">
+            <form onSubmit={form.handleSubmit} className="w-full max-w-[1200px]">
                 <div className="flex flex-col">
                     <div className="flex gap-y-3 mobile:flex-col">
-                        <div className="flex flex-col gap-3 px-6 h-full w-[400px] mobile:w-full ">
+                        <div className="flex flex-col gap-3 px-6 h-full w-full ">
                             <div
                                 className={clsx('"flex flex-col h-[65 px] w-full   sm:text-sm', {
                                     invalid: required && form.errors.name,
@@ -160,7 +160,7 @@ function Contact({ children, Hid }) {
                                 )}
                             </div>
                         </div>
-                        <div className="flex flex-col gap-3 px-6 h-auto w-[400px] mobile:w-full">
+                        <div className="flex flex-col gap-3 px-6 h-auto w-full mobile:w-full">
                             <textarea
                                 type="text"
                                 name="content"
@@ -193,7 +193,7 @@ function Contact({ children, Hid }) {
                 <div className="flex flex-col gap-6 pt-12 px-6">
                     <button
                         type="submit"
-                        className="btn btn-blue btn-md  "
+                        className="btn btn-blue bg-blue-gray-50 btn-md  "
                         onClick={() => {
                             setRequired(true);
                         }}

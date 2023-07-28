@@ -181,7 +181,7 @@ function NonPhisicalCard() {
                                                   key={i}
                                                   className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
                                                       activeIndex === i
-                                                          ? "bg-red-800 w-[32px]"
+                                                          ? "bg-okuro-orange w-[32px]"
                                                           : "bg-okuro-pagination w-4"
                                                   }`}
                                                   onClick={() => setActiveIndex(i)}

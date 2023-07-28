@@ -92,16 +92,16 @@ const TABS = [
 const imgVariant = {
     hidden: {
         opacity: 0,
-        scale: 0,
+        scale: 0.95,
         transition: { delay: 2 },
     },
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { delay: 0.5 },
+        transition: { delay: 0.1, duration: 0.5 },
     },
     trans: { delay: 2, duration: 20 },
-    exit: { scale: 0.5, opacity: 0, transition: { delay: 0.2 } },
+    exit: { scale: 0.9, opacity: 0, transition: { delay: 0, duration: 1 } },
 };
 
 const containerVariant = {
@@ -314,7 +314,7 @@ function AboutUs() {
                                     <span
                                         key={i}
                                         className={`block h-1 cursor-pointer rounded-2xl transition-all  ${
-                                            activeIndex === i ? "bg-red-800 w-[32px]" : "bg-okuro-pagination w-4"
+                                            activeIndex === i ? "bg-okuro-orange w-[32px]" : "bg-okuro-pagination w-4"
                                         }`}
                                         onClick={() => setActiveIndex(i)}
                                     />
@@ -332,7 +332,7 @@ function AboutUs() {
             </div>
             <div className="flex flex-col items-center justify-center gap-10 p-20 h-auto w-full   mobile:p-0 mobile:px-4">
                 <div className="flex items-center justify-center gap-[60px] h-full w-full mobile:flex-col mobile:gap-[24px] mobile:h-auto mobile:w-auto">
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon1.png"
@@ -357,7 +357,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon2.png"
@@ -383,7 +383,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon3.png"
@@ -406,7 +406,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon4.png"
@@ -431,7 +431,7 @@ function AboutUs() {
                     </div>
                 </div>
                 <div className="flex items-center justify-center gap-[60px] h-full w-full mobile:flex-col">
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon1.png"
@@ -454,7 +454,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon2.png"
@@ -478,7 +478,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon3.png"
@@ -499,7 +499,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
+                    <div className="flex flex-col justify-center items-center w-[353px] gap-[26px] h-[420px] bg-okuro-background-tab rounded-[20px] mobile:gap-6 mobile:p-0 mobile:h-auto mobile:w-auto mobile:max-w-[572px]">
                         <div className=" flex items-cennter justify-center h-auto w-full ">
                             <img
                                 src="../../../AboutIcon4.png"
@@ -859,7 +859,7 @@ function AboutUs() {
                 </div>
             </div>
             <div className="flex justify-center items-center  w-auto h-auto overflow-hidden">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-auto w-auto">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-auto w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Tổng quan</span> giao diện
@@ -890,7 +890,7 @@ function AboutUs() {
                             <div className="flex w-[1021px] h-[581px] ">
                                 <div className="">
                                     <AnimatePresence>
-                                        {signup && showTitle == 1 && (
+                                        {signup && showTitle == 1 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -901,10 +901,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 2 && (
+                                        {signup && (showTitle == 2) == 1 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -915,10 +917,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
-                                        )}{" "}
+                                        ) : (
+                                            <></>
+                                        )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 3 && (
+                                        {signup && showTitle == 3 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -929,10 +933,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
-                                        )}{" "}
+                                        ) : (
+                                            <></>
+                                        )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 4 && (
+                                        {signup && showTitle == 4 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -943,10 +949,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
-                                        )}{" "}
+                                        ) : (
+                                            <></>
+                                        )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 5 && (
+                                        {signup && showTitle == 5 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -957,10 +965,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 1 && (
+                                        {!signup && showTitle == 1 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -971,10 +981,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 2 && (
+                                        {!signup && showTitle == 2 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -985,10 +997,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 3 && (
+                                        {!signup && showTitle == 3 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -999,10 +1013,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 4 && (
+                                        {!signup && showTitle == 4 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -1013,10 +1029,12 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 5 && (
+                                        {!signup && showTitle == 5 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -1027,6 +1045,8 @@ function AboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                 </div>
