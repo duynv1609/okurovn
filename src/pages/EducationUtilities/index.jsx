@@ -364,10 +364,9 @@ function Utilities() {
                                                     </li>
                                                     <li>
                                                         <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
-                                                            Lưu giữ những khoảnh khắc{" "}
+                                                            Tiết kiệm{" "}
                                                             <span className="text-okuro-web-text">
-                                                                quý giá trong hành trình phát triển toàn diện của học
-                                                                sinh
+                                                                thời gian, giảm thiểu chi phí
                                                             </span>
                                                         </span>
                                                     </li>
@@ -743,10 +742,10 @@ function Utilities() {
                                                     </li>
                                                     <li>
                                                         <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
-                                                            Hệ thống hiển thị{" "}
                                                             <span className="text-okuro-web-text">
-                                                                thông tin bao gồm hình ảnh thực tế
-                                                            </span>
+                                                                Hệ thống hiển thị thông tin bao gồm
+                                                            </span>{" "}
+                                                            hình ảnh thực tế
                                                         </span>
                                                     </li>
                                                     <li>
@@ -813,15 +812,6 @@ function Utilities() {
                                                             Phân loại thông tin{" "}
                                                             <span className="text-okuro-web-text">
                                                                 theo hoạt động cần chú trọng
-                                                            </span>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
-                                                            Lưu giữ những khoảnh khắc{" "}
-                                                            <span className="text-okuro-web-text">
-                                                                quý giá trong hành trình phát triển toàn diện của học
-                                                                sinh
                                                             </span>
                                                         </span>
                                                     </li>
@@ -938,11 +928,10 @@ function Utilities() {
                                                 <div id="tabcontent1" className="h-full w-full ">
                                                     <li>
                                                         <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
-                                                            Giao diện hiển thị{" "}
                                                             <span className="text-okuro-web-text">
-                                                                {" "}
-                                                                dưới dạng To-Do-List
+                                                                Giao diện hiển thị dưới dạng
                                                             </span>
+                                                            To-Do-List
                                                         </span>
                                                     </li>
                                                     <li>
@@ -1073,7 +1062,7 @@ function Utilities() {
                                                     <li>
                                                         <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
                                                             <span className="text-okuro-web-text">
-                                                                Thanh toán trực tuyến qua hoặc kiosk tại trường với thẻ{" "}
+                                                                Thanh toán trực tuyến qua{" "}
                                                             </span>
                                                             ứng dụng Okuro{" "}
                                                             <span className="text-okuro-web-text">
@@ -1283,9 +1272,9 @@ function Utilities() {
                                             </li>
                                             <li>
                                                 <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
-                                                    Lưu giữ những khoảnh khắc{" "}
+                                                    Tiết kiệm{" "}
                                                     <span className="text-okuro-web-text">
-                                                        quý giá trong hành trình phát triển toàn diện của học sinh
+                                                        thời gian, giảm thiểu chi phí
                                                     </span>
                                                 </span>
                                             </li>
@@ -1630,18 +1619,10 @@ function Utilities() {
                                             </li>
                                             <li>
                                                 <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
-                                                    Hệ thống hiển thị{" "}
                                                     <span className="text-okuro-web-text">
-                                                        thông tin bao gồm hình ảnh thực tế
-                                                    </span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
-                                                    Thuận tiện kết nối{" "}
-                                                    <span className="text-okuro-web-text">
-                                                        liên lạc giữa phụ huynh với giáo viên, nhà trường
-                                                    </span>
+                                                        Hệ thống hiển thị thông tin bao gồm
+                                                    </span>{" "}
+                                                    hình ảnh thực tế
                                                 </span>
                                             </li>
                                         </div>
@@ -1691,14 +1672,6 @@ function Utilities() {
                                                     Phân loại thông tin{" "}
                                                     <span className="text-okuro-web-text">
                                                         theo hoạt động cần chú trọng
-                                                    </span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
-                                                    Lưu giữ những khoảnh khắc{" "}
-                                                    <span className="text-okuro-web-text">
-                                                        quý giá trong hành trình phát triển toàn diện của học sinh
                                                     </span>
                                                 </span>
                                             </li>
@@ -1797,12 +1770,12 @@ function Utilities() {
                                             id="tabcontent1"
                                             className="h-full w-full bg-[url('../../../bgtab10.png')]  bg-right-bottom bg-no-repeat"
                                         >
-                                            <li>
-                                                <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
-                                                    Giao diện hiển thị{" "}
-                                                    <span className="text-okuro-web-text"> dưới dạng To-Do-List</span>
-                                                </span>
-                                            </li>
+                                            <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
+                                                <span className="text-okuro-web-text">
+                                                    Giao diện hiển thị dưới dạng
+                                                </span>{" "}
+                                                To-Do-List
+                                            </span>
                                             <li>
                                                 <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
                                                     Rút ngắn khoảng cách{" "}
@@ -1914,7 +1887,7 @@ function Utilities() {
                                             <li>
                                                 <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
                                                     <span className="text-okuro-web-text">
-                                                        Thanh toán trực tuyến qua hoặc kiosk tại trường với thẻ{" "}
+                                                        Thanh toán trực tuyến qua{" "}
                                                     </span>
                                                     ứng dụng Okuro{" "}
                                                     <span className="text-okuro-web-text">

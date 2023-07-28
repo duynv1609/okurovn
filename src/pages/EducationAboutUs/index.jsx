@@ -1478,10 +1478,8 @@ function AboutUs() {
                                                         )}
                                                         {!signup && (
                                                             <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
-                                                                Sử dụng tính nắng{" "}
-                                                                <span className="text-okuro-web-text">
-                                                                    Tên học sinh
-                                                                </span>
+                                                                Sử dụng{" "}
+                                                                <span className="text-okuro-web-text">tính nắng</span>
                                                             </span>
                                                         )}
                                                     </AnimatePresence>

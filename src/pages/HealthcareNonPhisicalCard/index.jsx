@@ -218,11 +218,11 @@ function NonPhisicalCard() {
                                         <img
                                             src="../../../imgPhisicalNonIcon1.png"
                                             alt=""
-                                            className="w-[36px] h-[36px]"
+                                            className="w-[36px] h-[36px] mobile:w-[24px] mobile:h-[24px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col w-[275px] h-[72px]">
-                                        <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none ">
+                                    <div className="flex flex-col w-[275px] h-[72px] gap-2 mobile:h-auto">
+                                        <span className="text-okuro-web-text font-roboto text-[32px] mobile:text-[20px] font-bold leading-none ">
                                             25000+
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
@@ -235,11 +235,11 @@ function NonPhisicalCard() {
                                         <img
                                             src="../../../imgPhisicalNonIcon2.png"
                                             alt=""
-                                            className="w-[36px] h-[36px]"
+                                            className="w-[36px] h-[36px] mobile:w-[24px] mobile:h-[24px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col w-[318px] h-[72px]">
-                                        <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
+                                    <div className="flex flex-col w-[318px] h-[72px] gap-2 mobile:h-auto">
+                                        <span className="text-okuro-web-text font-roboto text-[32px] mobile:text-[20px] font-bold leading-none">
                                             Giao dịch siêu tốc
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
@@ -254,11 +254,11 @@ function NonPhisicalCard() {
                                         <img
                                             src="../../../imgPhisicalNonIcon3.png"
                                             alt=""
-                                            className="w-[36px] h-[36px]"
+                                            className="w-[36px] h-[36px] mobile:w-[24px] mobile:h-[24px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col w-[275px] h-[72px]">
-                                        <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
+                                    <div className="flex flex-col w-[275px] h-[72px] gap-2 mobile:h-auto">
+                                        <span className="text-okuro-web-text font-roboto text-[32px] mobile:text-[20px] font-bold leading-none">
                                             10+
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
@@ -271,11 +271,11 @@ function NonPhisicalCard() {
                                         <img
                                             src="../../../imgPhisicalNonIcon4.png"
                                             alt=""
-                                            className="w-[36px] h-[36px]"
+                                            className="w-[36px] h-[36px] mobile:w-[24px] mobile:h-[24px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col w-[318px] h-[72px]">
-                                        <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
+                                    <div className="flex flex-col w-[318px] h-[72px] gap-2 mobile:h-auto">
+                                        <span className="text-okuro-web-text font-roboto text-[32px] mobile:text-[20px] font-bold leading-none">
                                             An toàn và bảo mật
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
@@ -290,11 +290,11 @@ function NonPhisicalCard() {
                                         <img
                                             src="../../../imgPhisicalNonIcon5.png"
                                             alt=""
-                                            className="w-[36px] h-[36px]"
+                                            className="w-[36px] h-[36px] mobile:w-[24px] mobile:h-[24px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col w-[275px] h-[72px]">
-                                        <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
+                                    <div className="flex flex-col w-[275px] h-[72px] gap-2 mobile:h-auto">
+                                        <span className="text-okuro-web-text font-roboto text-[32px] mobile:text-[20px] font-bold leading-none">
                                             50+
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
@@ -307,11 +307,11 @@ function NonPhisicalCard() {
                                         <img
                                             src="../../../imgPhisicalNonIcon6.png"
                                             alt=""
-                                            className="w-[36px] h-[36px]"
+                                            className="w-[36px] h-[36px] mobile:w-[24px] mobile:h-[24px]"
                                         />
                                     </div>
-                                    <div className="flex flex-col w-[318px] h-[72px]">
-                                        <span className="text-okuro-web-text font-roboto text-[32px] font-bold leading-none">
+                                    <div className="flex flex-col w-[318px] h-[72px] gap-2 mobile:h-auto">
+                                        <span className="text-okuro-web-text font-roboto text-[32px] mobile:text-[20px] font-bold leading-none">
                                             Đối tác đồng hành
                                         </span>
                                         <span className="text-okuro-body-color text-[16px] font-normal leading-[26px]">
@@ -354,7 +354,7 @@ function NonPhisicalCard() {
                 </div>
                 <div className="flex w-auto h-auto text-center gap-[35px] mobile:gap-4">
                     <div className="flex h-auto w-auto flex-col items-center justify-between gap-[30px] pt-[79px] mobile:pt-10">
-                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[49px] pb-[106px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] mobile:rounded-[20px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[49px] pb-[106px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
                             <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#F1F7FF] ">
                                 <BoxSearch1 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
                             </div>
@@ -365,7 +365,7 @@ function NonPhisicalCard() {
                                 Liên kết với tất cả thẻ ATM của Ngân hàng đối tác
                             </p>
                         </div>
-                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[33px] pb-[106px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] mobile:rounded-[20px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[33px] pb-[106px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
                             <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#FFF2F8] ">
                                 <Code11 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
                             </div>
@@ -378,7 +378,7 @@ function NonPhisicalCard() {
                         </div>
                     </div>
                     <div className=" flex h-[427px] w-auto flex-col items-center justify-between gap-[30px] ">
-                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[54px] pb-[129px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] mobile:rounded-[20px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[54px] pb-[129px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
                             <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#FFF7E3] ">
                                 <EmptyWallet1 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
                             </div>
@@ -389,7 +389,7 @@ function NonPhisicalCard() {
                                 Thanh toán siêu tốc
                             </p>
                         </div>
-                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[38px] pb-[41px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
+                        <div className="flex w-full flex-col items-center gap-[19px] rounded-[40px] mobile:rounded-[20px] bg-white mobile:px-4 mobile:py-[21px] mobile:gap-2 px-[38px] pb-[41px] pt-[39px] drop-shadow-lg [box-shadow-width:1px] [box-shadow:0px_0px_0px_1px_rgba(242,_242,_242,_1)_inset] mobile:w-[164px] mobile:h-[219px] ">
                             <div className="flex w-[121px] h-[121px] mobile:min-h-[64px] mobile:w-[64px]  items-center justify-center rounded-[20px] bg-[#DEFFEE] ">
                                 <ChartSquare1 className="h-[74px] w-[74px]  mobile:h-[39px] mobile:w-[39px]" />
                             </div>

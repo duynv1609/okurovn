@@ -219,9 +219,8 @@ function Contact({ children, Hid }) {
                             </div>
                         )}
                     </button>
-                    <div className="flex items-start">
+                    <div className="flex items-start gap-[9px]">
                         <img src="../../../info.png" alt="" />
-
                         <span className="text-base font-normal font-roboto text-okuro-body-color mobile:text-[16px] mobile:leading-normal">
                             Kiểm tra hộp thư thường xuyên để theo dõi và cập nhật thông tin giá trị nhanh nhất
                         </span>

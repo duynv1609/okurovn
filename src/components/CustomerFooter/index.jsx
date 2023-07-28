@@ -31,7 +31,7 @@ function Footer({ children }) {
                                     <img src="../../../LogoFooter.png" alt="" className="w-[235px] h-12" />
                                 </Link>
                             </div>
-                            <span className="text-sm font-normal leading-[16px]">
+                            <span className="text-sm font-normal leading-[16px] text-okuro-body-color">
                                 Sản phẩm của Dolphin Solutions JSC
                             </span>
                         </div>
