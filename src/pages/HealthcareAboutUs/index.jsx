@@ -5,7 +5,8 @@ import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import clsx from "clsx";
 import HealthcareAboutPagination from "../../components/HealthcareAboutPagination";
-
+import { useSelector } from "react-redux";
+import { langSelector } from "../../redux/selectors/langSelector";
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
 import Sidebar from "../../components/Sidebar";
 
@@ -214,6 +215,7 @@ function HealthcareAboutUs() {
     let isMobile = false;
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
 
+    const lang = useSelector(langSelector);
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
     const [isContent, setIsContent] = useState(CONTENT[0]);
     const [toggle, setToggle] = useState(false);

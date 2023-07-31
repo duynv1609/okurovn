@@ -8,6 +8,8 @@ import AboutPagination from "../../components/AboutPagination";
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
 
+import { useSelector } from "react-redux";
+import { langSelector } from "../../redux/selectors/langSelector";
 const LANGUAGE = [
     { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
     { id: 1, logo: "logoEN_circle.svg", content: "Tiếng Anh" },
@@ -163,6 +165,7 @@ function AboutUs() {
     let isMobile = false;
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
 
+    const lang = useSelector(langSelector);
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
     const [isContent, setIsContent] = useState(CONTENT[0]);
     const [toggle, setToggle] = useState(false);

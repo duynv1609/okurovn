@@ -10,7 +10,10 @@ import PaginationPhisical from "../../components/PaginationPhisical";
 import Sidebar from "../../components/Sidebar";
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
-
+import { useDispatch } from "react-redux";
+import { langActions } from "../../redux/slices/langSlice";
+import { useSelector } from "react-redux";
+import { langSelector } from "../../redux/selectors/langSelector";
 const LANGUAGE = [
     { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
     { id: 1, logo: "logoEN_circle.svg", content: "Tiếng Anh" },
@@ -214,6 +217,8 @@ const containerVariant = {
 };
 
 function PhisicalCard() {
+    const dispatch = useDispatch();
+    const lang = useSelector(langSelector);
     const minMobile = useMediaQuery("(min-width:200px)");
     const maxMobile = useMediaQuery("(max-width:1000px)");
     let isMobile = false;
