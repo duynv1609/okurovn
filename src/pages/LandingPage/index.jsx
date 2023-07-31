@@ -231,19 +231,21 @@ function LandingPage() {
                                 </div>
                             </motion.div>
                         </Link>
-                        <motion.div
-                            variants={variants}
-                            initial={variants.initial}
-                            animate={variants.animate}
-                            className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl bg-cover bg-[url('../../../frameEMR.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
-                        >
-                            <div>
-                                <img src="../../../EMR.svg" alt="" className="w-[50px] h-[47px] mx-1" />
-                            </div>
-                            <div className=" flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl  desktop:w-[220px] mobile:w-[260px] mobile:text-4xl">
-                                {isContent[8]}
-                            </div>
-                        </motion.div>
+                        <Link to="/EMR">
+                            <motion.div
+                                variants={variants}
+                                initial={variants.initial}
+                                animate={variants.animate}
+                                className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl bg-cover bg-[url('../../../frameEMR.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
+                            >
+                                <div>
+                                    <img src="../../../EMR.svg" alt="" className="w-[50px] h-[47px] mx-1" />
+                                </div>
+                                <div className=" flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl  desktop:w-[220px] mobile:w-[260px] mobile:text-4xl">
+                                    {isContent[8]}
+                                </div>
+                            </motion.div>
+                        </Link>
                     </div>
                 </motion.div>
 

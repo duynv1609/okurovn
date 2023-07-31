@@ -46,7 +46,7 @@ const imgVariant = {
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { delay: 0.1, duration: 0.5 },
+        transition: { delay: 0.2, duration: 0.5 },
     },
     trans: { delay: 2, duration: 20 },
     exit: { scale: 0.9, opacity: 0, transition: { delay: 0, duration: 1 } },
@@ -186,6 +186,17 @@ function AboutUs() {
             setIndex({ now: index.now - 1, prev: index.now });
         } else setIndex({ now: 3, prev: index.now });
     }
+    function nextTitle() {
+        if (showTitle < 5) {
+            setShowTitle(showTitle + 1);
+        }
+    }
+    function prevTitle() {
+        if (showTitle > 1) {
+            setShowTitle(showTitle - 1);
+        }
+    }
+
     function setStep1() {
         if (index.now == 2) {
             prevStep();
@@ -236,7 +247,7 @@ function AboutUs() {
                                 color="white"
                                 size="lg"
                                 onClick={handlePrev}
-                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]  !absolute top-2/4 -translate-y-2/4 left-0 "
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%]   "
                             >
                                 <span>
                                     <i className="fa fa-angle-left fa-2xl"></i>
@@ -249,7 +260,7 @@ function AboutUs() {
                                 color="white"
                                 size="lg"
                                 onClick={handleNext}
-                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                                className=" bg-white text-okuro-color-text hover:bg-okuro-primary rounded-[100%] "
                             >
                                 <span>
                                     <i className="fa fa-angle-right fa-2xl"></i>
@@ -937,6 +948,57 @@ function AboutUs() {
                     <div id="Utilities" className="flex justify-center items-center  h-auto w-full">
                         <div className="z-20 flex  rounded-xl w-[1309px] h-auto  items-center justify-center overflow-y-hidden">
                             <div className="flex mobile:flex-col mobile:gap-6 w-[1021px] h-auto ">
+                                <div className="absolute flex max-w-[1350px] mt-[275px] -ml-[150px] mobile:max-w-full mobile:mt-20 mobile:ml-0 mobile:px-1 w-full  ">
+                                    <div className="h-auto w-auto " onClick={prevTitle}>
+                                        {showTitle > 1 ? (
+                                            <IconButton
+                                                variant="text"
+                                                color="white"
+                                                size="lg"
+                                                onClick={prevTitle}
+                                                className=" bg-okuro-btn-navigate mobile:h-6 mobile:w-6 text-white  hover:bg-okuro-primary rounded-[100%]   "
+                                            >
+                                                <span>
+                                                    <i
+                                                        className={clsx("fa fa-angle-left ", {
+                                                            "fa-xs": isMobile,
+                                                            "fa-2xl": !isMobile,
+                                                        })}
+                                                    ></i>
+                                                </span>
+                                            </IconButton>
+                                        ) : (
+                                            <div
+                                                variant="text"
+                                                color="white"
+                                                size="lg"
+                                                className="  mobile:h-6 mobile:w-6   "
+                                            ></div>
+                                        )}
+                                    </div>
+                                    <div className="h-auto w-auto " onClick={nextTitle}>
+                                        {showTitle < 5 ? (
+                                            <IconButton
+                                                variant="text"
+                                                color="white"
+                                                size="lg"
+                                                onClick={nextTitle}
+                                                className=" bg-okuro-btn-navigate mobile:h-6 mobile:w-6 text-white hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                                            >
+                                                <span>
+                                                    <i
+                                                        className={clsx("fa fa-angle-right ", {
+                                                            "fa-xs": isMobile,
+                                                            "fa-2xl": !isMobile,
+                                                        })}
+                                                    ></i>
+                                                </span>
+                                            </IconButton>
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </div>
+                                </div>
                                 <div className="flex justify-center items-center">
                                     <AnimatePresence>
                                         {signup && showTitle == 1 ? (
@@ -1100,7 +1162,7 @@ function AboutUs() {
                                     </AnimatePresence>
                                 </div>
                                 <div className="flex flex-col gap-4 justify-center items-center h-auto w-full ">
-                                    <div className="flex  h-[100px] w-full mobile:justify-center">
+                                    <div className="flex  h-[100px] w-full mobile:justify-center mobile:h-11">
                                         <div
                                             className={clsx(
                                                 "flex  w-[234px] h-11 items-center justify-center cursor-pointer rounded-lg transition-all mobile:w-[147px]",
@@ -1231,8 +1293,8 @@ function AboutUs() {
                                                                     alt=""
                                                                 />
                                                                 {isMobile ? (
-                                                                    <div className="w-[135px] h-8 px-6 bg-orange-600 rounded-lg shadow flex-col justify-start items-center inline-flex">
-                                                                        <div className="text-center text-white text-xs font-black leading-loose">
+                                                                    <div className="h-8 px-6 font-roboto bg-okuro-orange rounded-lg shadow flex justify-center items-center ">
+                                                                        <div className="text-center text-white text-xs font-black ">
                                                                             Tải Okuro Ngay!
                                                                         </div>
                                                                     </div>
@@ -1466,13 +1528,15 @@ function AboutUs() {
                                                             }}
                                                             exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
-                                                                Nhập số điện thoại muốn đăng ký tài khoản Okuro
-                                                            </p>
-                                                            <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
-                                                                Lưu ý: Mỗi số điện thoại chỉ được sử dụng 01 tài khoản
-                                                                Okuro
-                                                            </p>
+                                                            <div className="w-full h-full">
+                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
+                                                                    Thiết lập mật khẩu để bảo vệ tài khoản và bấm "Đăng
+                                                                    ký"
+                                                                </p>
+                                                                <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
+                                                                    Lưu ý: Mật khẩu ở 02 ô phải hoàn toàn giống nhau
+                                                                </p>
+                                                            </div>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>

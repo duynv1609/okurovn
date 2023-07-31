@@ -5,6 +5,7 @@ import HealthcareLayout from '../layouts/HealthcareLayout';
 
 //page LandingPage
 import LandingPage from '../pages/LandingPage';
+import EMR from '../pages/EMR';
 import DeleteAccount from '../pages/DeleteAccount';
 import HealthcareAboutUs from '../pages/HealthcareAboutUs';
 import HealthcarePhisicalCard from '../pages/HealthcarePhisicalCard';
@@ -20,6 +21,14 @@ const publicRoutes = [
     {
         path: '/',
         component: LandingPage,
+        layout: LandingPageLayout,
+        props: {
+            heading: 'Trang chủ',
+        },
+    },
+    {
+        path: '/EMR',
+        component: EMR,
         layout: LandingPageLayout,
         props: {
             heading: 'Trang chủ',

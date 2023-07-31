@@ -98,9 +98,9 @@ const imgVariant = {
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { delay: 0.1, duration: 0.3 },
+        transition: { delay: 0.2, duration: 0.5 },
     },
-    exit: { scale: 0.95, opacity: 0 },
+    exit: { scale: 0.95, opacity: 0, delay: 0.2 },
 };
 
 const containerVariant = {
@@ -237,6 +237,17 @@ function HealthcareAboutUs() {
             setIndex({ now: index.now - 1, prev: index.now });
         } else setIndex({ now: 3, prev: index.now });
     }
+    function nextTitle() {
+        if (showTitle < 5) {
+            setShowTitle(showTitle + 1);
+        }
+    }
+    function prevTitle() {
+        if (showTitle > 1) {
+            setShowTitle(showTitle - 1);
+        }
+    }
+
     function setStep1() {
         if (index.now == 2) {
             prevStep();
@@ -451,7 +462,7 @@ function HealthcareAboutUs() {
                 <div className="min-w-[60px] min-h-[4px] rounded-[63px] mb-10 bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
             </div>
             <div className="flex justify-center items-center  w-full h-auto ">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-full w-full mobile:flex-col mobile:gap-5 mobile:max-w-[558px]">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-ato w-full mobile:flex-col mobile:gap-5 mobile:max-w-[558px]">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text[24px]">
                             Chức năng <span className="text-okuro-color-text">nổi bật</span>
@@ -594,7 +605,7 @@ function HealthcareAboutUs() {
                     <div className="min-w-[60px] mt-5 mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[765px] mobile:h-auto desk1000:h-auto">
+            <div className="flex justify-center items-center  w-full h-auto ">
                 <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full desk1000:">
                     <div className="flex w-full justify-center items-center min-h-[66px] px-4">
                         <p className="text-[40px]  w-full font-roboto font-semibold text-center align-middle leading-[64px] text-okuro-color-text  mobile:text-[24px] mobile:leading-normal">
@@ -914,9 +925,55 @@ function HealthcareAboutUs() {
                     <div id="Utilities" className="flex justify-center items-center  h-full w-full ">
                         <div className="z-20 flex  rounded-xl w-[1309px] h-[869px]  items-center justify-center overflow-y-hidden">
                             <div className="flex w-[1021px] gap-6 h-[581px] ">
+                                <div className="absolute flex max-w-[1350px] mt-[275px] -ml-[150px] mobile:max-w-full mobile:mt-20 mobile:ml-0 mobile:px-1 w-full justify-between items-center ">
+                                    <div className="h-auto w-auto " onClick={prevTitle}>
+                                        {showTitle > 1 ? (
+                                            <IconButton
+                                                variant="text"
+                                                color="white"
+                                                size="lg"
+                                                onClick={prevTitle}
+                                                className=" bg-okuro-btn-navigate mobile:h-6 mobile:w-6 text-white  hover:bg-okuro-primary rounded-[100%]   "
+                                            >
+                                                <span>
+                                                    <i
+                                                        className={clsx("fa fa-angle-left ", {
+                                                            "fa-xs": isMobile,
+                                                            "fa-2xl": !isMobile,
+                                                        })}
+                                                    ></i>
+                                                </span>
+                                            </IconButton>
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </div>
+                                    <div className="h-auto w-auto " onClick={nextTitle}>
+                                        {showTitle < 5 ? (
+                                            <IconButton
+                                                variant="text"
+                                                color="white"
+                                                size="lg"
+                                                onClick={nextTitle}
+                                                className=" bg-okuro-btn-navigate mobile:h-6 mobile:w-6 text-white hover:bg-okuro-primary rounded-[100%] !absolute top-2/4 -translate-y-2/4 !right-0"
+                                            >
+                                                <span>
+                                                    <i
+                                                        className={clsx("fa fa-angle-right ", {
+                                                            "fa-xs": isMobile,
+                                                            "fa-2xl": !isMobile,
+                                                        })}
+                                                    ></i>
+                                                </span>
+                                            </IconButton>
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </div>
+                                </div>
                                 <div className="">
                                     <AnimatePresence>
-                                        {signup && showTitle == 1 && (
+                                        {signup && showTitle == 1 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -927,10 +984,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 2 && (
+                                        {signup && showTitle == 2 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -941,10 +1000,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
-                                        )}{" "}
+                                        ) : (
+                                            <></>
+                                        )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 3 && (
+                                        {signup && showTitle == 3 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -955,10 +1016,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
-                                        )}{" "}
+                                        ) : (
+                                            <></>
+                                        )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 4 && (
+                                        {signup && showTitle == 4 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -969,10 +1032,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
-                                        )}{" "}
+                                        ) : (
+                                            <></>
+                                        )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {signup && showTitle == 5 && (
+                                        {signup && showTitle == 5 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -983,10 +1048,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 1 && (
+                                        {!signup && showTitle == 1 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -997,10 +1064,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 2 && (
+                                        {!signup && showTitle == 2 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -1011,10 +1080,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 3 && (
+                                        {!signup && showTitle == 3 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -1025,10 +1096,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 4 && (
+                                        {!signup && showTitle == 4 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -1039,10 +1112,12 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                     <AnimatePresence>
-                                        {!signup && showTitle == 5 && (
+                                        {!signup && showTitle == 5 ? (
                                             <motion.img
                                                 variants={imgVariant}
                                                 initial="hidden"
@@ -1053,6 +1128,8 @@ function HealthcareAboutUs() {
                                                 alt=""
                                                 className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
                                             />
+                                        ) : (
+                                            <></>
                                         )}
                                     </AnimatePresence>
                                 </div>
@@ -1113,7 +1190,7 @@ function HealthcareAboutUs() {
                                                     </AnimatePresence>
                                                 </div>
                                                 <AnimatePresence>
-                                                    {signup && showTitle == 1 && (
+                                                    {signup && showTitle == 1 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1134,10 +1211,12 @@ function HealthcareAboutUs() {
                                                                 <img src="../../../QR.png" className="" alt="" />
                                                             </div>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                                 <AnimatePresence>
-                                                    {!signup && showTitle == 1 && (
+                                                    {!signup && showTitle == 1 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1158,6 +1237,8 @@ function HealthcareAboutUs() {
                                                                 <img src="../../../QR.png" className="" alt="" />
                                                             </div>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                             </div>
@@ -1216,7 +1297,7 @@ function HealthcareAboutUs() {
                                                     </AnimatePresence>
                                                 </div>
                                                 <AnimatePresence>
-                                                    {signup && showTitle == 2 && (
+                                                    {signup && showTitle == 2 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1231,10 +1312,12 @@ function HealthcareAboutUs() {
                                                                 Mở ứng dụng và chọn đăng ký
                                                             </span>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                                 <AnimatePresence>
-                                                    {!signup && showTitle == 2 && (
+                                                    {!signup && showTitle == 2 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1250,6 +1333,8 @@ function HealthcareAboutUs() {
                                                                 chọn "Giáo dục"
                                                             </span>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                             </div>
@@ -1308,9 +1393,9 @@ function HealthcareAboutUs() {
                                                     </AnimatePresence>
                                                 </div>
                                                 <AnimatePresence>
-                                                    {signup && showTitle == 3 && (
+                                                    {signup && showTitle == 3 ? (
                                                         <motion.div
-                                                            className="flex gap-4"
+                                                            className="flex flex-col "
                                                             initial={{ opacity: 0, y: -10 }}
                                                             animate={{
                                                                 opacity: 1,
@@ -1319,18 +1404,22 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
-                                                                Nhập số điện thoại muốn đăng ký tài khoản Okuro
-                                                            </p>
-                                                            <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
-                                                                Lưu ý: Mỗi số điện thoại chỉ được sử dụng 01 tài khoản
-                                                                Okuro
-                                                            </p>
+                                                            <div className="w-full h-full">
+                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
+                                                                    Thiết lập mật khẩu để bảo vệ tài khoản và bấm "Đăng
+                                                                    ký"
+                                                                </p>
+                                                                <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
+                                                                    Lưu ý: Mật khẩu ở 02 ô phải hoàn toàn giống nhau
+                                                                </p>
+                                                            </div>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                                 <AnimatePresence>
-                                                    {!signup && showTitle == 3 && (
+                                                    {!signup && showTitle == 2 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1341,10 +1430,13 @@ function HealthcareAboutUs() {
                                                             }}
                                                             exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
-                                                                Chọn trường đang theo học
-                                                            </p>
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
+                                                                Vuốt màn hình xuống dưới phần mở rộng của ứng dụng rồi
+                                                                chọn "Giáo dục"
+                                                            </span>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                             </div>
@@ -1403,7 +1495,7 @@ function HealthcareAboutUs() {
                                                     </AnimatePresence>
                                                 </div>
                                                 <AnimatePresence>
-                                                    {signup && showTitle == 4 && (
+                                                    {signup && showTitle == 4 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1419,10 +1511,12 @@ function HealthcareAboutUs() {
                                                                 "Xác nhận"
                                                             </span>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                                 <AnimatePresence>
-                                                    {!signup && showTitle == 4 && (
+                                                    {!signup && showTitle == 4 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1437,6 +1531,8 @@ function HealthcareAboutUs() {
                                                                 Chọn tên học sinh trong danh sách
                                                             </span>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                             </div>
@@ -1502,7 +1598,7 @@ function HealthcareAboutUs() {
                                                     </AnimatePresence>
                                                 </div>
                                                 <AnimatePresence>
-                                                    {signup && showTitle == 5 && (
+                                                    {signup && showTitle == 5 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1523,10 +1619,12 @@ function HealthcareAboutUs() {
                                                                 </p>
                                                             </div>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                                 <AnimatePresence>
-                                                    {!signup && showTitle == 5 && (
+                                                    {!signup && showTitle == 5 ? (
                                                         <motion.div
                                                             className="flex gap-4"
                                                             initial={{ opacity: 0, y: -10 }}
@@ -1541,6 +1639,8 @@ function HealthcareAboutUs() {
                                                                 Sẵn sàng trải nghiệm các tính năng trên ứng dụng Okuro
                                                             </p>
                                                         </motion.div>
+                                                    ) : (
+                                                        <></>
                                                     )}
                                                 </AnimatePresence>
                                             </div>

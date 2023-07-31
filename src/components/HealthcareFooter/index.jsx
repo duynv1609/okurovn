@@ -38,7 +38,10 @@ function Footer({ children }) {
                         </div>
                         {isDeskTop && (
                             <div className="w-full h-[34px] justify-center items-center gap-4 inline-flex">
-                                <div className="w-[34px] h-[34px] justify-center items-center flex">
+                                <a
+                                    href="https://www.facebook.com/okuro.vietnam/"
+                                    className="w-[34px] h-[34px] justify-center items-center flex"
+                                >
                                     <div className="grow shrink basis-0 self-stretch p-[11px] bg-white rounded-[10px] shadow justify-center items-center inline-flex">
                                         <div className="w-3 h-3 relative flex-col justify-start items-start flex">
                                             <svg
@@ -67,8 +70,11 @@ function Footer({ children }) {
                                             </svg>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="w-[34px] h-[34px] justify-center items-center flex">
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/company/dolphin-solutions-jsc/mycompany/"
+                                    className="w-[34px] h-[34px] justify-center items-center flex"
+                                >
                                     <div className="grow shrink basis-0 self-stretch pl-3 pr-[10.98px] pt-[10.79px] pb-[12.21px] bg-white rounded-[10px] shadow justify-center items-center inline-flex">
                                         <div className="w-[11px] h-[11px] relative flex-col justify-start items-start flex">
                                             <svg
@@ -105,8 +111,11 @@ function Footer({ children }) {
                                             </svg>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="w-[34px] h-[34px] justify-center items-center flex">
+                                </a>
+                                <a
+                                    href="https://oa.zalo.me/manage/dashboard"
+                                    className="w-[34px] h-[34px] justify-center items-center flex"
+                                >
                                     <div className="grow shrink basis-0 self-stretch px-2 bg-white rounded-[10px] shadow justify-center items-center inline-flex">
                                         <div className="w-[18px] h-[6.50px] relative flex-col justify-start items-start flex">
                                             <svg
@@ -151,8 +160,11 @@ function Footer({ children }) {
                                             </svg>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="w-[34px] h-[34px] justify-center items-center flex">
+                                </a>
+                                <a
+                                    href="https://www.tiktok.com/@okuro.vn"
+                                    className="w-[34px] h-[34px] justify-center items-center flex"
+                                >
                                     <div className="w-[34px] h-[34px] relative bg-white rounded-[10px] shadow flex-col justify-start items-start flex">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -215,8 +227,11 @@ function Footer({ children }) {
                                             </defs>
                                         </svg>
                                     </div>
-                                </div>
-                                <div className="w-[34px] h-[34px] justify-center items-center flex">
+                                </a>
+                                <a
+                                    href=" https://www.youtube.com/@OkuroVietnam"
+                                    className="w-[34px] h-[34px] justify-center items-center flex"
+                                >
                                     <div className="w-[34px] h-[34px] relative bg-white rounded-[10px] shadow flex-col justify-start items-start flex">
                                         {" "}
                                         <svg
@@ -280,7 +295,7 @@ function Footer({ children }) {
                                             </defs>
                                         </svg>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         )}
                     </div>
@@ -328,7 +343,10 @@ function Footer({ children }) {
                     </div>
                     {!isDeskTop && (
                         <div className="w-full h-[34px] justify-center items-center gap-4 inline-flex">
-                            <div className="w-[34px] h-[34px] justify-center items-center flex">
+                            <a
+                                href="https://www.facebook.com/okuro.vietnam/"
+                                className="w-[34px] h-[34px] justify-center items-center flex"
+                            >
                                 <div className="grow shrink basis-0 self-stretch p-[11px] bg-white rounded-[10px] shadow justify-center items-center inline-flex">
                                     <div className="w-3 h-3 relative flex-col justify-start items-start flex">
                                         <svg
@@ -357,8 +375,11 @@ function Footer({ children }) {
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="w-[34px] h-[34px] justify-center items-center flex">
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/dolphin-solutions-jsc/mycompany/"
+                                className="w-[34px] h-[34px] justify-center items-center flex"
+                            >
                                 <div className="grow shrink basis-0 self-stretch pl-3 pr-[10.98px] pt-[10.79px] pb-[12.21px] bg-white rounded-[10px] shadow justify-center items-center inline-flex">
                                     <div className="w-[11px] h-[11px] relative flex-col justify-start items-start flex">
                                         <svg
@@ -395,8 +416,11 @@ function Footer({ children }) {
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="w-[34px] h-[34px] justify-center items-center flex">
+                            </a>
+                            <a
+                                href="https://oa.zalo.me/manage/dashboard"
+                                className="w-[34px] h-[34px] justify-center items-center flex"
+                            >
                                 <div className="grow shrink basis-0 self-stretch px-2 bg-white rounded-[10px] shadow justify-center items-center inline-flex">
                                     <div className="w-[18px] h-[6.50px] relative flex-col justify-start items-start flex">
                                         <svg
@@ -441,8 +465,11 @@ function Footer({ children }) {
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="w-[34px] h-[34px] justify-center items-center flex">
+                            </a>
+                            <a
+                                href="https://www.tiktok.com/@okuro.vn"
+                                className="w-[34px] h-[34px] justify-center items-center flex"
+                            >
                                 <div className="w-[34px] h-[34px] relative bg-white rounded-[10px] shadow flex-col justify-start items-start flex">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -505,8 +532,11 @@ function Footer({ children }) {
                                         </defs>
                                     </svg>
                                 </div>
-                            </div>
-                            <div className="w-[34px] h-[34px] justify-center items-center flex">
+                            </a>
+                            <a
+                                href=" https://www.youtube.com/@OkuroVietnam"
+                                className="w-[34px] h-[34px] justify-center items-center flex"
+                            >
                                 <div className="w-[34px] h-[34px] relative bg-white rounded-[10px] shadow flex-col justify-start items-start flex">
                                     {" "}
                                     <svg
@@ -570,7 +600,7 @@ function Footer({ children }) {
                                         </defs>
                                     </svg>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     )}
                 </div>

@@ -12,12 +12,10 @@ const bag2 =
 
 function Contact({ children, Hid }) {
     const isDeskTop = useMediaQuery("(min-width:1000px)");
-    const refContact = useRef(null);
     const [loading, setLoading] = useState(false);
     const [required, setRequired] = useState(false);
     const showSuccessNoti = () => toast.success("Thêm thành công!");
     const showErorrNoti = () => toast.error("Có lỗi xảy ra!");
-    const navigate = useNavigate();
 
     const validationSchema = Yup.object({
         name: Yup.string().required("Vui lòng nhập họ và tên!"),
@@ -46,10 +44,30 @@ function Contact({ children, Hid }) {
     //
     function handleFormsubmit(values) {
         setLoading(true);
-        setRequired(true);
-        console.log(values);
-        showSuccessNoti();
-        setLoading(false);
+        fetch("https://be-okurovn.vercel.app/api/customer", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+        })
+            .then((res) => res.json())
+            .then((resJson) => {
+                if (resJson.success) {
+                    setLoading(false);
+                    showSuccessNoti();
+                    form.resetForm();
+                } else {
+                    setLoading(false);
+                    console.log(values);
+                    showErorrNoti();
+                }
+            })
+            .catch(() => {
+                setLoading(false);
+                console.log(values);
+                showErorrNoti();
+            });
     }
     //
     return (
