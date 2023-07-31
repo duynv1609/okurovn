@@ -12,7 +12,7 @@ const LINK = [
     // { Link: "/", Content: "" },
     { Link: "/healthcare/about", Content: "Về chúng tôi" },
     { Link: "/healthcare/phisical-card", Content: "Thẻ vật lý" },
-    { Link: "/healthcare/nonphisical-card", Content: "Thi phi vật lý" },
+    { Link: "/healthcare/nonphisical-card", Content: "Thẻ phi vật lý" },
     { Link: "/healthcare/contact", Content: "Liên hệ" },
 ];
 

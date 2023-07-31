@@ -1091,7 +1091,7 @@ function HealthcareAboutUs() {
                                                         {signup && (
                                                             <span
                                                                 className={clsx(
-                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] mobile:text-[16px]",
                                                                     {
                                                                         "!text-okuro-orange font-semibold ":
                                                                             showTitle >= 1,
@@ -1122,9 +1122,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Tải ứng dụng miễn phí bằng cách tìm kiếm từ khóa "Okuro"
                                                                 trên App Store hoặc Google Play Store. Hoặc quét mã QR
                                                                 để tải Okuro:
@@ -1146,9 +1146,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Nhập số điện thoại và mật khẩu để đăng nhập tài khoản
                                                                 Okuro. Nếu không nhớ mật khẩu, chọn "Quên mật khẩu?" để
                                                                 lấy lại mật khẩu
@@ -1194,7 +1194,7 @@ function HealthcareAboutUs() {
                                                         {signup && (
                                                             <span
                                                                 className={clsx(
-                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] mobile:text-[16px]",
                                                                     {
                                                                         "!text-okuro-orange font-semibold ":
                                                                             showTitle >= 2,
@@ -1225,9 +1225,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Mở ứng dụng và chọn đăng ký
                                                             </span>
                                                         </motion.div>
@@ -1243,9 +1243,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Vuốt màn hình xuống dưới phần mở rộng của ứng dụng rồi
                                                                 chọn "Giáo dục"
                                                             </span>
@@ -1286,7 +1286,7 @@ function HealthcareAboutUs() {
                                                         {signup && (
                                                             <span
                                                                 className={clsx(
-                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] mobile:text-[16px]",
                                                                     {
                                                                         "!text-okuro-orange font-semibold ":
                                                                             showTitle >= 3,
@@ -1317,9 +1317,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Nhập số điện thoại muốn đăng ký tài khoản Okuro
                                                             </p>
                                                             <p className="text-okuro-color-text font-roboto text-[15px]  leading-[25px] font-light">
@@ -1339,9 +1339,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Chọn trường đang theo học
                                                             </p>
                                                         </motion.div>
@@ -1381,7 +1381,7 @@ function HealthcareAboutUs() {
                                                         {signup && (
                                                             <span
                                                                 className={clsx(
-                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] mobile:text-[16px]",
                                                                     {
                                                                         "!text-okuro-orange font-semibold ":
                                                                             showTitle >= 4,
@@ -1412,9 +1412,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Vui lòng kiểm tra và nhập chính xác mã xác minh và chọn
                                                                 "Xác nhận"
                                                             </span>
@@ -1431,9 +1431,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <span className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Chọn tên học sinh trong danh sách
                                                             </span>
                                                         </motion.div>
@@ -1472,7 +1472,7 @@ function HealthcareAboutUs() {
                                                         {signup && (
                                                             <span
                                                                 className={clsx(
-                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] mobile:text-[16px]",
                                                                     {
                                                                         "!text-okuro-orange font-semibold ":
                                                                             showTitle >= 5,
@@ -1511,10 +1511,10 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
                                                             <div className="w-full h-full">
-                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                                <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                     Thiết lập mật khẩu để bảo vệ tài khoản và bấm "Đăng
                                                                     ký"
                                                                 </p>
@@ -1535,9 +1535,9 @@ function HealthcareAboutUs() {
                                                                 y: 0,
                                                                 transition: { delay: 0.2 },
                                                             }}
-                                                            exit={{ y: -10, transition: { duration: 0.2 } }}
+                                                            exit={{ y: -3, transition: { duration: 0.2 } }}
                                                         >
-                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px]">
+                                                            <p className="text-okuro-color-text font-roboto text-[15px] font-normal leading-[25px] mobile:text-okuro-body-color">
                                                                 Sẵn sàng trải nghiệm các tính năng trên ứng dụng Okuro
                                                             </p>
                                                         </motion.div>
