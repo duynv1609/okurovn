@@ -94,15 +94,13 @@ const imgVariant = {
     hidden: {
         opacity: 0,
         scale: 0.95,
-        transition: { delay: 2 },
     },
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { delay: 0.5 },
+        transition: { delay: 0.1, duration: 0.3 },
     },
-    trans: { delay: 2, duration: 20 },
-    exit: { scale: 0.95, opacity: 0, transition: { delay: 0.2 } },
+    exit: { scale: 0.95, opacity: 0 },
 };
 
 const containerVariant = {
@@ -212,7 +210,7 @@ const containerVariant = {
 
 function HealthcareAboutUs() {
     const minMobile = useMediaQuery("(min-width:200px)");
-    const maxMobile = useMediaQuery("(max-width:1000px)");
+    const maxMobile = useMediaQuery("(max-width:1100px)");
     let isMobile = false;
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
 
@@ -644,14 +642,14 @@ function HealthcareAboutUs() {
                     <div className="min-w-[60px] mb-20 mobile:mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[765px] mobile:hidden">
-                <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-full max-h-[765px] h-auto px-4">
+                <div className="select-none flex flex-col gap-[40px] mobile:gap-[24px] justify-center  items-center h-full w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Ý kiến</span> người dùng
                         </span>
                     </div>
-                    <div className="flex w-[900px] justify-between items-center min-h-[66px]   ">
+                    <div className="flex max-w-[900px] w-full justify-between items-center min-h-[66px] mobile:h-8 mobile:min-h-[32px] mobile:mb-3">
                         <div className="w-[74px] h-[32px] " onClick={prevStep}>
                             <motion.img
                                 animate="anime"
@@ -670,107 +668,223 @@ function HealthcareAboutUs() {
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-between w-full h-[394px] gap-[28px]   ">
-                        <div className="flex gap-[100px] ">
-                            <motion.div
-                                custom={index}
-                                whileHover="hover"
-                                onClick={setStep2}
-                                variants={containerVariant}
-                                initial="initial"
-                                animate="animate"
-                                transition="transition"
-                                className="flex h-min hover:cursor-pointer"
-                            >
-                                <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%]  ">
-                                    {" "}
-                                    <img src="../../../icon.png" className="w-full h-full" alt="" />
-                                </div>
-                                <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
-                                    <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
-                                        <img src="../../../HealthcareUser1.png" alt="" />
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
-                                            Người dùng Phương Bùi
-                                        </span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
-                                            Nhờ Okuro tôi thấy việc đặt kịch khám dễ dàng hơn bao giờ hết
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                custom={index}
-                                whileHover="hover"
-                                onClick={setStep1}
-                                variants={containerVariant}
-                                initial="initial"
-                                animate="animate2"
-                                transition="transition"
-                                className="flex h-min hover:cursor-pointer"
-                            >
-                                <div className="z-30 absolute h-[42px] w-[54px] -translate-y-[50%] ">
-                                    {" "}
-                                    <img src="../../../icon.png" className="w-full h-full" alt="" />
-                                </div>
-                                <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
-                                    <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
-                                        <img src="../../../HealthcareUser2.png" alt="" />
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
-                                            Người dùng Thuha Hatran
-                                        </span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
-                                            Okuro giúp việc thanh toán viện phí của tôi trở nên nhanh gọn, rất hữu ích
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                custom={index}
-                                whileHover="hover"
-                                onClick={setStep3}
-                                variants={containerVariant}
-                                initial="initial"
-                                animate="animate3"
-                                transition="transition"
-                                className="flex h-min hover:cursor-pointer"
-                            >
-                                <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
-                                    {" "}
-                                    <img src="../../../icon.png" className="w-full h-full" alt="" />
-                                </div>
-                                <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
-                                    <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
-                                        <img src="../../../HealthcareUser3.png" alt="" />
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
-                                            Người dùng Hieu Hang
-                                        </span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
-                                            Có tính năng hồ sơ điện tử của Okuro tôi không cần phải lưu giữ giấy tờ theo
-                                            cách truyền thống nữa. Rất tiện lợi và hữu dụng
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
+                    {isMobile ? (
+                        <div className="h-full">
+                            {index.now == 1 ? (
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={imgVariant}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition="trans"
+                                        className="flex h-min hover:cursor-pointer"
+                                    >
+                                        <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%]  ">
+                                            {" "}
+                                            <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                        </div>
+                                        <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                            <div
+                                                id="img"
+                                                className=" flex justify-center items-center w-[72px] h-[72px]"
+                                            >
+                                                <img src="../../../HealthcareUser1.png" alt="" />
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                    Người dùng Phương Bùi
+                                                </span>
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                    Nhờ Okuro tôi thấy việc đặt kịch khám dễ dàng hơn bao giờ hết
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            ) : (
+                                <></>
+                            )}
+                            {index.now == 2 ? (
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={imgVariant}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition="trans"
+                                        className="flex h-min hover:cursor-pointer"
+                                    >
+                                        <div className="z-30 absolute h-[42px] w-[54px] -translate-y-[50%] ">
+                                            {" "}
+                                            <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                        </div>
+                                        <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                            <div
+                                                id="img"
+                                                className=" flex justify-center items-center w-[72px] h-[72px]"
+                                            >
+                                                <img src="../../../HealthcareUser2.png" alt="" />
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                    Người dùng Thuha Hatran
+                                                </span>
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                    Okuro giúp việc thanh toán viện phí của tôi trở nên nhanh gọn, rất
+                                                    hữu ích
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            ) : (
+                                <></>
+                            )}
+                            {index.now == 3 ? (
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={imgVariant}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition="trans"
+                                        className="flex h-min hover:cursor-pointer"
+                                    >
+                                        <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
+                                            {" "}
+                                            <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                        </div>
+                                        <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                            <div
+                                                id="img"
+                                                className=" flex justify-center items-center w-[72px] h-[72px]"
+                                            >
+                                                <img src="../../../HealthcareUser3.png" alt="" />
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                    Người dùng Hieu Hang
+                                                </span>
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                    Có tính năng hồ sơ điện tử của Okuro tôi không cần phải lưu giữ giấy
+                                                    tờ theo cách truyền thống nữa. Rất tiện lợi và hữu dụng
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            ) : (
+                                <></>
+                            )}
                         </div>
-                    </div>
+                    ) : (
+                        <div className="flex flex-col items-center justify-between w-full h-[394px] gap-[28px] desk1000:gap-[0px]  ">
+                            <div className="flex gap-[100px] ">
+                                <motion.div
+                                    custom={index}
+                                    whileHover="hover"
+                                    onClick={setStep2}
+                                    variants={containerVariant}
+                                    initial="initial"
+                                    animate="animate"
+                                    transition="transition"
+                                    className="flex h-min hover:cursor-pointer"
+                                >
+                                    <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%]  ">
+                                        {" "}
+                                        <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                        <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
+                                            <img src="../../../HealthcareUser1.png" alt="" />
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                Người dùng Phương Bùi
+                                            </span>
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                Nhờ Okuro tôi thấy việc đặt kịch khám dễ dàng hơn bao giờ hết
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                                <motion.div
+                                    custom={index}
+                                    whileHover="hover"
+                                    onClick={setStep1}
+                                    variants={containerVariant}
+                                    initial="initial"
+                                    animate="animate2"
+                                    transition="transition"
+                                    className="flex h-min hover:cursor-pointer"
+                                >
+                                    <div className="z-30 absolute h-[42px] w-[54px] -translate-y-[50%] ">
+                                        {" "}
+                                        <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                        <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
+                                            <img src="../../../HealthcareUser2.png" alt="" />
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                Người dùng Thuha Hatran
+                                            </span>
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                Okuro giúp việc thanh toán viện phí của tôi trở nên nhanh gọn, rất hữu
+                                                ích
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                                <motion.div
+                                    custom={index}
+                                    whileHover="hover"
+                                    onClick={setStep3}
+                                    variants={containerVariant}
+                                    initial="initial"
+                                    animate="animate3"
+                                    transition="transition"
+                                    className="flex h-min hover:cursor-pointer"
+                                >
+                                    <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
+                                        {" "}
+                                        <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                        <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
+                                            <img src="../../../HealthcareUser3.png" alt="" />
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                Người dùng Hieu Hang
+                                            </span>
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                Có tính năng hồ sơ điện tử của Okuro tôi không cần phải lưu giữ giấy tờ
+                                                theo cách truyền thống nữa. Rất tiện lợi và hữu dụng
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
+                    )}
 
                     <div className="min-w-[60px] mt-5 mb-20 mobile:mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
             <div className="flex justify-center items-center  w-auto h-auto overflow-hidden">
-                <div className="flex flex-col gap-[40px] justify-center  items-center h-auto w-auto">
+                <div className="flex flex-col gap-[40px] justify-center  items-center h-auto w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
                         <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Tổng quan</span> giao diện

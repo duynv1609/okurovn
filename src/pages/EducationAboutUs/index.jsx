@@ -36,58 +36,6 @@ const CONTENT = [
         "EMR",
     ],
 ];
-const TABS = [
-    [
-        {
-            title: "Mạng xã hội",
-        },
-        {
-            title: "Tuyển sinh",
-        },
-        {
-            title: "Thông tin học sinh",
-        },
-        {
-            title: "Thời khóa biểu",
-        },
-        {
-            title: "Điểm danh xe bus",
-        },
-        {
-            title: "Giáo viên",
-        },
-        {
-            title: "Thực đơn",
-        },
-
-        {
-            title: "Nhật ký hoạt động",
-        },
-        {
-            title: "Điểm danh",
-        },
-        {
-            title: "Lời nhắn",
-        },
-        {
-            title: "Kết quả học tập",
-        },
-        {
-            title: "Thanh toán",
-        },
-    ],
-    [
-        "Mạng xã hội",
-        "Tuyển sinh",
-        "Thông tin học sinh",
-        "Thời khóa biểu",
-        "Điểm danh xe bus",
-        "Giáo viên",
-        "Thực đơn",
-        "Nhật ký hoạt động",
-        `absolute  top-4 left-1/2 bg-red-200  -translate-x-1/2 z-50 flex  gap-[50px]`,
-    ],
-];
 
 const imgVariant = {
     hidden: {
@@ -718,14 +666,14 @@ function AboutUs() {
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex justify-center items-center  w-full h-[765px] mobile:hidden">
-                <div className="select-none flex flex-col gap-[40px] justify-center  items-center h-full w-full">
+            <div className="flex justify-center items-center  w-full max-h-[765px] h-auto px-4">
+                <div className="select-none flex flex-col gap-[40px] mobile:gap-[24px] justify-center  items-center h-full w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
                             <span className="text-okuro-color-text">Ý kiến</span> người dùng
                         </span>
                     </div>
-                    <div className="flex w-[900px] justify-between items-center min-h-[66px]   ">
+                    <div className="flex max-w-[900px] w-full justify-between items-center min-h-[66px] mobile:h-8 mobile:min-h-[32px] mobile:mb-3">
                         <div className="w-[74px] h-[32px] " onClick={prevStep}>
                             <motion.img
                                 animate="anime"
@@ -744,118 +692,219 @@ function AboutUs() {
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-between w-full h-[394px] gap-[28px]   ">
-                        <div className="flex gap-[100px] ">
-                            <motion.div
-                                custom={index}
-                                whileHover="hover"
-                                onClick={setStep2}
-                                variants={containerVariant}
-                                initial="initial"
-                                animate="animate"
-                                transition="transition"
-                                className="flex h-min hover:cursor-pointer"
-                            >
-                                <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%]  ">
-                                    {" "}
-                                    <img src="../../../icon.png" className="w-full h-full" alt="" />
-                                </div>
-                                <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
-                                    <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
-                                        <img src="../../../user1.png" alt="" />
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-orange">
-                                            Phụ huynh{" "}
-                                            <span className=" text-okuro-name-text-user text-center">
-                                                {" "}
-                                                em Nguyễn Anh Bằng <br /> (Lớp 8)
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
-                                            Okuro giúp tôi quản lý việc học tập và điểm số của con dễ dàng.
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                custom={index}
-                                whileHover="hover"
-                                onClick={setStep1}
-                                variants={containerVariant}
-                                initial="initial"
-                                animate="animate2"
-                                transition="transition"
-                                className="flex h-min hover:cursor-pointer"
-                            >
-                                <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
-                                    {" "}
-                                    <img src="../../../icon.png" className="w-full h-full" alt="" />
-                                </div>
-                                <div className="z-10 flex flex-col w-[313px] h-full justify-center items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
-                                    <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
-                                        <img src="../../../user2.png" alt="" />
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-orange">
-                                            Phụ huynh{" "}
-                                            <span className=" text-okuro-name-text-user text-center">
-                                                {" "}
-                                                bé Hoàng Thảo My <br /> (Lớp 1)
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
-                                            Bé nhà mình chuẩn bị vào lớp 1. Đây thực sự là một ứng dụng hữu dụng và
-                                            triển vọng. Từ việc tuyển sinh cho bé vào lớp 1 và vượt cấp đều rất thuận
-                                            tiện. Mình yên tâm hơn về việc quản lý con và kết nối với nhà trường.
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                custom={index}
-                                whileHover="hover"
-                                onClick={setStep3}
-                                variants={containerVariant}
-                                initial="initial"
-                                animate="animate3"
-                                transition="transition"
-                                className="flex h-min hover:cursor-pointer"
-                            >
-                                <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
-                                    {" "}
-                                    <img src="../../../icon.png" className="w-full h-full" alt="" />
-                                </div>
-                                <div className="z-10 flex flex-col w-[313px] h-full justify-center items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
-                                    <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
-                                        <img src="../../../user3.png" alt="" />
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-orange">
-                                            Phụ huynh{" "}
-                                            <span className=" text-okuro-name-text-user text-center">
-                                                {" "}
-                                                bạn Trương Văn Nam <br /> (Lớp 12)
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
-                                            Nam chuẩn bị tốt nghiệp thì tôi mới biết đến ứng dụng này. Hy vọng ứng dụng
-                                            Okuro sẽ phát triển rộng rãi cho nhiều trường để giúp mọi người dễ theo dõi
-                                            các con. Cảm ơn Okuro.
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
+                    {isMobile ? (
+                        <div className="h-full">
+                            {index.now == 1 ? (
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={imgVariant}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition="trans"
+                                        className="flex h-min hover:cursor-pointer"
+                                    >
+                                        <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%]  ">
+                                            {" "}
+                                            <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                        </div>
+                                        <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                            <div
+                                                id="img"
+                                                className=" flex justify-center items-center w-[72px] h-[72px]"
+                                            >
+                                                <img src="../../../HealthcareUser1.png" alt="" />
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                    Người dùng Phương Bùi
+                                                </span>
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                    Nhờ Okuro tôi thấy việc đặt kịch khám dễ dàng hơn bao giờ hết
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            ) : (
+                                <></>
+                            )}
+                            {index.now == 2 ? (
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={imgVariant}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition="trans"
+                                        className="flex h-min hover:cursor-pointer"
+                                    >
+                                        <div className="z-30 absolute h-[42px] w-[54px] -translate-y-[50%] ">
+                                            {" "}
+                                            <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                        </div>
+                                        <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                            <div
+                                                id="img"
+                                                className=" flex justify-center items-center w-[72px] h-[72px]"
+                                            >
+                                                <img src="../../../HealthcareUser2.png" alt="" />
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                    Người dùng Thuha Hatran
+                                                </span>
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                    Okuro giúp việc thanh toán viện phí của tôi trở nên nhanh gọn, rất
+                                                    hữu ích
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            ) : (
+                                <></>
+                            )}
+                            {index.now == 3 ? (
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={imgVariant}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition="trans"
+                                        className="flex h-min hover:cursor-pointer"
+                                    >
+                                        <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
+                                            {" "}
+                                            <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                        </div>
+                                        <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                            <div
+                                                id="img"
+                                                className=" flex justify-center items-center w-[72px] h-[72px]"
+                                            >
+                                                <img src="../../../HealthcareUser3.png" alt="" />
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                    Người dùng Hieu Hang
+                                                </span>
+                                            </div>
+                                            <div className="flex">
+                                                <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                    Có tính năng hồ sơ điện tử của Okuro tôi không cần phải lưu giữ giấy
+                                                    tờ theo cách truyền thống nữa. Rất tiện lợi và hữu dụng
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            ) : (
+                                <></>
+                            )}
                         </div>
-                    </div>
+                    ) : (
+                        <div className="flex flex-col items-center justify-between w-full h-[394px] gap-[28px] desk1000:gap-[0px]  ">
+                            <div className="flex gap-[100px] ">
+                                <motion.div
+                                    custom={index}
+                                    whileHover="hover"
+                                    onClick={setStep2}
+                                    variants={containerVariant}
+                                    initial="initial"
+                                    animate="animate"
+                                    transition="transition"
+                                    className="flex h-min hover:cursor-pointer"
+                                >
+                                    <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%]  ">
+                                        {" "}
+                                        <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                        <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
+                                            <img src="../../../HealthcareUser1.png" alt="" />
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                Người dùng Phương Bùi
+                                            </span>
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                Nhờ Okuro tôi thấy việc đặt kịch khám dễ dàng hơn bao giờ hết
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                                <motion.div
+                                    custom={index}
+                                    whileHover="hover"
+                                    onClick={setStep1}
+                                    variants={containerVariant}
+                                    initial="initial"
+                                    animate="animate2"
+                                    transition="transition"
+                                    className="flex h-min hover:cursor-pointer"
+                                >
+                                    <div className="z-30 absolute h-[42px] w-[54px] -translate-y-[50%] ">
+                                        {" "}
+                                        <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                        <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
+                                            <img src="../../../HealthcareUser2.png" alt="" />
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                Người dùng Thuha Hatran
+                                            </span>
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                Okuro giúp việc thanh toán viện phí của tôi trở nên nhanh gọn, rất hữu
+                                                ích
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                                <motion.div
+                                    custom={index}
+                                    whileHover="hover"
+                                    onClick={setStep3}
+                                    variants={containerVariant}
+                                    initial="initial"
+                                    animate="animate3"
+                                    transition="transition"
+                                    className="flex h-min hover:cursor-pointer"
+                                >
+                                    <div className="z-30 absolute h-[42px] w-[54px]   -translate-y-[50%] ">
+                                        {" "}
+                                        <img src="../../../icon.png" className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="z-10 flex flex-col w-[313px]  justify items-center gap-7 rounded-[24px] border border-white shadow-[0_4px_40px_0px_rgba(59,130,246,0.20)] px-9 py-[50px]">
+                                        <div id="img" className=" flex justify-center items-center w-[72px] h-[72px]">
+                                            <img src="../../../HealthcareUser3.png" alt="" />
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-[16px] w-full font-roboto font-black text-center leading-[23px]  text-okuro-name-text-user ">
+                                                Người dùng Hieu Hang
+                                            </span>
+                                        </div>
+                                        <div className="flex">
+                                            <span className="text-okuro-color-text text-[14px] font-roboto text-center font-normal leading-[20px] opacity-[60%]">
+                                                Có tính năng hồ sơ điện tử của Okuro tôi không cần phải lưu giữ giấy tờ
+                                                theo cách truyền thống nữa. Rất tiện lợi và hữu dụng
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
+                    )}
 
-                    <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
+                    <div className="min-w-[60px] mt-5 mb-20 mobile:mb-10 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
             <div className="flex justify-center items-center  w-auto h-auto overflow-hidden">
@@ -878,17 +927,17 @@ function AboutUs() {
                     <div className="min-w-[60px] mt-5 mb-20 min-h-[4px] w-[60px] h-[4px] rounded-[63px] bg-gradient-to-r from-okuro-color-text to-okuro-primary"></div>
                 </div>
             </div>
-            <div className="flex flex-col justify-between items-center  w-full h-[1023px] mobile:hidden">
+            <div className="flex flex-col justify-between items-center  w-full h-[1023px]">
                 <div className="flex flex-col  justify-center  items-center h-full w-full">
                     <div className="flex w-full justify-center items-center min-h-[66px]   ">
-                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange">
-                            <span className="text-okuro-color-text">Trở thành</span> người dùng
+                        <span className="text-[40px] capitalize w-full font-roboto font-semibold text-center align-middle leading-[64px]  text-okuro-orange mobile:text-[24px] mobile:leading-normal">
+                            Trở thành<span className="text-okuro-color-text"> người dùng của OKURO</span>
                         </span>
                     </div>
                     <div id="Utilities" className="flex justify-center items-center  h-full w-full ">
                         <div className="z-20 flex  rounded-xl w-[1309px] h-[869px]  items-center justify-center overflow-y-hidden">
-                            <div className="flex w-[1021px] h-[581px] ">
-                                <div className="">
+                            <div className="flex mobile:flex-col mobile:gap-6 w-[1021px] h-[581px] ">
+                                <div className="flex justify-center items-center">
                                     <AnimatePresence>
                                         {signup && showTitle == 1 ? (
                                             <motion.img
@@ -899,7 +948,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignUp1.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -915,7 +964,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignUp2.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -931,7 +980,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignUp3.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -947,7 +996,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignUp4.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -963,7 +1012,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignUp5.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -979,7 +1028,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignIn1.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -995,7 +1044,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignIn2.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -1011,7 +1060,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignIn3.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -1027,7 +1076,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignIn4.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -1043,7 +1092,7 @@ function AboutUs() {
                                                 exit="exit"
                                                 src="../../../AboutSignIn5.png"
                                                 alt=""
-                                                className="min-w-[432px] w-[432px] h-[581px] hover:cursor-pointer"
+                                                className="min-w-[432px] w-[432px] h-[581px] mobile:min-w-[200px] mobile:w-[200px] mobile:h-[269px]  hover:cursor-pointer"
                                             />
                                         ) : (
                                             <></>
@@ -1111,16 +1160,43 @@ function AboutUs() {
                                                             <motion.div
                                                                 initial={{}}
                                                                 animate={{}}
-                                                                className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange"
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 1,
+                                                                    }
+                                                                )}
                                                             >
                                                                 Tải ứng dụng{" "}
-                                                                <span className="text-okuro-web-text"> Okuro</span>
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 1,
+                                                                    })}
+                                                                >
+                                                                    {" "}
+                                                                    Okuro
+                                                                </span>
                                                             </motion.div>
                                                         )}
                                                         {!signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 1,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Đăng nhập{" "}
-                                                                <span className="text-okuro-web-text">
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 1,
+                                                                    })}
+                                                                >
                                                                     {" "}
                                                                     ứng dụng Okuro
                                                                 </span>
@@ -1208,15 +1284,47 @@ function AboutUs() {
                                                 <div className="hover:cursor-pointer">
                                                     <AnimatePresence>
                                                         {signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 2,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Đăng ký{" "}
-                                                                <span className="text-okuro-web-text"> tài khoản</span>
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 2,
+                                                                    })}
+                                                                >
+                                                                    {" "}
+                                                                    tài khoản
+                                                                </span>
                                                             </span>
                                                         )}
                                                         {!signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 2,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Chọn mảng{" "}
-                                                                <span className="text-okuro-web-text"> Giáo dục </span>
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 2,
+                                                                    })}
+                                                                >
+                                                                    {" "}
+                                                                    Giáo dục{" "}
+                                                                </span>
                                                             </span>
                                                         )}
                                                     </AnimatePresence>
@@ -1290,18 +1398,47 @@ function AboutUs() {
                                                 <div className="hover:cursor-pointer">
                                                     <AnimatePresence>
                                                         {signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 3,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Nhập{" "}
-                                                                <span className="text-okuro-web-text">
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 3,
+                                                                    })}
+                                                                >
                                                                     {" "}
                                                                     số điện thoại
                                                                 </span>
                                                             </span>
                                                         )}
                                                         {!signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 3,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Chọn{" "}
-                                                                <span className="text-okuro-web-text">Trường học</span>
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 3,
+                                                                    })}
+                                                                >
+                                                                    {" "}
+                                                                    Trường học
+                                                                </span>
                                                             </span>
                                                         )}
                                                     </AnimatePresence>
@@ -1378,18 +1515,45 @@ function AboutUs() {
                                                 <div className="hover:cursor-pointer">
                                                     <AnimatePresence>
                                                         {signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 4,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Nhập{" "}
-                                                                <span className="text-okuro-web-text">
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 4,
+                                                                    })}
+                                                                >
                                                                     {" "}
                                                                     mã xác minh
                                                                 </span>
                                                             </span>
                                                         )}
                                                         {!signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 4,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Chọn{" "}
-                                                                <span className="text-okuro-web-text">
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 4,
+                                                                    })}
+                                                                >
+                                                                    {" "}
                                                                     Tên học sinh
                                                                 </span>
                                                             </span>
@@ -1468,18 +1632,47 @@ function AboutUs() {
                                                 <div className="hover:cursor-pointer">
                                                     <AnimatePresence>
                                                         {signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 5,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Tạo{" "}
-                                                                <span className="text-okuro-web-text">
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 5,
+                                                                    })}
+                                                                >
                                                                     {" "}
                                                                     mật khẩu đăng nhập
                                                                 </span>
                                                             </span>
                                                         )}
                                                         {!signup && (
-                                                            <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
+                                                            <span
+                                                                className={clsx(
+                                                                    "text-xl font-roboto font-normal text-okuro-web-text  leading-[170%] ",
+                                                                    {
+                                                                        "!text-okuro-orange font-semibold ":
+                                                                            showTitle >= 5,
+                                                                    }
+                                                                )}
+                                                            >
                                                                 Sử dụng{" "}
-                                                                <span className="text-okuro-web-text">tính nắng</span>
+                                                                <span
+                                                                    className={clsx({
+                                                                        "text-okuro-web-text font-semibold ":
+                                                                            showTitle >= 5,
+                                                                    })}
+                                                                >
+                                                                    {" "}
+                                                                    tính nắng
+                                                                </span>
                                                             </span>
                                                         )}
                                                     </AnimatePresence>

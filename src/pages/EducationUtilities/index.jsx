@@ -233,7 +233,6 @@ function Utilities() {
                                                     }
                                                 )}
                                             >
-                                                {console.log("day la ", i, tab)}
                                                 {tab.title}
                                             </span>
                                         </div>
@@ -732,13 +731,13 @@ function Utilities() {
                                             <div className="flex flex-col gap-4 justify-start items-start h-auto w-full px-3">
                                                 <div id="tabcontent1" className="h-full w-full">
                                                     <li>
-                                                        <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
+                                                        <p className="text-base font-roboto font-normal leading-7 text-okuro-orange">
                                                             Cập nhật thông tin{" "}
                                                             <span className="text-okuro-web-text">
-                                                                thời gian và chất lượng bữa ăn hàng ngày: bữa sáng, bữa
-                                                                trưa và bữa phụ
+                                                                thời gian và chất lượng bữa ăn hàng ngày: <br></br>
+                                                                <span>bữa sáng, bữa trưa và bữa phụ</span>
                                                             </span>
-                                                        </span>
+                                                        </p>
                                                     </li>
                                                     <li>
                                                         <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
@@ -1120,13 +1119,14 @@ function Utilities() {
                                 <div className="absolute flex items-center justify-center left-[50%]  -translate-x-[50%] overflow-hidden w-[1271px] h-[200px] bg-white ">
                                     <div
                                         className={clsx(
-                                            "absolute   left-1/2 bg-white  -translate-x-[50%] z-50 flex w-[1271px] gap-[24px]",
+                                            "absolute   left-1/2 bg-white   z-50 flex w-[1720px] gap-[24px]",
                                             {
-                                                "-translate-x-[64.55%]": activeIndex == 7,
-                                                "-translate-x-[79.11%]": activeIndex == 8,
-                                                "-translate-x-[93.66%]": activeIndex == 9,
-                                                "-translate-x-[1375px]": activeIndex == 10,
-                                                "-translate-x-[1560px]": activeIndex == 11,
+                                                "-translate-x-[36.92%]": activeIndex < 7,
+                                                "-translate-x-[47.75%]": activeIndex == 7,
+                                                "-translate-x-[58.5%]": activeIndex == 8,
+                                                "-translate-x-[69.2%]": activeIndex == 9,
+                                                "-translate-x-[80%]": activeIndex == 10,
+                                                "-translate-x-[90.77%]": activeIndex == 11,
                                             }
                                         )}
                                     >
@@ -1154,7 +1154,6 @@ function Utilities() {
                                                             }
                                                         )}
                                                     >
-                                                        {console.log("day la ", i, tab)}
                                                         {tab.title}
                                                     </span>
                                                 </div>
@@ -1609,13 +1608,13 @@ function Utilities() {
                                             className="h-full w-full bg-[url('../../../bgtab7.png')]  bg-right-bottom bg-no-repeat"
                                         >
                                             <li>
-                                                <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
+                                                <p className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">
                                                     Cập nhật thông tin{" "}
                                                     <span className="text-okuro-web-text">
-                                                        thời gian và chất lượng bữa ăn hàng ngày: bữa sáng, bữa trưa và
-                                                        bữa phụ
+                                                        thời gian và chất lượng bữa ăn hàng ngày:<br></br>
+                                                        <span>bữa sáng, bữa trưa và bữa phụ</span>
                                                     </span>
-                                                </span>
+                                                </p>
                                             </li>
                                             <li>
                                                 <span className="text-xl font-roboto font-normal leading-[170%] text-okuro-orange">

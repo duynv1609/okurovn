@@ -24,7 +24,7 @@ const ScrollButton = () => {
     return (
         <>
             <div
-                className="z-20 fixed w-full bottom-[180px] left-[90%] mobile:left-[85%]  hover:cursor-pointer"
+                className="z-30 fixed w-full bottom-[180px] left-[90%] mobile:left-[85%] opacity-90  hover:cursor-pointer"
                 onClick={scrollToTop}
                 style={{ display: visible ? "inline" : "none" }}
             >
