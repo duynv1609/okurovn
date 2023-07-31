@@ -60,7 +60,7 @@ function LandingPage() {
                     >
                         <div className="flex justify-between mobile:w-[343px] mobile:flex-col  mobile:h-[179px] mobile:z-50 ">
                             <div
-                                className="w-full h-10 flex justify-end sm:hidden md:h-9 md:w-0 "
+                                className="w-full h-10 hidden justify-end sm:hidden md:h-9 md:w-0 "
                                 onClick={() => {
                                     if (lang.id == 0) {
                                         dispatch(langActions.lang(LANGUAGE[0]));
@@ -124,7 +124,7 @@ function LandingPage() {
                             </div>
                         </div>
 
-                        <div className="z-30 flex  flex-col items-center w-[700px]  mobile:w-[343px] mobile:h-[40px] mobile:items-start  mobile:hidden ">
+                        <div className="z-30 hidden  flex-col items-center w-[700px]  mobile:w-[343px] mobile:h-[40px] mobile:items-start  mobile:hidden ">
                             <div id="language" className="z-30 flex justify-end w-full min-h-[140px] ">
                                 <Popover className="flex select-none z-30 w-40 translate-y-3 space-y-3">
                                     {({ open }) => (
