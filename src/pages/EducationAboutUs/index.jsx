@@ -1230,11 +1230,15 @@ function AboutUs() {
                                                                     className="h-[73px] min-w-[73px]"
                                                                     alt=""
                                                                 />
-                                                                <div className="w-[135px] h-8 px-6 bg-orange-600 rounded-lg shadow flex-col justify-start items-center inline-flex">
-                                                                    <div className="text-center text-white text-xs font-black leading-loose">
-                                                                        Tải Okuro Ngay!
+                                                                {isMobile ? (
+                                                                    <div className="w-[135px] h-8 px-6 bg-orange-600 rounded-lg shadow flex-col justify-start items-center inline-flex">
+                                                                        <div className="text-center text-white text-xs font-black leading-loose">
+                                                                            Tải Okuro Ngay!
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                ) : (
+                                                                    <></>
+                                                                )}
                                                             </div>
                                                         </motion.div>
                                                     )}
