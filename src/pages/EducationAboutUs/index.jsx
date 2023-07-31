@@ -1671,7 +1671,7 @@ function AboutUs() {
                                                                     })}
                                                                 >
                                                                     {" "}
-                                                                    tính nắng
+                                                                    tính năng
                                                                 </span>
                                                             </span>
                                                         )}

@@ -1493,7 +1493,7 @@ function HealthcareAboutUs() {
                                                         )}
                                                         {!signup && (
                                                             <span className="text-xl font-roboto font-semibold leading-[170%] text-okuro-orange">
-                                                                Sử dụng tính nắng{" "}
+                                                                Sử dụng tính năng{" "}
                                                                 <span className="text-okuro-web-text">
                                                                     Tên học sinh
                                                                 </span>
