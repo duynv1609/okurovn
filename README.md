@@ -2,5 +2,5 @@
 
 Update Website okuro.vn
 
-npm i
+npm i &&
 npm run dev
