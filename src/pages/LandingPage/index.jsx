@@ -62,7 +62,7 @@ function LandingPage() {
                             <div
                                 className="w-full h-10 hidden justify-end sm:hidden md:h-9 md:w-0 "
                                 onClick={() => {
-                                    if (lang.id == 0) {
+                                    if (lang?.id == 0) {
                                         dispatch(langActions.lang(LANGUAGE[0]));
                                     } else {
                                         dispatch(langActions.lang(LANGUAGE[1]));
@@ -74,7 +74,7 @@ function LandingPage() {
                                         className={clsx(
                                             "bg-[url('../../../logoVN.svg')] bg-center w-6 h-[18px] rounded-l-[20px] opacity-100",
                                             {
-                                                "opacity-20": lang.id == 1,
+                                                "opacity-20": lang?.id == 1,
                                             }
                                         )}
                                     ></div>
@@ -82,7 +82,7 @@ function LandingPage() {
                                         className={clsx(
                                             "bg-[url('../../../logoEN.svg')]  bg-center w-6 h-[18px] rounded-r-[20px] opacity-100",
                                             {
-                                                "opacity-20": lang.id == 0,
+                                                "opacity-20": lang?.id == 0,
                                             }
                                         )}
                                     ></div>
@@ -93,31 +93,31 @@ function LandingPage() {
 
                                 <div className="flex flex-col items-start gap-4 my-8  mobile:mb-4 mobile:my-0 mobile:gap-0">
                                     <div className="text-5xl  font-roboto  font-bold text-okuro-color-text desktop:text-3xl mobile:text-3xl">
-                                        {CONTENT[lang.id][0]}
+                                        {CONTENT[lang?.id][0]}
                                     </div>
                                     <div
                                         className={clsx("flex  justify-center mobile:space-x-0", {
                                             "flex justify-start items-end  space-x-0 desktop:flex-col desktop:items-start":
-                                                lang.id == 1,
-                                            "items-end": lang.id == 0,
+                                                lang?.id == 1,
+                                            "items-end": lang?.id == 0,
                                         })}
                                     >
                                         <div className="text-7xl  font-bold whitespace-nowrap text-okuro-orange desktop:text-5xl  mobile:text-3xl">
-                                            {CONTENT[lang.id][1]}
+                                            {CONTENT[lang?.id][1]}
                                         </div>
                                         <div className="text-5xl font-bold text-okuro-color-text desktop:text-3xl  mobile:text-2xl">
-                                            {CONTENT[lang.id][2]}
+                                            {CONTENT[lang?.id][2]}
                                         </div>
                                         <div className="z-30 text-7xl font-bold text-okuro-primary  whitespace-nowrap desktop:text-5xl  mobile:text-3xl">
-                                            {CONTENT[lang.id][3]}
+                                            {CONTENT[lang?.id][3]}
                                         </div>
                                     </div>
                                     <div
                                         style={{ whiteSpace: "pre-wrap" }}
                                         className=" text-slate-500 text-xl font-light leading-9 desktop:text-xl mobile:text-base mobile:leading-6"
                                     >
-                                        {CONTENT[lang.id][4]} {"\n"}
-                                        {CONTENT[lang.id][5]}
+                                        {CONTENT[lang?.id][4]} {"\n"}
+                                        {CONTENT[lang?.id][5]}
                                     </div>
                                 </div>
                                 <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-color-text"></div>
@@ -209,7 +209,7 @@ function LandingPage() {
                                 className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl   bg-cover bg-[url('../../../yte.png')]  hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                             >
                                 <div className="flex flex-col items-start justify-center  w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl ">
-                                    {CONTENT[lang.id][6]}
+                                    {CONTENT[lang?.id][6]}
                                 </div>
                             </motion.div>{" "}
                         </Link>
@@ -221,7 +221,7 @@ function LandingPage() {
                                 className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl  bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                             >
                                 <div className="flex flex-col items-start  justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
-                                    {CONTENT[lang.id][7]}
+                                    {CONTENT[lang?.id][7]}
                                 </div>
                             </motion.div>
                         </Link>
@@ -236,7 +236,7 @@ function LandingPage() {
                                     <img src="../../../EMR.svg" alt="" className="w-[50px] h-[47px] mx-1" />
                                 </div>
                                 <div className=" flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl  desktop:w-[220px] mobile:w-[260px] mobile:text-4xl">
-                                    {CONTENT[lang.id][8]}
+                                    {CONTENT[lang?.id][8]}
                                 </div>
                             </motion.div>
                         </Link>
