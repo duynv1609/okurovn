@@ -39,7 +39,7 @@ const CONTENT = [
 
 function LandingPage() {
     const dispatch = useDispatch();
-    const lang = useSelector(langSelector);
+    const lang = useState(LANGUAGE[[0]]);
     const isDeskTop = useMediaQuery("(min-width:1900px)");
     const variants = { initial: { scale: 0 }, animate: { scale: 1 } };
 
