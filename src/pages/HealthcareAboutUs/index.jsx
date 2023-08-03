@@ -367,7 +367,7 @@ function HealthcareAboutUs() {
                                     <span className="text-okuro-body-color text-[18px] font-roboto  font-normal leading-[30px] opacity-[60%] mobile:text-[14px] mobile:leading-[23px]">
                                         <li className="mb-0">
                                             {t(
-                                                "content.Cơ chế mã hóa thông tin theo nguyên tắc mã hóa phân tầng dữ liệu giúp thông tin luôn được bảo mật với trạng thái tốt nhất."
+                                                "content.Cơ chế mã hóa thông tin theo nguyên tắc mã hóa phân tầng dữ liệu giúp thông tin luôn được bảo mật với trạng thái tốt nhất"
                                             )}
                                         </li>
                                     </span>
