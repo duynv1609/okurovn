@@ -112,59 +112,59 @@ function PhisicalCard() {
                         </span>
                     </div>
                     <div id="Phisical1" className="flex justify-center items-center  h-full w-full ">
-                        {card.card ? (
-                            <div className="z-20 flex  rounded-xl max-w-[1178px] w-full h-auto  items-center justify-center overflow-y-hidden">
-                                <div className="flex mobile:flex-col max-w-[1178px] w-full gap-[52px] mobile:gap-[24px] items-center justify-center h-auto overflow-y-hidden">
-                                    <div className="">
-                                        <AnimatePresence>
-                                            {phisical1 == 1 ? (
-                                                <motion.img
-                                                    variants={imgVariant}
-                                                    initial="hidden"
-                                                    animate="visible"
-                                                    transition="trans"
-                                                    exit="exit"
-                                                    src="../../../phisical11.png"
-                                                    alt=""
-                                                    className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
-                                                />
-                                            ) : (
-                                                <></>
-                                            )}
-                                        </AnimatePresence>
-                                        <AnimatePresence>
-                                            {phisical1 == 2 ? (
-                                                <motion.img
-                                                    variants={imgVariant}
-                                                    initial="hidden"
-                                                    animate="visible"
-                                                    transition="trans"
-                                                    exit="exit"
-                                                    src="../../../phisical12.png"
-                                                    alt=""
-                                                    className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
-                                                />
-                                            ) : (
-                                                <></>
-                                            )}
-                                        </AnimatePresence>
-                                        <AnimatePresence>
-                                            {phisical1 == 3 ? (
-                                                <motion.img
-                                                    variants={imgVariant}
-                                                    initial="hidden"
-                                                    animate="visible"
-                                                    transition="trans"
-                                                    exit="exit"
-                                                    src="../../../phisical13.png"
-                                                    alt=""
-                                                    className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px]  hover:cursor-pointer"
-                                                />
-                                            ) : (
-                                                <></>
-                                            )}
-                                        </AnimatePresence>
-                                    </div>
+                        <div className="z-20 flex  rounded-xl max-w-[1178px] w-full h-auto  items-center justify-center overflow-y-hidden">
+                            <div className="flex mobile:flex-col max-w-[1178px] w-full gap-[52px] mobile:gap-[24px] items-center justify-center h-auto overflow-y-hidden">
+                                <div className="">
+                                    <AnimatePresence>
+                                        {phisical1 == 1 ? (
+                                            <motion.img
+                                                variants={imgVariant}
+                                                initial="hidden"
+                                                animate="visible"
+                                                transition="trans"
+                                                exit="exit"
+                                                src="../../../phisical11.png"
+                                                alt=""
+                                                className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
+                                            />
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </AnimatePresence>
+                                    <AnimatePresence>
+                                        {phisical1 == 2 ? (
+                                            <motion.img
+                                                variants={imgVariant}
+                                                initial="hidden"
+                                                animate="visible"
+                                                transition="trans"
+                                                exit="exit"
+                                                src="../../../phisical12.png"
+                                                alt=""
+                                                className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
+                                            />
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </AnimatePresence>
+                                    <AnimatePresence>
+                                        {phisical1 == 3 ? (
+                                            <motion.img
+                                                variants={imgVariant}
+                                                initial="hidden"
+                                                animate="visible"
+                                                transition="trans"
+                                                exit="exit"
+                                                src="../../../phisical13.png"
+                                                alt=""
+                                                className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px]  hover:cursor-pointer"
+                                            />
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                                {card.card ? (
                                     <div className="flex flex-col gap-4 justify-center mobile:items-center  max-w-[460px] w-full h-auto mobile:px-4 ">
                                         <div className="flex justify-start mobile:items-center">
                                             {phisical1 == 1 && (
@@ -267,111 +267,116 @@ function PhisicalCard() {
                                             </div>
                                         )}
                                     </div>
-                                </div>
+                                ) : (
+                                    <></>
+                                )}
                             </div>
-                        ) : (
-                            <></>
-                        )}
+                        </div>
                     </div>
                     <div id="Phisical2" className="flex justify-center items-center  h-full w-full ">
                         <div className="z-20 flex  rounded-xl max-w-[1178px] w-full h-auto  items-center justify-center overflow-y-hidden">
                             <div className="flex mobile:flex-col-reverse max-w-[1178px] w-full gap-[52px] mobile:gap-[24px] items-center justify-center h-auto overflow-y-hidden">
-                                <div className="flex flex-col gap-4 justify-center mobile:items-center  max-w-[460px] w-full h-auto mobile:px-4 ">
-                                    <div className="flex justify-start mobile:items-center">
+                                {card.card ? (
+                                    <div className="flex flex-col gap-4 justify-center mobile:items-center  max-w-[460px] w-full h-auto mobile:px-4 ">
+                                        <div className="flex justify-start mobile:items-center">
+                                            {phisical2 == 1 && (
+                                                <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
+                                                    <span className="text-okuro-name">OKURO</span>
+                                                    <span className="text-okuro-bank"> x SaigonBank</span>
+                                                </p>
+                                            )}
+                                            {phisical2 == 2 && (
+                                                <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
+                                                    <span className="text-okuro-bank">Mặt trước thẻ</span>
+                                                </p>
+                                            )}
+                                            {phisical2 == 3 && (
+                                                <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
+                                                    <span className="text-okuro-bank">Mặt sau thẻ</span>
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="flex mobile:justify-center mobile:items-center gap-[30px] h-[52px] w-full ">
+                                            <div
+                                                className={clsx(
+                                                    "flex      w-[52px] h-[52px] bg-no-repeat  items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                    {
+                                                        " bg-[url('../../../phisicalxanh11.png')]": phisical2 == 1,
+                                                        " bg-[url('../../../phisicaltrang11.png')]": phisical2 != 1,
+                                                    }
+                                                )}
+                                                onClick={() => {
+                                                    setPhisical2(1);
+                                                }}
+                                            ></div>
+
+                                            <div
+                                                className={clsx(
+                                                    "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                    {
+                                                        " bg-[url('../../../phisicalxanh12.png')]": phisical2 == 2,
+                                                        " bg-[url('../../../phisicaltrang12.png')]": phisical2 != 2,
+                                                    }
+                                                )}
+                                                onClick={() => {
+                                                    setPhisical2(2);
+                                                }}
+                                            ></div>
+                                            <div
+                                                className={clsx(
+                                                    "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                    {
+                                                        " bg-[url('../../../phisicalxanh13.png')]": phisical2 == 3,
+                                                        " bg-[url('../../../phisicaltrang13.png')]": phisical2 != 3,
+                                                    }
+                                                )}
+                                                onClick={() => {
+                                                    setPhisical2(3);
+                                                }}
+                                            ></div>
+                                        </div>
                                         {phisical2 == 1 && (
-                                            <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
-                                                <span className="text-okuro-name">OKURO</span>
-                                                <span className="text-okuro-bank"> x SaigonBank</span>
-                                            </p>
+                                            <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
+                                                <p>
+                                                    Ngân hàng liên kết:{" "}
+                                                    <span className="font-extrabold">SaigonBank</span>
+                                                </p>
+                                                <p>
+                                                    Nơi áp dụng thẻ:
+                                                    <span className="font-extrabold">Bệnh viện Lê Văn Thịnh</span>
+                                                </p>
+                                                <p>
+                                                    Quyền lợi:{" "}
+                                                    <span className="font-extrabold">
+                                                        Miễn phí cho lần cấp thẻ đầu tiên
+                                                    </span>
+                                                </p>
+                                            </div>
                                         )}
                                         {phisical2 == 2 && (
-                                            <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
-                                                <span className="text-okuro-bank">Mặt trước thẻ</span>
-                                            </p>
+                                            <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
+                                                <p>1. Chip điện tử</p>
+                                                <p>
+                                                    2. Số thẻ: <span className="font-extrabold">7907 5221 0001</span>
+                                                </p>
+                                                <p>
+                                                    3. Ngày bắt đầu hiệu lực thẻ:
+                                                    <span className="font-extrabold"> 06/30</span>
+                                                </p>
+                                            </div>
                                         )}
                                         {phisical2 == 3 && (
-                                            <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
-                                                <span className="text-okuro-bank">Mặt sau thẻ</span>
-                                            </p>
+                                            <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
+                                                <p>1. Chữ ký của chủ thẻ</p>
+                                                <p>2. Mã QR hướng dẫn sử dụng thẻ</p>
+                                                <p>3. Giá trị khi sử dụng thẻ</p>
+                                                <p>4. Thông tin liên hệ</p>
+                                            </div>
                                         )}
                                     </div>
-                                    <div className="flex mobile:justify-center mobile:items-center gap-[30px] h-[52px] w-full ">
-                                        <div
-                                            className={clsx(
-                                                "flex      w-[52px] h-[52px] bg-no-repeat  items-center justify-center cursor-pointer rounded-lg transition-all",
-                                                {
-                                                    " bg-[url('../../../phisicalxanh11.png')]": phisical2 == 1,
-                                                    " bg-[url('../../../phisicaltrang11.png')]": phisical2 != 1,
-                                                }
-                                            )}
-                                            onClick={() => {
-                                                setPhisical2(1);
-                                            }}
-                                        ></div>
-
-                                        <div
-                                            className={clsx(
-                                                "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
-                                                {
-                                                    " bg-[url('../../../phisicalxanh12.png')]": phisical2 == 2,
-                                                    " bg-[url('../../../phisicaltrang12.png')]": phisical2 != 2,
-                                                }
-                                            )}
-                                            onClick={() => {
-                                                setPhisical2(2);
-                                            }}
-                                        ></div>
-                                        <div
-                                            className={clsx(
-                                                "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
-                                                {
-                                                    " bg-[url('../../../phisicalxanh13.png')]": phisical2 == 3,
-                                                    " bg-[url('../../../phisicaltrang13.png')]": phisical2 != 3,
-                                                }
-                                            )}
-                                            onClick={() => {
-                                                setPhisical2(3);
-                                            }}
-                                        ></div>
-                                    </div>
-                                    {phisical2 == 1 && (
-                                        <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
-                                            <p>
-                                                Ngân hàng liên kết: <span className="font-extrabold">SaigonBank</span>
-                                            </p>
-                                            <p>
-                                                Nơi áp dụng thẻ:
-                                                <span className="font-extrabold">Bệnh viện Lê Văn Thịnh</span>
-                                            </p>
-                                            <p>
-                                                Quyền lợi:{" "}
-                                                <span className="font-extrabold">
-                                                    Miễn phí cho lần cấp thẻ đầu tiên
-                                                </span>
-                                            </p>
-                                        </div>
-                                    )}
-                                    {phisical2 == 2 && (
-                                        <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
-                                            <p>1. Chip điện tử</p>
-                                            <p>
-                                                2. Số thẻ: <span className="font-extrabold">7907 5221 0001</span>
-                                            </p>
-                                            <p>
-                                                3. Ngày bắt đầu hiệu lực thẻ:
-                                                <span className="font-extrabold"> 06/30</span>
-                                            </p>
-                                        </div>
-                                    )}
-                                    {phisical2 == 3 && (
-                                        <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
-                                            <p>1. Chữ ký của chủ thẻ</p>
-                                            <p>2. Mã QR hướng dẫn sử dụng thẻ</p>
-                                            <p>3. Giá trị khi sử dụng thẻ</p>
-                                            <p>4. Thông tin liên hệ</p>
-                                        </div>
-                                    )}
-                                </div>{" "}
+                                ) : (
+                                    <></>
+                                )}
                                 <div className=" overflow-hidden">
                                     <AnimatePresence>
                                         {phisical2 == 1 ? (
@@ -465,17 +470,21 @@ function PhisicalCard() {
                             ) : (
                                 <></>
                             )}
-                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                            {card.card ? (
+                                <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
+                                    <div className="flex items-start gap-[10px] w-full ">
+                                        <div className="flex items-center p-2 pl-[10px] justify-start">
+                                            <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                                        </div>
+                                        <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
+                                            <span className="font-extrabold"> Dễ dàng: </span>
+                                            Mở / Nạp / Hủy thẻ tại bệnh viện hoặc ngân hàng liên kết
+                                        </p>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
-                                        <span className="font-extrabold"> Dễ dàng: </span>
-                                        Mở / Nạp / Hủy thẻ tại bệnh viện hoặc ngân hàng liên kết
-                                    </p>
                                 </div>
-                            </div>
+                            ) : (
+                                <></>
+                            )}
                             {card.card ? (
                                 <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
                                     <div className="flex items-start gap-[10px] w-full ">
