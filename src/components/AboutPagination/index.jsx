@@ -1,17 +1,21 @@
+import { useTranslation } from "react-i18next";
 export default function Pagination() {
+    const { t } = useTranslation();
     return (
         <>
             <div className="flex justify-center items-center h-auto p-20 mobile:w-[343px] mobile:flex-col-reverse mobile:z-50 mobile:p-0 mobile:gap-[42px]">
                 <div className="flex flex-col gap-4 justify-center items-start h-full w-full  mobile:gap-3">
                     <div className="flex">
                         <p className="font-roboto text-[48px] text-okuro-orange capitalize font-black leading-[65px] mobile:text-[36px] mobile:font-bold mobile:leading-tight ">
-                            <span className="text-okuro-web-text">Nền tảng số hóa </span>
-                            <br /> “Quản lý giáo dục”
+                            <span className="text-okuro-web-text"> {t("content.Nền tảng số hóa")}</span>
+                            <br />
+                            {t("content.“Quản lý giáo dục”")}
                         </p>
                     </div>
                     <div className="flex">
                         <p className="text-okuro-web-text font-roboto text-[20px] font-light leading-[30px]  mobile:text-[16px] mobile:text-okuro-web-text mobile:leading-[24px]">
-                            Liên kết hệ thống các trường học <br /> Ứng dụng mạng xã hội chuyên biệt
+                            {t("content.Liên kết hệ thống các trường học")} <br />{" "}
+                            {t("content.Ứng dụng mạng xã hội chuyên biệt")}
                         </p>
                     </div>
                     <div

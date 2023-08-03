@@ -1,11 +1,8 @@
 import Contact from "../../components/CustomerContact";
 import Footer from "../../components/HealthcareFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
-import { Popover } from "@headlessui/react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import clsx from "clsx";
+
 import PaginationPhisicalNon from "../../components/PaginationPhisicalNon";
 import EmptyWallet1 from "./EmptyWallet1";
 import BoxSearch1 from "./BoxSearch1";
@@ -101,18 +98,6 @@ function NonPhisicalCard() {
     const maxMobile = useMediaQuery("(max-width:1000px)");
     let isMobile = false;
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
-
-    const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
-    const [isContent, setIsContent] = useState(CONTENT[0]);
-    const [toggle, setToggle] = useState(false);
-    function switchLanguage() {
-        if (isContent == CONTENT[1]) {
-            setIsContent(CONTENT[0]);
-        } else {
-            setIsContent(CONTENT[1]);
-        }
-    }
-    const [bus, setBus] = useState(false);
 
     return (
         <motion.div

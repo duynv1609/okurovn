@@ -4,13 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import clsx from "clsx";
+import { useContext } from "react";
+import { LangContext } from "../../LangContext";
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
-const bag2 =
-    "https://cdn.vn.alongwalk.info/wp-content/uploads/2023/01/05212422/image-30-hinh-nen-meo-cute-dung-cho-ca-dien-thoai-va-may-tinh-bfa19be160372b49145eb85b3f12be80.jpg";
+import { useTranslation } from "react-i18next";
 
 function Contact({ children, Hid }) {
+    const { t } = useTranslation();
     const isDeskTop = useMediaQuery("(min-width:1000px)");
     const [loading, setLoading] = useState(false);
     const [required, setRequired] = useState(false);
@@ -59,13 +61,11 @@ function Contact({ children, Hid }) {
                     form.resetForm();
                 } else {
                     setLoading(false);
-                    console.log(values);
                     showErorrNoti();
                 }
             })
             .catch(() => {
                 setLoading(false);
-                console.log(values);
                 showErorrNoti();
             });
     }
@@ -74,7 +74,7 @@ function Contact({ children, Hid }) {
         <div className="flex flex-col w-full  select-none justify-start py-12  gap-12 items-center bg-okuro-background-contact ">
             {(isDeskTop || !Hid) && (
                 <div className=" text-center text-[40px] font-semibold font-roboto capitalize text-okuro-color-text">
-                    Liên hệ
+                    {t("content.Liên hệ")}
                 </div>
             )}
             <form onSubmit={form.handleSubmit} className="w-full max-w-[1200px]">
@@ -99,7 +99,7 @@ function Contact({ children, Hid }) {
                                     onChange={form.handleChange}
                                     onBlur={form.handleBlur}
                                     value={form.values.name}
-                                    placeholder="Họ và tên"
+                                    placeholder={t("content.Họ và tên")}
                                 />
                                 {required && form.errors.name ? (
                                     <span
@@ -131,7 +131,7 @@ function Contact({ children, Hid }) {
                                     onChange={form.handleChange}
                                     onBlur={form.handleBlur}
                                     value={form.values.email}
-                                    placeholder="Email"
+                                    placeholder={t("content.Email")}
                                 />
                                 {required && form.errors.email ? (
                                     <span
@@ -163,7 +163,7 @@ function Contact({ children, Hid }) {
                                     onChange={form.handleChange}
                                     onBlur={form.handleBlur}
                                     value={form.values.phone}
-                                    placeholder="Số điện thoại"
+                                    placeholder={t("content.Số điện thoại")}
                                 />
                                 {required && form.errors.phone ? (
                                     <span
@@ -192,7 +192,7 @@ function Contact({ children, Hid }) {
                                 onChange={form.handleChange}
                                 onBlur={form.handleBlur}
                                 value={form.values.content}
-                                placeholder="Nội dung"
+                                placeholder={t("content.Nội dung")}
                             ></textarea>
                             {required && form.errors.content ? (
                                 <span
@@ -217,7 +217,7 @@ function Contact({ children, Hid }) {
                         }}
                     >
                         {!loading ? (
-                            <span>Gửi thông tin</span>
+                            <span>{t("content.Gửi thông tin")}</span>
                         ) : (
                             <div className="flex items-center">
                                 <svg
@@ -240,7 +240,9 @@ function Contact({ children, Hid }) {
                     <div className="flex items-start gap-[9px]">
                         <img src="../../../info.png" alt="" />
                         <span className="text-base font-normal font-roboto text-okuro-body-color mobile:text-[16px] mobile:leading-normal">
-                            Kiểm tra hộp thư thường xuyên để theo dõi và cập nhật thông tin giá trị nhanh nhất
+                            {t(
+                                "content.Kiểm tra hộp thư thường xuyên để theo dõi và cập nhật thông tin giá trị nhanh nhất"
+                            )}
                         </span>
                     </div>
                 </div>

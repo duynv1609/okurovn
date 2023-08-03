@@ -4,45 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { animate, motion } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
 import clsx from "clsx";
-import { useDispatch } from "react-redux";
-import { langActions } from "../../redux/slices/langSlice";
-import { useSelector } from "react-redux";
-import { langSelector } from "../../redux/selectors/langSelector";
+import { useContext } from "react";
+import { LangContext } from "../../LangContext";
+import { useTranslation } from "react-i18next";
 const LANGUAGE = [
     { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
     { id: 1, logo: "logoEN_circle.svg", content: "Tiếng Anh" },
 ];
-const CONTENT = [
-    [
-        "Giải Pháp Số Hóa",
-        "Y Tế",
-        ` \xa0và\xa0    `,
-        "Giáo Dục",
-        "Liên kết hệ thống bệnh viện và trường học",
-        "Ứng dụng mạng xã hội chuyên biệt",
-        "Y tế",
-        "Giáo dục",
-        "EMR",
-    ],
-    [
-        "Digital Solutions",
-        "Healthcare ",
-        "\xa0&\xa0",
-        "Education",
-        "Connecting hospital and school systems",
-        "Specialized social networking application",
-        "Healthcare",
-        "Education",
-        "EMR",
-    ],
-];
 
 function LandingPage() {
-    const dispatch = useDispatch();
-    const [lang, setLang] = useState(LANGUAGE[0]);
+    const { t } = useTranslation();
+    const langcontext = useContext(LangContext);
     const isDeskTop = useMediaQuery("(min-width:1900px)");
     const variants = { initial: { scale: 0 }, animate: { scale: 1 } };
-
     return (
         <motion.div>
             <div className="flex flex-col justify-between  w-full h-screen   mobile:items-center mobile:bg-okuro-background  ">
@@ -62,11 +36,7 @@ function LandingPage() {
                             <div
                                 className="w-full h-10 hidden justify-end sm:hidden md:h-9 md:w-0 "
                                 onClick={() => {
-                                    if (lang?.id == 0) {
-                                        dispatch(langActions.lang(LANGUAGE[0]));
-                                    } else {
-                                        dispatch(langActions.lang(LANGUAGE[1]));
-                                    }
+                                    langcontext.toggleLang();
                                 }}
                             >
                                 <div className="flex gap-0 w-12 h-[18px]">
@@ -74,7 +44,7 @@ function LandingPage() {
                                         className={clsx(
                                             "bg-[url('../../../logoVN.svg')] bg-center w-6 h-[18px] rounded-l-[20px] opacity-100",
                                             {
-                                                "opacity-20": lang?.id == 1,
+                                                "opacity-20": langcontext.lang?.id == 1,
                                             }
                                         )}
                                     ></div>
@@ -82,7 +52,7 @@ function LandingPage() {
                                         className={clsx(
                                             "bg-[url('../../../logoEN.svg')]  bg-center w-6 h-[18px] rounded-r-[20px] opacity-100",
                                             {
-                                                "opacity-20": lang?.id == 0,
+                                                "opacity-20": langcontext.lang?.id == 0,
                                             }
                                         )}
                                     ></div>
@@ -93,31 +63,31 @@ function LandingPage() {
 
                                 <div className="flex flex-col items-start gap-4 my-8  mobile:mb-4 mobile:my-0 mobile:gap-0">
                                     <div className="text-5xl  font-roboto  font-bold text-okuro-color-text desktop:text-3xl mobile:text-3xl">
-                                        {CONTENT[lang?.id][0]}
+                                        {t("content.Giải Pháp Số Hóa")}
                                     </div>
                                     <div
-                                        className={clsx("flex  justify-center mobile:space-x-0", {
+                                        className={clsx("flex  justify-center gap-x-1 mobile:space-x-0", {
                                             "flex justify-start items-end  space-x-0 desktop:flex-col desktop:items-start":
-                                                lang?.id == 1,
-                                            "items-end": lang?.id == 0,
+                                                langcontext.lang?.id == 1,
+                                            "items-end": langcontext.lang?.id == 0,
                                         })}
                                     >
                                         <div className="text-7xl  font-bold whitespace-nowrap text-okuro-orange desktop:text-5xl  mobile:text-3xl">
-                                            {CONTENT[lang?.id][1]}
+                                            {t("content.Y Tế")}
                                         </div>
                                         <div className="text-5xl font-bold text-okuro-color-text desktop:text-3xl  mobile:text-2xl">
-                                            {CONTENT[lang?.id][2]}
+                                            {t("content.và")}
                                         </div>
                                         <div className="z-30 text-7xl font-bold text-okuro-primary  whitespace-nowrap desktop:text-5xl  mobile:text-3xl">
-                                            {CONTENT[lang?.id][3]}
+                                            {t("content.Giáo Dục")}
                                         </div>
                                     </div>
                                     <div
                                         style={{ whiteSpace: "pre-wrap" }}
                                         className=" text-slate-500 text-xl font-light leading-9 desktop:text-xl mobile:text-base mobile:leading-6"
                                     >
-                                        {CONTENT[lang?.id][4]} {"\n"}
-                                        {CONTENT[lang?.id][5]}
+                                        {t("content.Liên kết hệ thống bệnh viện và trường học")} {"\n"}
+                                        {t("content.Ứng dụng mạng xã hội chuyên biệt")}
                                     </div>
                                 </div>
                                 <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-color-text"></div>
@@ -125,8 +95,8 @@ function LandingPage() {
                         </div>
 
                         <div className="z-30 flex  flex-col items-center w-[700px]  mobile:w-[343px] mobile:h-[40px] mobile:items-start  mobile:hidden ">
-                            <div id="language" className="z-30 flex justify-end w-full min-h-[140px] ">
-                                <Popover className=" hidden select-none z-30 w-40 translate-y-3 space-y-3">
+                            <div id="language" className="z-30 hidden justify-end w-full min-h-[140px] ">
+                                <Popover className=" flex select-none z-30 w-40 translate-y-3 space-y-3">
                                     {({ open }) => (
                                         <>
                                             <Popover.Button className="flex absolute items-center rounded-lg z-50 bg-okuro-background   outline-none ">
@@ -139,7 +109,7 @@ function LandingPage() {
                                                         }
                                                     )}
                                                 >
-                                                    {lang.content}
+                                                    {langcontext.lang.content}
                                                 </div>
 
                                                 {open ? (
@@ -163,20 +133,20 @@ function LandingPage() {
                                                             />
                                                             <div
                                                                 onClick={() => {
-                                                                    dispatch(langActions.lang(l));
+                                                                    if (l != LangContext.lang) langcontext.toggleLang();
                                                                 }}
                                                                 className={clsx(
                                                                     "text-base font-light leading-[30px] whitespace-nowrap text-okuro-body-color",
                                                                     {
                                                                         "text-okuro-web-text font-medium":
-                                                                            l.content == lang.content,
+                                                                            l.content == langcontext.lang.content,
                                                                     }
                                                                 )}
                                                             >
                                                                 {l.content}
                                                             </div>
                                                         </div>
-                                                        {l.content == lang.content ? (
+                                                        {l.content == langcontext.lang.content ? (
                                                             <img
                                                                 className="rounded-[30px]"
                                                                 src={"../../../Vector.svg"}
@@ -209,7 +179,7 @@ function LandingPage() {
                                 className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl   bg-cover bg-[url('../../../yte.png')]  hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                             >
                                 <div className="flex flex-col items-start justify-center  w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl ">
-                                    {CONTENT[lang?.id][6]}
+                                    {t("content.Y Tế")}
                                 </div>
                             </motion.div>{" "}
                         </Link>
@@ -221,7 +191,7 @@ function LandingPage() {
                                 className="z-20 flex justify-center items-center w-[452px] h-[180px] rounded-2xl  bg-cover bg-[url('../../../giaoduc.png')] hover:cursor-pointer desktop:w-[316px] desktop:h-[126px] desktop:bg-contain mobile:w-[343px] mobile:h-[136px]"
                             >
                                 <div className="flex flex-col items-start  justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl desktop:w-[222px] mobile:w-[260px] mobile:text-4xl">
-                                    {CONTENT[lang?.id][7]}
+                                    {t("content.Giáo Dục")}
                                 </div>
                             </motion.div>
                         </Link>
@@ -236,7 +206,7 @@ function LandingPage() {
                                     <img src="../../../EMR.svg" alt="" className="w-[50px] h-[47px] mx-1" />
                                 </div>
                                 <div className=" flex flex-col items-start justify-center w-[332px] h-[69px] text-5xl font-extrabold text-white desktop:text-3xl  desktop:w-[220px] mobile:w-[260px] mobile:text-4xl">
-                                    {CONTENT[lang?.id][8]}
+                                    {t("content.EMR")}
                                 </div>
                             </motion.div>
                         </Link>

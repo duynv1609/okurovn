@@ -4,11 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import clsx from "clsx";
+import { useContext } from "react";
+import { LangContext } from "../../LangContext";
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
-const bag2 =
-    "https://cdn.vn.alongwalk.info/wp-content/uploads/2023/01/05212422/image-30-hinh-nen-meo-cute-dung-cho-ca-dien-thoai-va-may-tinh-bfa19be160372b49145eb85b3f12be80.jpg";
 
 function FormDeleteAccount({ children }) {
     const refContact = useRef(null);
@@ -50,11 +50,9 @@ function FormDeleteAccount({ children }) {
         setLoading(true);
         setRequired(true);
         showSuccessNoti();
-        console.log(values);
         setLoading(false);
         form.resetForm();
     }
-    console.log(required);
     //
     return (
         <div className="flex flex-col h-[100%] select-none justify-center mt-6 mb-24  gap-12 items-center bg-okuro-background-contact">

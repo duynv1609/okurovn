@@ -1,11 +1,9 @@
 import Contact from "../../components/CustomerContact";
 import Footer from "../../components/CustomerFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
-import { Popover } from "@headlessui/react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+
 import Pagination from "../../components/Pagination";
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
@@ -14,30 +12,7 @@ const LANGUAGE = [
     { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
     { id: 1, logo: "logoEN_circle.svg", content: "Tiếng Anh" },
 ];
-const CONTENT = [
-    [
-        "Giải Pháp Số Hóa",
-        "Y Tế ",
-        "và ",
-        "Giáo Dục",
-        "Liên kết hệ thống bệnh viện và trường học",
-        "Ứng dụng mạng xã hội chuyên biệt",
-        "Y tế",
-        "Giáo dục",
-        "EMR",
-    ],
-    [
-        "Digital Solutions",
-        "Healthcare ",
-        "and ",
-        "Education",
-        "Connecting hospital and school systems",
-        "Specialized social networking application",
-        "Healthcare",
-        "Education",
-        "EMR",
-    ],
-];
+
 const TABS = [
     [
         {
@@ -113,16 +88,6 @@ function Utilities() {
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
 
     const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
-    const [isContent, setIsContent] = useState(CONTENT[0]);
-    const [toggle, setToggle] = useState(false);
-    function switchLanguage() {
-        if (isContent == CONTENT[1]) {
-            setIsContent(CONTENT[0]);
-        } else {
-            setIsContent(CONTENT[1]);
-        }
-    }
-    const [bus, setBus] = useState(false);
 
     const [isSelectedTab, setIsSelectedTab] = useState(1);
     return (
@@ -1769,7 +1734,7 @@ function Utilities() {
                                             id="tabcontent1"
                                             className="h-full w-full bg-[url('../../../bgtab10.png')]  bg-right-bottom bg-no-repeat"
                                         >
-                                            <span className="text-base font-roboto font-normal leading-7 text-okuro-orange">
+                                            <span className="text-xl font-roboto font-normal leading-7 text-okuro-orange">
                                                 <span className="text-okuro-web-text">
                                                     Giao diện hiển thị dưới dạng
                                                 </span>{" "}

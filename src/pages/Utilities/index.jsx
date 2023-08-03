@@ -6,6 +6,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import { useContext } from "react";
+import { LangContext } from "../../langContext";
+
 import Pagination from "../../components/Pagination";
 
 import { animate, motion } from "framer-motion";

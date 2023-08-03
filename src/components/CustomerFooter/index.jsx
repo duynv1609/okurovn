@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
+
 import ScrollButton from "../../components/ScrollButton";
 import { useMediaQuery } from "@mui/material";
 import { navbar } from "@material-tailwind/react";
@@ -51,7 +52,7 @@ function Footer({ children }) {
                                                 viewBox="0 0 13 13"
                                                 fill="none"
                                             >
-                                                <g clip-path="url(#clip0_19992_176690)">
+                                                <g clipPath="url(#clip0_19992_176690)">
                                                     <path
                                                         d="M8.48757 2.22004H9.5832V0.312039C9.39418 0.286039 8.7441 0.227539 7.98702 0.227539C6.40734 0.227539 5.32522 1.22104 5.32522 3.04704V4.72754H3.58203V6.86054H5.32522V12.2275H7.46246V6.86104H9.13515L9.40068 4.72804H7.46196V3.25854C7.46246 2.64204 7.62848 2.22004 8.48757 2.22004Z"
                                                         fill="#3B82F6"
@@ -84,7 +85,7 @@ function Footer({ children }) {
                                                 viewBox="0 0 12 12"
                                                 fill="none"
                                             >
-                                                <g clip-path="url(#clip0_19992_176694)">
+                                                <g clipPath="url(#clip0_19992_176694)">
                                                     <path
                                                         d="M11.5154 11.0188V11.0184H11.5182V6.98411C11.5182 5.01053 11.0933 3.49023 8.78577 3.49023C7.67648 3.49023 6.93207 4.0989 6.62816 4.67594H6.59607V3.67448H4.4082V11.0184H6.68637V7.38194C6.68637 6.42449 6.86789 5.49865 8.05373 5.49865C9.22215 5.49865 9.23957 6.59132 9.23957 7.44336V11.0188H11.5154Z"
                                                         fill="#3B82F6"
@@ -125,7 +126,7 @@ function Footer({ children }) {
                                                 viewBox="0 0 19 8"
                                                 fill="none"
                                             >
-                                                <g clip-path="url(#clip0_19992_176700)">
+                                                <g clipPath="url(#clip0_19992_176700)">
                                                     <path
                                                         d="M5.67169 0.818359C5.67572 1.06317 5.67572 1.30799 5.58517 1.54243C5.52481 1.69803 5.42622 1.82666 5.32361 1.95529C4.68377 2.77479 4.04594 3.59637 3.40811 4.42002C2.95942 4.99678 2.51274 5.57562 2.06405 6.15238C2.04795 6.17313 2.02381 6.1918 2.01777 6.22915C2.04594 6.22915 2.0721 6.22915 2.10027 6.22915C3.26324 6.22915 4.42622 6.22915 5.5892 6.22707C5.6556 6.22707 5.67371 6.2416 5.67169 6.31006C5.66566 6.48226 5.66968 6.65653 5.66968 6.82873C5.66767 7.06525 5.47853 7.26649 5.24916 7.26649C3.68175 7.26857 2.11435 7.26649 0.546945 7.26857C0.500667 7.26857 0.480547 7.26027 0.482559 7.20633C0.488595 7.03828 0.472498 6.87023 0.506704 6.70425C0.538897 6.5445 0.611331 6.40342 0.711935 6.27894C1.37793 5.43039 2.04594 4.58392 2.71194 3.73537C3.16868 3.15446 3.62542 2.57355 4.08216 1.99471C4.09222 1.98019 4.10228 1.96566 4.12039 1.93869C4.08417 1.93869 4.05801 1.93869 4.03185 1.93869C2.92723 1.93869 1.82059 1.93869 0.715959 1.94077C0.637488 1.94077 0.623404 1.91794 0.623404 1.84118C0.625416 1.50093 0.623404 1.15861 0.621392 0.818359C2.3055 0.818359 3.9896 0.818359 5.67169 0.818359Z"
                                                         fill="#3B82F6"
@@ -181,7 +182,7 @@ function Footer({ children }) {
                                                     height="34"
                                                     rx="10"
                                                     fill="white"
-                                                    shape-rendering="crispEdges"
+                                                    shapeRendering="crispEdges"
                                                 />
                                                 <path
                                                     d="M16.1163 22.8184C15.1546 22.8184 14.2323 22.4149 13.5523 21.6968C12.8723 20.9788 12.4902 20.0048 12.4902 18.9893C12.4902 17.9737 12.8723 16.9998 13.5523 16.2817C14.2323 15.5636 15.1546 15.1602 16.1163 15.1602H17.0016V17.0289H16.1163C15.7485 17.0289 15.389 17.1441 15.0832 17.3598C14.7774 17.5756 14.5391 17.8823 14.3983 18.2411C14.2576 18.5999 14.2207 18.9947 14.2925 19.3756C14.3642 19.7565 14.5413 20.1064 14.8014 20.381C15.0615 20.6557 15.3928 20.8427 15.7535 20.9184C16.1142 20.9942 16.4881 20.9553 16.8279 20.8067C17.1676 20.6581 17.4581 20.4064 17.6624 20.0835C17.8667 19.7606 17.9758 19.3809 17.9758 18.9925V10.8184H19.7454V11.7522C19.7454 12.273 19.9413 12.7724 20.29 13.1407C20.6388 13.5089 21.1117 13.7158 21.6049 13.7158H22.4902V15.5813H21.5987C20.9433 15.5823 20.3002 15.3936 19.7392 15.0358V18.9893C19.7384 20.004 19.3565 20.9769 18.6774 21.6947C17.9982 22.4125 17.0772 22.8166 16.1163 22.8184Z"
@@ -196,9 +197,9 @@ function Footer({ children }) {
                                                     width="50.0039"
                                                     height="50"
                                                     filterUnits="userSpaceOnUse"
-                                                    color-interpolation-filters="sRGB"
+                                                    colorInterpolationFilters="sRGB"
                                                 >
-                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                                     <feColorMatrix
                                                         in="SourceAlpha"
                                                         type="matrix"
@@ -249,7 +250,7 @@ function Footer({ children }) {
                                                     height="34"
                                                     rx="10"
                                                     fill="white"
-                                                    shape-rendering="crispEdges"
+                                                    shapeRendering="crispEdges"
                                                 />
                                                 <path
                                                     d="M14.7291 12.2831C13.6075 11.6626 12.6982 12.171 12.6982 13.4177V22.6185C12.6982 23.8665 13.6075 24.3743 14.7291 23.7543L23.066 19.1423C24.1879 18.5215 24.1879 17.5157 23.066 16.8951L14.7291 12.2831Z"
@@ -264,9 +265,9 @@ function Footer({ children }) {
                                                     width="50.0039"
                                                     height="50"
                                                     filterUnits="userSpaceOnUse"
-                                                    color-interpolation-filters="sRGB"
+                                                    colorInterpolationFilters="sRGB"
                                                 >
-                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                                     <feColorMatrix
                                                         in="SourceAlpha"
                                                         type="matrix"
@@ -356,7 +357,7 @@ function Footer({ children }) {
                                             viewBox="0 0 13 13"
                                             fill="none"
                                         >
-                                            <g clip-path="url(#clip0_19992_176690)">
+                                            <g clipPath="url(#clip0_19992_176690)">
                                                 <path
                                                     d="M8.48757 2.22004H9.5832V0.312039C9.39418 0.286039 8.7441 0.227539 7.98702 0.227539C6.40734 0.227539 5.32522 1.22104 5.32522 3.04704V4.72754H3.58203V6.86054H5.32522V12.2275H7.46246V6.86104H9.13515L9.40068 4.72804H7.46196V3.25854C7.46246 2.64204 7.62848 2.22004 8.48757 2.22004Z"
                                                     fill="#3B82F6"
@@ -389,7 +390,7 @@ function Footer({ children }) {
                                             viewBox="0 0 12 12"
                                             fill="none"
                                         >
-                                            <g clip-path="url(#clip0_19992_176694)">
+                                            <g clipPath="url(#clip0_19992_176694)">
                                                 <path
                                                     d="M11.5154 11.0188V11.0184H11.5182V6.98411C11.5182 5.01053 11.0933 3.49023 8.78577 3.49023C7.67648 3.49023 6.93207 4.0989 6.62816 4.67594H6.59607V3.67448H4.4082V11.0184H6.68637V7.38194C6.68637 6.42449 6.86789 5.49865 8.05373 5.49865C9.22215 5.49865 9.23957 6.59132 9.23957 7.44336V11.0188H11.5154Z"
                                                     fill="#3B82F6"
@@ -430,7 +431,7 @@ function Footer({ children }) {
                                             viewBox="0 0 19 8"
                                             fill="none"
                                         >
-                                            <g clip-path="url(#clip0_19992_176700)">
+                                            <g clipPath="url(#clip0_19992_176700)">
                                                 <path
                                                     d="M5.67169 0.818359C5.67572 1.06317 5.67572 1.30799 5.58517 1.54243C5.52481 1.69803 5.42622 1.82666 5.32361 1.95529C4.68377 2.77479 4.04594 3.59637 3.40811 4.42002C2.95942 4.99678 2.51274 5.57562 2.06405 6.15238C2.04795 6.17313 2.02381 6.1918 2.01777 6.22915C2.04594 6.22915 2.0721 6.22915 2.10027 6.22915C3.26324 6.22915 4.42622 6.22915 5.5892 6.22707C5.6556 6.22707 5.67371 6.2416 5.67169 6.31006C5.66566 6.48226 5.66968 6.65653 5.66968 6.82873C5.66767 7.06525 5.47853 7.26649 5.24916 7.26649C3.68175 7.26857 2.11435 7.26649 0.546945 7.26857C0.500667 7.26857 0.480547 7.26027 0.482559 7.20633C0.488595 7.03828 0.472498 6.87023 0.506704 6.70425C0.538897 6.5445 0.611331 6.40342 0.711935 6.27894C1.37793 5.43039 2.04594 4.58392 2.71194 3.73537C3.16868 3.15446 3.62542 2.57355 4.08216 1.99471C4.09222 1.98019 4.10228 1.96566 4.12039 1.93869C4.08417 1.93869 4.05801 1.93869 4.03185 1.93869C2.92723 1.93869 1.82059 1.93869 0.715959 1.94077C0.637488 1.94077 0.623404 1.91794 0.623404 1.84118C0.625416 1.50093 0.623404 1.15861 0.621392 0.818359C2.3055 0.818359 3.9896 0.818359 5.67169 0.818359Z"
                                                     fill="#3B82F6"
@@ -486,7 +487,7 @@ function Footer({ children }) {
                                                 height="34"
                                                 rx="10"
                                                 fill="white"
-                                                shape-rendering="crispEdges"
+                                                shapeRendering="crispEdges"
                                             />
                                             <path
                                                 d="M16.1163 22.8184C15.1546 22.8184 14.2323 22.4149 13.5523 21.6968C12.8723 20.9788 12.4902 20.0048 12.4902 18.9893C12.4902 17.9737 12.8723 16.9998 13.5523 16.2817C14.2323 15.5636 15.1546 15.1602 16.1163 15.1602H17.0016V17.0289H16.1163C15.7485 17.0289 15.389 17.1441 15.0832 17.3598C14.7774 17.5756 14.5391 17.8823 14.3983 18.2411C14.2576 18.5999 14.2207 18.9947 14.2925 19.3756C14.3642 19.7565 14.5413 20.1064 14.8014 20.381C15.0615 20.6557 15.3928 20.8427 15.7535 20.9184C16.1142 20.9942 16.4881 20.9553 16.8279 20.8067C17.1676 20.6581 17.4581 20.4064 17.6624 20.0835C17.8667 19.7606 17.9758 19.3809 17.9758 18.9925V10.8184H19.7454V11.7522C19.7454 12.273 19.9413 12.7724 20.29 13.1407C20.6388 13.5089 21.1117 13.7158 21.6049 13.7158H22.4902V15.5813H21.5987C20.9433 15.5823 20.3002 15.3936 19.7392 15.0358V18.9893C19.7384 20.004 19.3565 20.9769 18.6774 21.6947C17.9982 22.4125 17.0772 22.8166 16.1163 22.8184Z"
@@ -501,9 +502,9 @@ function Footer({ children }) {
                                                 width="50.0039"
                                                 height="50"
                                                 filterUnits="userSpaceOnUse"
-                                                color-interpolation-filters="sRGB"
+                                                colorInterpolationFilters="sRGB"
                                             >
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                                 <feColorMatrix
                                                     in="SourceAlpha"
                                                     type="matrix"
@@ -553,7 +554,7 @@ function Footer({ children }) {
                                                 height="34"
                                                 rx="10"
                                                 fill="white"
-                                                shape-rendering="crispEdges"
+                                                shapeRendering="crispEdges"
                                             />
                                             <path
                                                 d="M14.7291 12.2831C13.6075 11.6626 12.6982 12.171 12.6982 13.4177V22.6185C12.6982 23.8665 13.6075 24.3743 14.7291 23.7543L23.066 19.1423C24.1879 18.5215 24.1879 17.5157 23.066 16.8951L14.7291 12.2831Z"
@@ -568,9 +569,9 @@ function Footer({ children }) {
                                                 width="50.0039"
                                                 height="50"
                                                 filterUnits="userSpaceOnUse"
-                                                color-interpolation-filters="sRGB"
+                                                colorInterpolationFilters="sRGB"
                                             >
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                                 <feColorMatrix
                                                     in="SourceAlpha"
                                                     type="matrix"
@@ -627,44 +628,44 @@ function Footer({ children }) {
                                     fill="url(#paint0_linear_19992_129002)"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M19.7812 20.458H22.5022V23.2051H19.7812V20.458Z"
                                     fill="url(#paint1_linear_19992_129002)"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M24.585 20.4581H22.5039V18.3545H24.585V20.4581Z"
                                     fill="url(#paint2_linear_19992_129002)"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M20.9453 16.7812H22.503V18.3548H20.9453V16.7812Z"
                                     fill="url(#paint3_linear_19992_129002)"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M18.4883 23.2051H19.7843V24.5143H18.4883V23.2051Z"
                                     fill="#939598"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M20.9459 19.6637H19.6484V18.3545H20.9459V19.6637Z"
                                     fill="#939598"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M23.9395 17.1202H25.2369V15.8096H23.9395V17.1202Z"
                                     fill="#939598"
                                 />
                                 <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M26.647 19.3379H25.3496V20.6471H26.647V19.3379Z"
                                     fill="#939598"
                                 />
@@ -681,8 +682,8 @@ function Footer({ children }) {
                                         y2="13.7286"
                                         gradientUnits="userSpaceOnUse"
                                     >
-                                        <stop stop-color="#262262" />
-                                        <stop offset="1" stop-color="#27AAE1" />
+                                        <stop stopColor="#262262" />
+                                        <stop offset="1" stopColor="#27AAE1" />
                                     </linearGradient>
                                     <linearGradient
                                         id="paint1_linear_19992_129002"
@@ -692,8 +693,8 @@ function Footer({ children }) {
                                         y2="19.8554"
                                         gradientUnits="userSpaceOnUse"
                                     >
-                                        <stop stop-color="#262262" />
-                                        <stop offset="1" stop-color="#27AAE1" />
+                                        <stop stopColor="#262262" />
+                                        <stop offset="1" stopColor="#27AAE1" />
                                     </linearGradient>
                                     <linearGradient
                                         id="paint2_linear_19992_129002"
@@ -703,8 +704,8 @@ function Footer({ children }) {
                                         y2="18.5726"
                                         gradientUnits="userSpaceOnUse"
                                     >
-                                        <stop stop-color="#262262" />
-                                        <stop offset="1" stop-color="#27AAE1" />
+                                        <stop stopColor="#262262" />
+                                        <stop offset="1" stopColor="#27AAE1" />
                                     </linearGradient>
                                     <linearGradient
                                         id="paint3_linear_19992_129002"
@@ -714,14 +715,14 @@ function Footer({ children }) {
                                         y2="16.3548"
                                         gradientUnits="userSpaceOnUse"
                                     >
-                                        <stop stop-color="#262262" />
-                                        <stop offset="1" stop-color="#27AAE1" />
+                                        <stop stopColor="#262262" />
+                                        <stop offset="1" stopColor="#27AAE1" />
                                     </linearGradient>
                                 </defs>
                             </svg>
                         </div>
                         <div className="text-center text-white text-sm font-normal leading-relaxed">
-                            ® 2021 All rights reserved
+                            ® 2023 All rights reserved
                         </div>
                     </div>
                 </div>

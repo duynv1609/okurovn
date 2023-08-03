@@ -3,7 +3,6 @@ import { Popover } from "@headlessui/react";
 import { MenuToggle } from "../../../components/MenuToggle";
 import Navigation from "../../../components/Navigation";
 import clsx from "clsx";
-import { useDispatch, useSelector } from "react-redux";
 
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -133,7 +132,7 @@ function HeaderCustomer({ children, showModal, setShowModal }) {
                             </div>
                         </motion.nav>
                     ) : (
-                        <>{console.log("OPEN ", isOpen)}</>
+                        <></>
                     )}
                 </div>
             </div>

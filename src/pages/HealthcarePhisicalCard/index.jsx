@@ -1,100 +1,13 @@
 import Contact from "../../components/CustomerContact";
 import Footer from "../../components/HealthcareFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
-import { Popover } from "@headlessui/react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import { useContext } from "react";
+import { route } from "../../components/FormDeleteAccount/page";
 import PaginationPhisical from "../../components/PaginationPhisical";
-import Sidebar from "../../components/Sidebar";
 import { animate, motion, useCycle, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { langActions } from "../../redux/slices/langSlice";
-import { useSelector } from "react-redux";
-import { langSelector } from "../../redux/selectors/langSelector";
-const LANGUAGE = [
-    { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
-    { id: 1, logo: "logoEN_circle.svg", content: "Tiếng Anh" },
-];
-const CONTENT = [
-    [
-        "Giải Pháp Số Hóa",
-        "Y Tế ",
-        "và ",
-        "Giáo Dục",
-        "Liên kết hệ thống bệnh viện và trường học",
-        "Ứng dụng mạng xã hội chuyên biệt",
-        "Y tế",
-        "Giáo dục",
-        "EMR",
-    ],
-    [
-        "Digital Solutions",
-        "Healthcare ",
-        "and ",
-        "Education",
-        "Connecting hospital and school systems",
-        "Specialized social networking application",
-        "Healthcare",
-        "Education",
-        "EMR",
-    ],
-];
-const TABS = [
-    [
-        {
-            title: "Mạng xã hội",
-        },
-        {
-            title: "Tuyển sinh",
-        },
-        {
-            title: "Thông tin học sinh",
-        },
-        {
-            title: "Thời khóa biểu",
-        },
-        {
-            title: "Điểm danh xe bus",
-        },
-        {
-            title: "Giáo viên",
-        },
-        {
-            title: "Thực đơn",
-        },
-
-        {
-            title: "Nhật ký hoạt động",
-        },
-        {
-            title: "Điểm danh",
-        },
-        {
-            title: "Lời nhắn",
-        },
-        {
-            title: "Kết quả học tập",
-        },
-        {
-            title: "Thanh toán",
-        },
-    ],
-    [
-        "Mạng xã hội",
-        "Tuyển sinh",
-        "Thông tin học sinh",
-        "Thời khóa biểu",
-        "Điểm danh xe bus",
-        "Giáo viên",
-        "Thực đơn",
-        "Nhật ký hoạt động",
-        `absolute  top-4 left-1/2 bg-red-200  -translate-x-1/2 z-50 flex  gap-[50px]`,
-    ],
-];
-
 const imgVariant = {
     hidden: {
         opacity: 0,
@@ -111,136 +24,14 @@ const imgVariant = {
     exit: { scale: 0.95, opacity: 0, x: 0, transition: { delay: 0.1 } },
 };
 
-const containerVariant = {
-    initial: (index) => {
-        return { x: -100, opacity: 1, scale: 1 };
-    },
-    animate: (index) => {
-        switch (index.now) {
-            case 1:
-                if (index.prev == 3) {
-                    return {
-                        x: 0,
-                        scale: [0.5, 1],
-                        transition: {
-                            opacity: [1, 0, 0, 0, 0, 1],
-                            scale: { duration: 0.3 },
-                        },
-                    };
-                }
-                return { x: 0, opacity: 1, scale: 1 };
-            case 2:
-                return { x: 412 };
-            case 3:
-                if (index.prev == 1) {
-                    return {
-                        x: 825,
-                        scale: [0.5, 1],
-                        transition: {
-                            opacity: [1, 0, 0, 0, 0, 1],
-                            scale: { duration: 0.3 },
-                        },
-                    };
-                }
-                return { x: 825, opacity: 1, scale: 1 };
-        }
-    },
-    animate2: (index) => {
-        switch (index.now) {
-            case 1:
-                return { x: 0 };
-            case 2:
-                if (index.prev == 3) {
-                    return {
-                        x: 412,
-                        scale: [0.5, 1],
-                        transition: {
-                            opacity: [1, 0, 0, 0, 0, 1],
-                            scale: { duration: 0.3 },
-                        },
-                    };
-                }
-                return { x: 412, opacity: 1, scale: 1 };
-            case 3:
-                if (index.prev == 2) {
-                    return {
-                        x: -412,
-                        scale: [0.5, 1],
-                        transition: {
-                            opacity: [1, 0, 0, 0, 0, 1],
-                            scale: { duration: 0.3 },
-                        },
-                    };
-                }
-                return { x: -412, opacity: 1, scale: 1 };
-        }
-    },
-    animate3: (index) => {
-        switch (index.now) {
-            case 1:
-                if (index.prev == 1) {
-                    return {
-                        x: 0,
-                        scale: [0.5, 1],
-                        transition: {
-                            opacity: [1, 0, 0, 0, 0, 1],
-                            scale: { duration: 0.3 },
-                        },
-                    };
-                }
-                return { x: 0, opacity: 1, scale: 1 };
-            case 2:
-                if (index.prev == 1) {
-                    return {
-                        x: -825,
-                        scale: [0.5, 1],
-                        transition: {
-                            opacity: [1, 0, 0, 0, 0, 1],
-                            scale: { duration: 0.3 },
-                        },
-                    };
-                }
-                return { x: -825, opacity: 1, scale: 1 };
-            case 3:
-                return { x: -412 };
-        }
-    },
-    hover: {
-        scale: 1.24,
-        textShadow: "0px 0px 8px rbg(225,225,225)",
-        boxShadow: "0px 0px 8px rbg(225,225,225)",
-    },
-    transition: { duration: 10 },
-    exit: {
-        x: 100,
-    },
-};
-
 function PhisicalCard() {
-    const dispatch = useDispatch();
-    const lang = useSelector(langSelector);
     const minMobile = useMediaQuery("(min-width:200px)");
     const maxMobile = useMediaQuery("(max-width:1000px)");
     let isMobile = false;
+    const card = useContext(route);
     minMobile && maxMobile ? (isMobile = true) : (isMobile = false);
-
-    const [signup, setSignup] = useState(true);
     const [phisical1, setPhisical1] = useState(1);
     const [phisical2, setPhisical2] = useState(1);
-    const [phisical3, setPhisical3] = useState(1);
-
-    const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
-    const [isContent, setIsContent] = useState(CONTENT[0]);
-    const [toggle, setToggle] = useState(false);
-    function switchLanguage() {
-        if (isContent == CONTENT[1]) {
-            setIsContent(CONTENT[0]);
-        } else {
-            setIsContent(CONTENT[1]);
-        }
-    }
-    const [bus, setBus] = useState(false);
-
     return (
         <motion.div
             initial={{ opacity: 0.2 }}
@@ -321,160 +112,166 @@ function PhisicalCard() {
                         </span>
                     </div>
                     <div id="Phisical1" className="flex justify-center items-center  h-full w-full ">
-                        <div className="z-20 flex  rounded-xl max-w-[1178px] w-full h-auto  items-center justify-center overflow-y-hidden">
-                            <div className="flex mobile:flex-col max-w-[1178px] w-full gap-[52px] mobile:gap-[24px] items-center justify-center h-auto overflow-y-hidden">
-                                <div className="">
-                                    <AnimatePresence>
-                                        {phisical1 == 1 ? (
-                                            <motion.img
-                                                variants={imgVariant}
-                                                initial="hidden"
-                                                animate="visible"
-                                                transition="trans"
-                                                exit="exit"
-                                                src="../../../phisical11.png"
-                                                alt=""
-                                                className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
-                                            />
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </AnimatePresence>
-                                    <AnimatePresence>
-                                        {phisical1 == 2 ? (
-                                            <motion.img
-                                                variants={imgVariant}
-                                                initial="hidden"
-                                                animate="visible"
-                                                transition="trans"
-                                                exit="exit"
-                                                src="../../../phisical12.png"
-                                                alt=""
-                                                className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
-                                            />
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </AnimatePresence>
-                                    <AnimatePresence>
-                                        {phisical1 == 3 ? (
-                                            <motion.img
-                                                variants={imgVariant}
-                                                initial="hidden"
-                                                animate="visible"
-                                                transition="trans"
-                                                exit="exit"
-                                                src="../../../phisical13.png"
-                                                alt=""
-                                                className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px]  hover:cursor-pointer"
-                                            />
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                                <div className="flex flex-col gap-4 justify-center mobile:items-center  max-w-[460px] w-full h-auto mobile:px-4 ">
-                                    <div className="flex justify-start mobile:items-center">
+                        {card.card ? (
+                            <div className="z-20 flex  rounded-xl max-w-[1178px] w-full h-auto  items-center justify-center overflow-y-hidden">
+                                <div className="flex mobile:flex-col max-w-[1178px] w-full gap-[52px] mobile:gap-[24px] items-center justify-center h-auto overflow-y-hidden">
+                                    <div className="">
+                                        <AnimatePresence>
+                                            {phisical1 == 1 ? (
+                                                <motion.img
+                                                    variants={imgVariant}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                    transition="trans"
+                                                    exit="exit"
+                                                    src="../../../phisical11.png"
+                                                    alt=""
+                                                    className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
+                                                />
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </AnimatePresence>
+                                        <AnimatePresence>
+                                            {phisical1 == 2 ? (
+                                                <motion.img
+                                                    variants={imgVariant}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                    transition="trans"
+                                                    exit="exit"
+                                                    src="../../../phisical12.png"
+                                                    alt=""
+                                                    className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px] overflow-y-hidden hover:cursor-pointer"
+                                                />
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </AnimatePresence>
+                                        <AnimatePresence>
+                                            {phisical1 == 3 ? (
+                                                <motion.img
+                                                    variants={imgVariant}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                    transition="trans"
+                                                    exit="exit"
+                                                    src="../../../phisical13.png"
+                                                    alt=""
+                                                    className="min-w-[666px] w-[666x] mobile:w-[300px] mobile:min-w-[300px] h-[443px] mobile:h-[200px]  hover:cursor-pointer"
+                                                />
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                    <div className="flex flex-col gap-4 justify-center mobile:items-center  max-w-[460px] w-full h-auto mobile:px-4 ">
+                                        <div className="flex justify-start mobile:items-center">
+                                            {phisical1 == 1 && (
+                                                <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
+                                                    <span className="text-okuro-name">OKURO</span>
+                                                    <span className="text-okuro-bank"> x VietinBank</span>
+                                                </p>
+                                            )}
+                                            {phisical1 == 2 && (
+                                                <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
+                                                    <span className="text-okuro-bank">Mặt trước thẻ</span>
+                                                </p>
+                                            )}
+                                            {phisical1 == 3 && (
+                                                <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
+                                                    <span className="text-okuro-bank">Mặt sau thẻ</span>
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="flex mobile:justify-center mobile:items-center gap-[30px] h-[52px] w-full ">
+                                            <div
+                                                className={clsx(
+                                                    "flex      w-[52px] h-[52px] bg-no-repeat  items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                    {
+                                                        " bg-[url('../../../phisicalxanh11.png')]": phisical1 == 1,
+                                                        " bg-[url('../../../phisicaltrang11.png')]": phisical1 != 1,
+                                                    }
+                                                )}
+                                                onClick={() => {
+                                                    setPhisical1(1);
+                                                }}
+                                            ></div>
+
+                                            <div
+                                                className={clsx(
+                                                    "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                    {
+                                                        " bg-[url('../../../phisicalxanh12.png')]": phisical1 == 2,
+                                                        " bg-[url('../../../phisicaltrang12.png')]": phisical1 != 2,
+                                                    }
+                                                )}
+                                                onClick={() => {
+                                                    setPhisical1(2);
+                                                }}
+                                            ></div>
+                                            <div
+                                                className={clsx(
+                                                    "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
+                                                    {
+                                                        " bg-[url('../../../phisicalxanh13.png')]": phisical1 == 3,
+                                                        " bg-[url('../../../phisicaltrang13.png')]": phisical1 != 3,
+                                                    }
+                                                )}
+                                                onClick={() => {
+                                                    setPhisical1(3);
+                                                }}
+                                            ></div>
+                                        </div>
                                         {phisical1 == 1 && (
-                                            <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
-                                                <span className="text-okuro-name">OKURO</span>
-                                                <span className="text-okuro-bank"> x VietinBank</span>
-                                            </p>
+                                            <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
+                                                <p>
+                                                    Ngân hàng liên kết:{" "}
+                                                    <span className="font-extrabold">VietinBank</span>
+                                                </p>
+                                                <p>
+                                                    Nơi áp dụng thẻ:
+                                                    <span className="font-extrabold">Bệnh viện Bệnh Nhiệt Đới</span>
+                                                </p>
+                                                <p>
+                                                    Quyền lợi:{" "}
+                                                    <span className="font-extrabold">
+                                                        Miễn phí cho lần cấp thẻ đầu tiên
+                                                    </span>
+                                                </p>
+                                            </div>
                                         )}
                                         {phisical1 == 2 && (
-                                            <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
-                                                <span className="text-okuro-bank">Mặt trước thẻ</span>
-                                            </p>
+                                            <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
+                                                <p>1. Chip điện tử</p>
+                                                <p>
+                                                    2. Số thẻ:{" "}
+                                                    <span className="font-extrabold">1234 5678 9012 3456</span>
+                                                </p>
+                                                <p>
+                                                    3. Ngày bắt đầu hiệu lực thẻ:
+                                                    <span className="font-extrabold">21/10</span>
+                                                </p>
+                                                <p>
+                                                    4. Ngày kết thúc hiệu lực thẻ:{" "}
+                                                    <span className="font-extrabold">06/30</span>
+                                                </p>
+                                            </div>
                                         )}
                                         {phisical1 == 3 && (
-                                            <p className="font-roboto text-[30px] font-bold leading-[48px] mobile:text-[20px] mobile:leading-8">
-                                                <span className="text-okuro-bank">Mặt sau thẻ</span>
-                                            </p>
+                                            <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
+                                                <p>1. Chữ ký của chủ thẻ</p>
+                                                <p>2. Mã QR hướng dẫn sử dụng thẻ</p>
+                                                <p>3. Giá trị khi sử dụng thẻ</p>
+                                                <p>4. Thông tin liên hệ</p>
+                                            </div>
                                         )}
                                     </div>
-                                    <div className="flex mobile:justify-center mobile:items-center gap-[30px] h-[52px] w-full ">
-                                        <div
-                                            className={clsx(
-                                                "flex      w-[52px] h-[52px] bg-no-repeat  items-center justify-center cursor-pointer rounded-lg transition-all",
-                                                {
-                                                    " bg-[url('../../../phisicalxanh11.png')]": phisical1 == 1,
-                                                    " bg-[url('../../../phisicaltrang11.png')]": phisical1 != 1,
-                                                }
-                                            )}
-                                            onClick={() => {
-                                                setPhisical1(1);
-                                            }}
-                                        ></div>
-
-                                        <div
-                                            className={clsx(
-                                                "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
-                                                {
-                                                    " bg-[url('../../../phisicalxanh12.png')]": phisical1 == 2,
-                                                    " bg-[url('../../../phisicaltrang12.png')]": phisical1 != 2,
-                                                }
-                                            )}
-                                            onClick={() => {
-                                                setPhisical1(2);
-                                            }}
-                                        ></div>
-                                        <div
-                                            className={clsx(
-                                                "flex   bg-contain w-[52px] h-[52px] bg-no-repeat  opacity-100   items-center justify-center cursor-pointer rounded-lg transition-all",
-                                                {
-                                                    " bg-[url('../../../phisicalxanh13.png')]": phisical1 == 3,
-                                                    " bg-[url('../../../phisicaltrang13.png')]": phisical1 != 3,
-                                                }
-                                            )}
-                                            onClick={() => {
-                                                setPhisical1(3);
-                                            }}
-                                        ></div>
-                                    </div>
-                                    {phisical1 == 1 && (
-                                        <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
-                                            <p>
-                                                Ngân hàng liên kết: <span className="font-extrabold">VietinBank</span>
-                                            </p>
-                                            <p>
-                                                Nơi áp dụng thẻ:
-                                                <span className="font-extrabold">Bệnh viện Bệnh Nhiệt Đới</span>
-                                            </p>
-                                            <p>
-                                                Quyền lợi:{" "}
-                                                <span className="font-extrabold">
-                                                    Miễn phí cho lần cấp thẻ đầu tiên
-                                                </span>
-                                            </p>
-                                        </div>
-                                    )}
-                                    {phisical1 == 2 && (
-                                        <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
-                                            <p>1. Chip điện tử</p>
-                                            <p>
-                                                2. Số thẻ: <span className="font-extrabold">1234 5678 9012 3456</span>
-                                            </p>
-                                            <p>
-                                                3. Ngày bắt đầu hiệu lực thẻ:
-                                                <span className="font-extrabold">21/10</span>
-                                            </p>
-                                            <p>
-                                                4. Ngày kết thúc hiệu lực thẻ:{" "}
-                                                <span className="font-extrabold">06/30</span>
-                                            </p>
-                                        </div>
-                                    )}
-                                    {phisical1 == 3 && (
-                                        <div className="flex flex-col gap-3 w-full h-[164px] font-roboto text-[18px] font-normal mobile:text-[16px] mobile:leading-7 leading-8 text-okuro-body-color">
-                                            <p>1. Chữ ký của chủ thẻ</p>
-                                            <p>2. Mã QR hướng dẫn sử dụng thẻ</p>
-                                            <p>3. Giá trị khi sử dụng thẻ</p>
-                                            <p>4. Thông tin liên hệ</p>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
-                        </div>
+                        ) : (
+                            <></>
+                        )}
                     </div>
                     <div id="Phisical2" className="flex justify-center items-center  h-full w-full ">
                         <div className="z-20 flex  rounded-xl max-w-[1178px] w-full h-auto  items-center justify-center overflow-y-hidden">
@@ -652,18 +449,22 @@ function PhisicalCard() {
                                 </span>
                             </div>
                             <div className=" min-w-[108px] w-[108px] min-h-[6px] bg-okuro-orange rounded-lg mobile:hidden"></div>
-
-                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                            {card.card ? (
+                                <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
+                                    <div className="flex items-start gap-[10px] w-full ">
+                                        <div className="flex items-center p-2 pl-[10px] justify-start">
+                                            <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                                        </div>
+                                        <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
+                                            <span className="font-extrabold">Tiện lợi: </span>
+                                            Thẻ có thể sử dụng tại mọi bệnh viện ứng dụng hệ thống công nghệ số hóa
+                                            Okuro
+                                        </p>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
-                                        <span className="font-extrabold">Tiện lợi: </span>
-                                        Thẻ có thể sử dụng tại mọi bệnh viện ứng dụng hệ thống công nghệ số hóa Okuro
-                                    </p>
                                 </div>
-                            </div>
+                            ) : (
+                                <></>
+                            )}
                             <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
                                 <div className="flex items-start gap-[10px] w-full ">
                                     <div className="flex items-center p-2 pl-[10px] justify-start">
@@ -675,28 +476,36 @@ function PhisicalCard() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                            {card.card ? (
+                                <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
+                                    <div className="flex items-start gap-[10px] w-full ">
+                                        <div className="flex items-center p-2 pl-[10px] justify-start">
+                                            <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                                        </div>
+                                        <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
+                                            <span className="font-extrabold"> Bảo mật: </span>
+                                            Đảm bảo thông tin được bảo mật và lưu giữ lâu dài
+                                        </p>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
-                                        <span className="font-extrabold"> Bảo mật: </span>
-                                        Đảm bảo thông tin được bảo mật và lưu giữ lâu dài
-                                    </p>
                                 </div>
-                            </div>
-                            <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
-                                <div className="flex items-start gap-[10px] w-full ">
-                                    <div className="flex items-center p-2 pl-[10px] justify-start">
-                                        <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                            ) : (
+                                <></>
+                            )}
+                            {card.card ? (
+                                <div className="flex flex-col w-[580px] mobile:w-auto mobile:h-auto ">
+                                    <div className="flex items-start gap-[10px] w-full ">
+                                        <div className="flex items-center p-2 pl-[10px] justify-start">
+                                            <div className="h-[15px] w-[15px]   rounded bg-okuro-orange"></div>
+                                        </div>
+                                        <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
+                                            <span className="font-extrabold"> Linh hoạt: </span>
+                                            Thanh toán hóa mọi chi phí khám chữa bệnh an toàn, tiết kiệm thời gian
+                                        </p>
                                     </div>
-                                    <p className="text-okuro-body-color font-roboto text-[18px]  font-normal leading-[30px] mobile:text-okuro-body-color">
-                                        <span className="font-extrabold"> Linh hoạt: </span>
-                                        Thanh toán hóa mọi chi phí khám chữa bệnh an toàn, tiết kiệm thời gian
-                                    </p>
                                 </div>
-                            </div>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     </div>
                     {isMobile ? (

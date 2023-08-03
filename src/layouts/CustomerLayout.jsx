@@ -3,7 +3,6 @@ import { useState } from "react";
 import Modal from "../components/Modal";
 function CustomerLayout({ heading, children }) {
     const [showModal, setShowModal] = useState(false);
-    console.log(showModal);
     return (
         <div className="flex flex-col justify-between h-full w-full overflow-hidden ">
             <div className="z-50">
