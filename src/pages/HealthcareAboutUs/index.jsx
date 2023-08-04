@@ -563,13 +563,13 @@ function HealthcareAboutUs() {
                                         </div>
                                         <div className="text-okuro-web-text text-[12px] font-normal leading-[16px] ">
                                             <p>
-                                                <span className="font-semibold "> {t("content.Địa chỉ:")} </span>
+                                                <span className="font-semibold "> {t("content.Địa chỉ")}: </span>
                                                 {t("content.341 Sư Vạn Hạnh, Phường 10, Quận 10, TP HCM")}
                                             </p>
                                         </div>
                                         <div className="text-okuro-web-text text-[12px] font-normal leading-[16px]">
                                             <p>
-                                                <span className="font-semibold "> {t("content.Điện thoại:")} </span>
+                                                <span className="font-semibold "> {t("content.Điện thoại")}: </span>
                                                 (028) 39271119 <br></br>
                                                 <span className="font-semibold "> Fax: </span>
                                                 (028) 39270053
