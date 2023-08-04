@@ -23,10 +23,14 @@ export default function Pagination() {
                     ></div>
                     <div className="flex gap-4 mobile:hidden">
                         <div>
-                            <img src="../../../google.png" alt="" className="hover:cursor-pointer" />
+                            <a href="https://play.google.com/store/apps/details?id=vn.okuro.app&hl=vi&gl=US&pli=1">
+                                <img src="../../../google.png" alt="" className="hover:cursor-pointer" />
+                            </a>
                         </div>
                         <div>
-                            <img src="../../../appstore.png" alt="" className="hover:cursor-pointer" />
+                            <a href="https://apps.apple.com/us/app/okuro/id1570372051">
+                                <img src="../../../appstore.png" alt="" className="hover:cursor-pointer" />
+                            </a>
                         </div>
                     </div>
                 </div>

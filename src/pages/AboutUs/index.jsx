@@ -1,114 +1,10 @@
 import Contact from "../../components/CustomerContact";
 import Footer from "../../components/CustomerFooter";
 import { Carousel, IconButton, tabs } from "@material-tailwind/react";
-import { Popover } from "@headlessui/react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import clsx from "clsx";
-import { useContext } from "react";
-import { LangContext } from "../../langContext";
-
 import AboutPagination from "../../components/AboutPagination";
-
 import { motion } from "framer-motion";
 
-const LANGUAGE = [
-    { id: 0, logo: "logoVN_circle.svg", content: "Tiếng Việt" },
-    { id: 1, logo: "logoEN_circle.svg", content: "Tiếng Anh" },
-];
-const CONTENT = [
-    [
-        "Giải Pháp Số Hóa",
-        "Y Tế ",
-        "và ",
-        "Giáo Dục",
-        "Liên kết hệ thống bệnh viện và trường học",
-        "Ứng dụng mạng xã hội chuyên biệt",
-        "Y tế",
-        "Giáo dục",
-        "EMR",
-    ],
-    [
-        "Digital Solutions",
-        "Healthcare ",
-        "and ",
-        "Education",
-        "Connecting hospital and school systems",
-        "Specialized social networking application",
-        "Healthcare",
-        "Education",
-        "EMR",
-    ],
-];
-const TABS = [
-    [
-        {
-            title: "Mạng xã hội",
-        },
-        {
-            title: "Tuyển sinh",
-        },
-        {
-            title: "Thông tin học sinh",
-        },
-        {
-            title: "Thời khóa biểu",
-        },
-        {
-            title: "Điểm danh xe bus",
-        },
-        {
-            title: "Giáo viên",
-        },
-        {
-            title: "Thực đơn",
-        },
-
-        {
-            title: "Nhật ký hoạt động",
-        },
-        {
-            title: "Điểm danh",
-        },
-        {
-            title: "Lời nhắn",
-        },
-        {
-            title: "Kết quả học tập",
-        },
-        {
-            title: "Thanh toán",
-        },
-    ],
-    [
-        "Mạng xã hội",
-        "Tuyển sinh",
-        "Thông tin học sinh",
-        "Thời khóa biểu",
-        "Điểm danh xe bus",
-        "Giáo viên",
-        "Thực đơn",
-        "Nhật ký hoạt động",
-        `absolute  top-4 left-1/2 bg-red-200  -translate-x-1/2 z-50 flex  gap-[50px]`,
-    ],
-];
-const num = (185 / (161 * 12 + 24 * 11)) * 100;
-
 function AboutUs() {
-    console.log(num);
-    const [isLanguage, setIsLanguage] = useState(LANGUAGE[0]);
-    const [isContent, setIsContent] = useState(CONTENT[0]);
-    const [toggle, setToggle] = useState(false);
-    function switchLanguage() {
-        if (isContent == CONTENT[1]) {
-            setIsContent(CONTENT[0]);
-        } else {
-            setIsContent(CONTENT[1]);
-        }
-    }
-    const [bus, setBus] = useState(false);
-
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -884,10 +780,14 @@ function AboutUs() {
                                     <div id="br" className="w-[82px] h-[6px] rounded-[63px] bg-okuro-color-text"></div>
                                     <div className="flex gap-4">
                                         <div>
-                                            <img src="../../../google.png" alt="" className="hover:cursor-pointer" />
+                                           <a href="https://play.google.com/store/apps/details?id=vn.okuro.app&hl=vi&gl=US&pli=1">
+                                <img src="../../../google.png" alt="" className="hover:cursor-pointer" />
+                            </a>
                                         </div>
                                         <div>
-                                            <img src="../../../appstore.png" alt="" className="hover:cursor-pointer" />
+                                           <a href="https://apps.apple.com/us/app/okuro/id1570372051">
+                            <img src="../../../appstore.png" alt="" className="hover:cursor-pointer" />
+                            </a>
                                         </div>
                                     </div>
                                 </div>

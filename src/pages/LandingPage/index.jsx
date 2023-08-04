@@ -170,7 +170,7 @@ function LandingPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="z-20 flex justify-center  items-end gap-[42px] w-full lg:bottom-[10%]  lg:absolute  desktop:top-[530px]   pc:bottom-[7%] mobile:flex-col mobile:relative    mobile:items-center mobile:justify-center mobile:gap-6  mobile:h-[456px] ">
+                    <div className="z-20 flex justify-center  items-end gap1050:gap-[12px] gap-[42px] w-full lg:bottom-[10%]  lg:absolute lg:top-[850px] desktop:top-[600px] desk1000:top-[650px] pc:top-[800px]     pc:bottom-[7%] mobile:flex-col mobile:relative    mobile:items-center mobile:justify-center mobile:gap-6  mobile:h-[456px] ">
                         <Link to="/healthcare/about">
                             <motion.div
                                 variants={variants}

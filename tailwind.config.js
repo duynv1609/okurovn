@@ -12,14 +12,15 @@ module.exports = withMT({
         screens: {
             sm: { min: '640px' },
             md: { min: '768px' },
-            lg: { min: '1024px' },
+            lg: { min: '1000px' },
             xl: { min: '1280px' },
             mobile: { max: '1000px' },
             desk1000: {min:'1000px',max:'1500px'},
             notmobile: {min:'1000px'},
-            desktop: { min: '1400px', max: '1600px' },
+            desktop: { min: '1000px', max: '1600px' },
             pc: { min: '1600px', max: '2000px' },
             myscreen: { min: '2200px', max: '3000px' },
+            gap1050: { min: '1000px', max: '1100px' },
         },
         extend: {
             spacing: {
