@@ -9,17 +9,26 @@ function RouteProvider({ children }) {
         fetch("https://phpokuro.vercel.app/okurovn/edu")
             .then((res) => res.json())
             .then((resJson) => {
-                setEdu(resJson.success);
+                const timer = setTimeout(() => {
+                    setEdu(resJson.success);
+                }, 5000);
+                return () => clearTimeout(timer);
             });
         fetch("https://phpokuro.vercel.app/okurovn/hos")
             .then((res) => res.json())
             .then((resJson) => {
-                setHos(resJson.success);
+                const timer = setTimeout(() => {
+                    setHos(resJson.success);
+                }, 5000);
+                return () => clearTimeout(timer);
             });
         fetch("https://phpokuro.vercel.app/okurovn/card")
             .then((res) => res.json())
             .then((resJson) => {
-                setCard(resJson.success);
+                const timer = setTimeout(() => {
+                    setCard(resJson.success);
+                }, 5000);
+                return () => clearTimeout(timer);
             });
     }, []);
 

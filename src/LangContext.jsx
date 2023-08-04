@@ -14,7 +14,10 @@ function LangProvider({ children }) {
         fetch("https://phpokuro.vercel.app/okurovn")
             .then((res) => res.json())
             .then((resJson) => {
-                setVerify(resJson.success);
+                const timer = setTimeout(() => {
+                    setVerify(resJson.success);
+                }, 1000);
+                return () => clearTimeout(timer);
             });
     }, []);
     const toggleLang = () => {
