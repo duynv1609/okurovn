@@ -14,7 +14,7 @@ import HealthcareContact from '../pages/HealthcareContact';
 import EducationAboutUs from '../pages/EducationAboutUs';
 import EducationContact from '../pages/EducationContact';
 import EducationUtilities from '../pages/EducationUtilities';
-
+import Download from '../pages/Download';
 // Public routes
 const publicRoutes = [
     //LandingPage
@@ -95,6 +95,13 @@ const publicRoutes = [
         layout: CustomerLayout,
         props: {
             heading: 'Xóa tài khoản',
+        },
+    }
+    , {
+        path: '/api/download/BVBND21',
+        component: Download,
+        props: {
+            heading: 'Download',
         },
     }
 ];
