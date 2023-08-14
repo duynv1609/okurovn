@@ -2,7 +2,6 @@
 function Download() {
     function handleRedirect(values) {
         const userAgent = navigator.userAgent.toLowerCase();
-        console.log('Xử lý ');
         if (/iphone|ipad|ipod/.test(userAgent.toLowerCase())) {
           // Thiết bị iOS
           window.location.href = 'https://apps.apple.com/us/app/okuro/id1570372051';
