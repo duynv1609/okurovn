@@ -98,7 +98,7 @@ const publicRoutes = [
         },
     }
     , {
-        path: '/api/download/BVBND21',
+        path: '/api/download/:code',
         component: Download,
         props: {
             heading: 'Download',
